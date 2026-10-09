@@ -1,0 +1,8 @@
+{
+  "name": "ÉLIXIR & DERMA | Beauty & Skincare Editorial Journal",
+  "description": "An editorial beauty journal delivering dermatologist-reviewed essays, active ingredient science, clean formulation deep-dives, and skincare rituals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
