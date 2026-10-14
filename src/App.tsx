@@ -83,6 +83,9 @@ export default function App() {
     // Default to Home
     setSelectedArticle(null);
     setCurrentView('home');
+    if (typeof window !== 'undefined' && (window.location.pathname === '/' || window.location.pathname === '')) {
+      window.history.replaceState(null, '', getHomeUrl());
+    }
     updateSeoMetadata(null, 'home');
   }, []);
 

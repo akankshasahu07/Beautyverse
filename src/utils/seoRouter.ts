@@ -57,10 +57,10 @@ export function getArticleUrl(article: BeautyArticle): string {
 }
 
 /**
- * Returns the SEO URL for the homepage.
+ * Returns the unique SEO URL for the homepage.
  */
 export function getHomeUrl(): string {
-  return '/';
+  return '/home';
 }
 
 /**
@@ -139,7 +139,7 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
   const directSlugMatch = path.match(/^\/([a-z0-9-]+)$/);
   if (directSlugMatch) {
     const slugCandidate = directSlugMatch[1];
-    if (slugCandidate === 'home' || slugCandidate === 'index') {
+    if (slugCandidate === 'home' || slugCandidate === 'index' || slugCandidate === 'beauty-and-skincare-blog') {
       return { view: 'home' };
     }
     if (slugCandidate === 'articles') {
@@ -181,7 +181,7 @@ export function updateSeoMetadata(article: BeautyArticle | null, view: 'home' | 
   if (typeof document === 'undefined') return;
 
   const origin = window.location.origin;
-  const canonicalUrl = `${origin}${article && view === 'detail' ? getArticleUrl(article) : view === 'articles' ? '/articles' : '/'}`;
+  const canonicalUrl = `${origin}${article && view === 'detail' ? getArticleUrl(article) : view === 'articles' ? '/articles' : getHomeUrl()}`;
 
   // Default values from Homepage Step 2 Keyword Map
   const homeMapping = STEP_2_KEYWORD_MAP['home'];
@@ -302,9 +302,13 @@ export function updateSeoMetadata(article: BeautyArticle | null, view: 'home' | 
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       'name': 'ÉLIXIR & DERMA',
-      'url': origin,
+      'url': `${origin}${getHomeUrl()}`,
       'description': description,
       'keywords': keywordsArray,
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': canonicalUrl
+      },
       'publisher': {
         '@type': 'Organization',
         'name': 'ÉLIXIR & DERMA Publishing Corp.'

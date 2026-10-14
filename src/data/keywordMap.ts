@@ -22,7 +22,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
   // Page 1: Homepage
   'home': {
     pageId: 'home',
-    pageUrl: '/',
+    pageUrl: '/home',
     pageName: 'Editorial Homepage',
     mainKeyword: 'beauty and skincare blog',
     relatedKeyword1: 'beauty product reviews',
