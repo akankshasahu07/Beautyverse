@@ -28,7 +28,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
     relatedKeyword1: 'beauty product reviews',
     relatedKeyword2: 'beauty and skincare ingredients',
     seoTitle: 'ELIXIR & DERMA | Beauty and Skincare Blog: Reviews & Ingredients',
-    metaDescription: 'Welcome to ÉLIXIR & DERMA, an independent beauty and skincare blog featuring comprehensive beauty product reviews and clinical analyses of beauty and skincare ingredients.',
+    metaDescription: 'Explore our beauty and skincare blog for expert beauty product reviews, skincare tips, and insights into beauty and skincare ingredients to help you make informed beauty choices.',
     primaryHeadingH1: 'The Science of Radiant Formulations: An Independent Beauty and Skincare Blog',
     sectionHeadingsH2: [
       'The Beauty Product Cabinet: 6 Formulations in Focus',
