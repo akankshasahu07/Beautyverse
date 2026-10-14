@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, Bookmark, Share2, Volume2, VolumeX, Play, Pause, 
   Check, MessageSquare, ChevronDown, ChevronUp, AlertCircle, 
-  Sparkles, Stethoscope, Layers, Send
+  Sparkles, Stethoscope, Layers, Send, Link2, Key
 } from 'lucide-react';
 import { BeautyArticle, ArticleComment } from '../types/article';
+import { getArticleUrl, getArticlesHubUrl } from '../utils/seoRouter';
 
 interface ArticleDetailProps {
   article: BeautyArticle;
@@ -13,6 +14,7 @@ interface ArticleDetailProps {
   onToggleSave: (id: string) => void;
   onSelectArticle: (article: BeautyArticle) => void;
   allArticles: BeautyArticle[];
+  onOpenKeywordMap?: () => void;
 }
 
 export const ArticleDetail: React.FC<ArticleDetailProps> = ({
@@ -21,7 +23,8 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
   isSaved,
   onToggleSave,
   onSelectArticle,
-  allArticles
+  allArticles,
+  onOpenKeywordMap
 }) => {
   // Reading state
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -101,8 +104,9 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
   };
 
   const handleShare = () => {
+    const fullUrl = `${window.location.origin}${getArticleUrl(article)}`;
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(fullUrl);
       setCopiedToast(true);
       setTimeout(() => setCopiedToast(false), 3000);
     }
@@ -162,13 +166,17 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
         themeMode === 'dark' ? 'bg-[#161514]/90 border-stone-800' : 'bg-[#FAF8F5]/90 border-[#E8E2D9]'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
-          <button
-            onClick={onBack}
+          <a
+            href={getArticlesHubUrl('All')}
+            onClick={(e) => {
+              e.preventDefault();
+              onBack();
+            }}
             className="flex items-center gap-1.5 text-xs uppercase tracking-wider font-medium text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>All Articles</span>
-          </button>
+          </a>
 
           {/* Reading Customization Controls */}
           <div className="flex items-center gap-4 text-xs">
@@ -306,7 +314,9 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
       <main className="max-w-3xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
         {/* Unboxed Metadata Header (Zero-Pill Discipline) */}
         <div className="text-[11px] uppercase tracking-widest text-stone-500 mb-4 font-editorial-sans flex items-center gap-2 flex-wrap">
-          <span className="text-stone-900 dark:text-stone-100 font-semibold">{article.category}</span>
+          <span className="text-stone-900 dark:text-stone-100 font-semibold">{article.productType}</span>
+          <span aria-hidden="true">·</span>
+          <span>{article.category}</span>
           <span aria-hidden="true">·</span>
           <span>Routine Step: {article.routineStep}</span>
           <span aria-hidden="true">·</span>
@@ -321,9 +331,72 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
         </h1>
 
         {/* Editorial Subtitle / Dek */}
-        <p className="text-stone-600 dark:text-stone-300 text-lg sm:text-xl font-light leading-relaxed mb-8">
+        <p className="text-stone-600 dark:text-stone-300 text-lg sm:text-xl font-light leading-relaxed mb-6">
           {article.dek}
         </p>
+
+        {/* Descriptive SEO-Friendly Permalink & Step 2 Keyword Map Reference */}
+        <div className="p-4 bg-stone-100/90 dark:bg-stone-900 border border-[#E8E2D9] dark:border-stone-800 rounded-sm mb-8 text-xs font-editorial-sans space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 overflow-hidden text-stone-600 dark:text-stone-400 min-w-0">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 shrink-0">
+                SEO Canonical URL:
+              </span>
+              <a
+                href={getArticleUrl(article)}
+                className="font-mono text-[11px] text-stone-800 dark:text-stone-200 underline decoration-stone-300 underline-offset-2 truncate"
+                title="Unique, descriptive, SEO-friendly URL"
+              >
+                /article/{article.slug}
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0">
+              {onOpenKeywordMap && (
+                <button
+                  onClick={onOpenKeywordMap}
+                  className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium text-stone-700 dark:text-stone-300 bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-sm hover:text-stone-900 dark:hover:text-white transition-colors cursor-pointer"
+                  title="Inspect Step 2 keyword strategy map"
+                >
+                  <Key className="w-3 h-3 text-stone-500" />
+                  <span>Keyword Map</span>
+                </button>
+              )}
+
+              <button
+                onClick={handleShare}
+                className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-medium text-stone-700 dark:text-stone-300 bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 rounded-sm hover:text-stone-900 dark:hover:text-white transition-colors cursor-pointer shadow-2xs"
+                title="Copy full SEO URL to clipboard"
+              >
+                <Link2 className="w-3 h-3 text-stone-500" />
+                <span>Copy SEO Link</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Assigned Step 2 Keyword Strategy Verification */}
+          {article.seoKeywords && (
+            <div className="pt-2.5 border-t border-[#E8E2D9] dark:border-stone-800 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-[11px]">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[9px] uppercase font-bold tracking-wider text-stone-500">
+                  Assigned Main Keyword:
+                </span>
+                <span className="font-semibold text-stone-900 dark:text-stone-100 bg-white dark:bg-stone-800 px-2 py-0.5 border border-[#E8E2D9] dark:border-stone-700 rounded-xs font-mono text-[10px]">
+                  "{article.seoKeywords.mainKeyword}"
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-stone-600 dark:text-stone-400">
+                <span className="text-[9px] uppercase font-bold tracking-wider text-stone-500">
+                  Related Keywords:
+                </span>
+                <span className="italic text-stone-800 dark:text-stone-200">
+                  "{article.seoKeywords.relatedKeyword1}" · "{article.seoKeywords.relatedKeyword2}"
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Author Byline Lockup */}
         <div className="flex items-center gap-4 pb-8 mb-10 border-b border-[#E8E2D9] dark:border-stone-800">
@@ -475,12 +548,18 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             {article.productFormulations.map((product, pIdx) => (
               <div key={pIdx} className="border border-[#E8E2D9] dark:border-stone-800 p-5 bg-white dark:bg-stone-900 flex flex-col justify-between">
                 <div>
-                  <div className="text-[10px] uppercase tracking-widest text-stone-500 mb-1">
-                    {product.formulationType}
+                  <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-stone-500 mb-1">
+                    <span>{product.formulationType}</span>
+                    <span className="font-mono text-stone-800 dark:text-stone-200">Finish: {product.finish}</span>
                   </div>
                   <h4 className="font-editorial-serif text-lg font-medium text-stone-900 dark:text-stone-100 mb-2">
                     {product.title}
                   </h4>
+                  {product.shadeNote && (
+                    <div className="text-[11px] text-amber-800 dark:text-amber-300 font-medium mb-2">
+                      ✦ {product.shadeNote}
+                    </div>
+                  )}
                   <p className="text-xs text-stone-600 dark:text-stone-400 mb-3">
                     <strong className="font-medium text-stone-800 dark:text-stone-200">Actives: </strong>
                     {product.keyActives}
@@ -632,9 +711,13 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
 
         {/* Next / Previous Article Navigation */}
         <div className="mt-16 pt-10 border-t border-[#E8E2D9] dark:border-stone-800 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <button
-            onClick={() => onSelectArticle(prevArticle)}
-            className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-left hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900"
+          <a
+            href={getArticleUrl(prevArticle)}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectArticle(prevArticle);
+            }}
+            className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-left hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900 block"
           >
             <div className="text-[10px] uppercase tracking-widest text-stone-500 mb-1 flex items-center gap-1">
               <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
@@ -643,11 +726,15 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             <div className="font-editorial-serif text-base sm:text-lg font-medium text-stone-900 dark:text-stone-100 line-clamp-2">
               {prevArticle.title}
             </div>
-          </button>
+          </a>
 
-          <button
-            onClick={() => onSelectArticle(nextArticle)}
-            className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-right hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900"
+          <a
+            href={getArticleUrl(nextArticle)}
+            onClick={(e) => {
+              e.preventDefault();
+              onSelectArticle(nextArticle);
+            }}
+            className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-right hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900 block"
           >
             <div className="text-[10px] uppercase tracking-widest text-stone-500 mb-1 flex items-center justify-end gap-1">
               <span>Next Investigation</span>
@@ -656,7 +743,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             <div className="font-editorial-serif text-base sm:text-lg font-medium text-stone-900 dark:text-stone-100 line-clamp-2">
               {nextArticle.title}
             </div>
-          </button>
+          </a>
         </div>
       </main>
     </article>

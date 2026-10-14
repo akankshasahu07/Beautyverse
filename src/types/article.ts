@@ -1,14 +1,24 @@
+import { PageKeywordMapping } from '../data/keywordMap';
+
+export type BeautyProductType =
+  | 'Lipstick'
+  | 'Serum'
+  | 'Compact Powder'
+  | 'Sunscreen'
+  | 'Blush'
+  | 'Foundation & Tint'
+  | 'Cleansing Balm'
+  | 'Eye Cream'
+  | 'Setting Mist'
+  | 'Barrier Cream';
+
 export type BeautyCategory =
+  | 'Color Cosmetics'
   | 'Active Skincare'
-  | 'Barrier Repair'
-  | 'K-Beauty Innovations'
-  | 'Antioxidant Serums'
-  | 'Suncare & Photoprotection'
-  | 'Scalp & Hair Wellness'
-  | 'Formulation Science'
-  | 'Clean Cosmetics'
-  | 'Biomimetic Actives'
-  | 'Facial Oils & Lipids';
+  | 'Base & Complexion'
+  | 'Suncare & Defense'
+  | 'Cleansing & Prep'
+  | 'Lip Care';
 
 export interface Author {
   name: string;
@@ -25,10 +35,14 @@ export interface HeroActive {
 
 export interface ProductArchetype {
   title: string;
+  productType: BeautyProductType;
   formulationType: string;
   keyActives: string;
   textureNote: string;
+  finish: 'Velvet Matte' | 'Dewy Satin' | 'Soft Focus Blurred' | 'Invisible Glow' | 'Natural Luminous' | 'Cashmere Melt';
   idealSkinType: string;
+  ratingScore: number;
+  shadeNote?: string;
 }
 
 export interface ArticleSection {
@@ -54,7 +68,8 @@ export interface BeautyArticle {
   id: string;
   slug: string;
   title: string;
-  dek: string; // Editorial secondary deck/subtitle
+  dek: string;
+  productType: BeautyProductType;
   category: BeautyCategory;
   publishDate: string;
   readTime: string;
@@ -68,9 +83,10 @@ export interface BeautyArticle {
   heroIngredients: HeroActive[];
   sections: ArticleSection[];
   dermatologistPerspective: string;
-  routineStep: 'Cleanser' | 'Toner/Essence' | 'Active Serum' | 'Moisturizer' | 'Facial Oil' | 'SPF Photoprotection';
+  routineStep: 'Cleanser' | 'Toner/Essence' | 'Active Serum' | 'Moisturizer' | 'Facial Oil' | 'SPF Photoprotection' | 'Base Makeup' | 'Color & Lips';
   productFormulations: ProductArchetype[];
   faqs: { question: string; answer: string }[];
   contraindications: string[];
   initialComments: ArticleComment[];
+  seoKeywords?: PageKeywordMapping;
 }

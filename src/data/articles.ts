@@ -1,97 +1,201 @@
 import { BeautyArticle } from '../types/article';
+import { STEP_2_KEYWORD_MAP } from './keywordMap';
 
 export const BEAUTY_ARTICLES: BeautyArticle[] = [
   {
-    id: 'retinoid-renaissance-longevity',
-    slug: 'the-retinoid-renaissance-micro-dosing-vs-prescription-tretinoin',
-    title: 'The Retinoid Renaissance: Micro-Dosing vs. Prescription Tretinoin for Barrier Longevity',
-    dek: 'Why dermatology is shifting away from aggressive nightly peeling toward micro-encapsulated retinaldehydes and lipid-buffered schedules.',
-    category: 'Active Skincare',
+    id: 'velvet-lipstick-formulation-science',
+    slug: 'the-velvet-lip-revolution-hydrating-matte-polymers-and-clean-pigments',
+    title: 'The Velvet Lip Revolution: The Science of Hydrating Matte Lipstick That Never Dries Lips',
+    dek: 'How cosmetic chemists engineered comfortable hydrating matte lipstick: pairing cushioning hydrating lipstick bases with plant squalane and revealing how to keep lips hydrated with matte lipstick all day.',
+    productType: 'Lipstick',
+    category: 'Color Cosmetics',
     publishDate: 'Autumn 2026',
     readTime: '7 min read',
+    author: {
+      name: 'Genevieve Moreau',
+      role: 'Master Backstage Makeup Chemist',
+      credentials: 'Paris Haute Couture Beauty Director',
+      avatarInitials: 'GM'
+    },
+    heroImage: '/src/assets/images/beauty_lipstick_editorial_1791630593033.jpg',
+    imageAlt: 'Satin rosewood lipstick bullet in golden brass case with smooth velvet swatch on warm travertine marble',
+    imageCaption: 'Fig. 1 — Modern velvet lipsticks suspend high-purity iron oxide pigments within micro-spherical elastomer matrices for featherlight slip.',
+    leadPullQuote: 'For decades, matte lipstick meant drying alcohol solvents and chapped lips by 2 PM. Modern pigment chemistry now delivers 10-hour soft-focus velvet with zero cellular dehydration.',
+    keyTakeaways: [
+      'Traditional matte lipsticks relied on high loads of kaolin clay and silica that leach natural moisture from delicate vermilion border mucosa, spurring modern hydrating matte lipstick innovation.',
+      'Next-generation hydrating lipstick formulas replace rigid waxes with cross-linked elastomer matrices and sugarcane squalane that flex with speech and smiles.',
+      'Dermatologists emphasize that learning how to keep lips hydrated with matte lipstick requires gentle warm compress prep followed by low-weight humectant layering.'
+    ],
+    targetSkinConcerns: ['Chapped Lips', 'Lip Feathering into Fine Lines', 'Uneven Pigment Wear', 'Heavy Lipstick Sensation'],
+    heroIngredients: [
+      { name: 'Palmitoyl Tripeptide-38', molecularPurpose: 'Biomimetic matrikine stimulating collagen and hyaluronic synthesis within the mucosal vermilion border', clinicalConcentration: '1.5% active complex' },
+      { name: 'Plant-Derived Squalane', molecularPurpose: 'Biocompatible lipid carrying mineral pigments seamlessly across lip ridges without feathering', clinicalConcentration: '15% – 20% of base' },
+      { name: 'High-Purity Iron Oxides', molecularPurpose: 'Triple-milled mineral pigments delivering opaque color saturation in a single weightless swipe', clinicalConcentration: '10% – 14%' }
+    ],
+    sections: [
+      {
+        heading: 'The Anatomy of the Vermilion Border: Why Traditional Formulas Fail Hydrating Lipstick Standards',
+        paragraphs: [
+          'Human lips are anatomically unique: unlike facial skin, the vermilion zone of the lips lacks sebaceous glands, sweat glands, and hair follicles. The stratum corneum is extremely thin—often only three to five cellular layers compared to sixteen on the cheek. Consequently, lips lose water three to four times faster than the rest of the face.',
+          'Early matte liquid lipsticks relied on volatile isododecane solvents and heavy film-formers that evaporated rapidly, leaving behind a brittle pigment crust. Formulating an effective hydrating matte lipstick required rethinking the lipid vehicle entirely, creating a true hydrating lipstick that suspends concentrated mineral pigments without extracting cellular moisture.'
+        ],
+        callout: {
+          label: 'Cosmetic Chemistry Shift',
+          quoteOrText: 'A true hydrating matte lipstick finish is created by optical light diffusion rather than moisture deprivation. Micro-spheres scatter light isotropically to deliver a soft-focus velvet veil.',
+          clinicalReference: 'International Journal of Cosmetic Science'
+        }
+      },
+      {
+        heading: 'The Chemistry of Hydrating Matte Lipstick: Elastomeric Gels and Encapsulated Squalane',
+        paragraphs: [
+          'In modern formulations, cosmetic chemists formulate hydrating matte lipstick using cross-linked elastomeric gels combined with low-melting-point botanical butters like murumuru and cupuaçu. When applied, the warmth of the lips activates the lipid matrix, depositing an ultra-thin veil of pigment that feels like whipped silk.',
+          'Rather than settling into lip lines, these specialized ingredients roll across the surface to form a flexible hydrating lipstick matrix. Even after eight hours of continuous wear, the lips remain soft, plump, and thoroughly cushioned.'
+        ]
+      },
+      {
+        heading: 'Dermatologist Protocol: How to Keep Lips Hydrated with Matte Lipstick All Day',
+        paragraphs: [
+          'To understand how to keep lips hydrated with matte lipstick, preparation is everything. Start by gently polishing lips with a damp, warm muslin cloth to remove dead surface keratinocytes without causing micro-tears. Follow immediately with a drop of low-molecular-weight hyaluronic acid, allowing thirty seconds to absorb before applying your hydrating matte lipstick directly from the bullet.',
+          'Throughout the day, avoid lip licking, which accelerates evaporative water loss. If you experience dry zones after meals, lightly pat a ceramide lip balm over the center of the lips rather than rubbing the entire formula off. This preserves your pigment while reinforcing how to keep lips hydrated with matte lipstick from morning to night.'
+        ]
+      }
+    ],
+    dermatologistPerspective: 'Avoid lipsticks loaded with synthetic fragrance or camphor if you suffer from chronic peeling. Look for formulations certified with food-grade plant squalane, ceramides, and unadulterated mineral pigments.',
+    routineStep: 'Color & Lips',
+    productFormulations: [
+      {
+        title: 'Velvet Silk Peptide Lipstick',
+        productType: 'Lipstick',
+        formulationType: 'Cushioning Satin-Matte Bullet',
+        keyActives: 'Palmitoyl Tripeptide-38 + Sugarcane Squalane + Murumuru Butter',
+        textureNote: 'Glides like a nourishing balm, sets to a soft-focus velvet veil',
+        finish: 'Velvet Matte',
+        idealSkinType: 'All lip types, especially dry or mature lips',
+        ratingScore: 9.8,
+        shadeNote: 'Shade shown: Rosewood Terroir (universally flattering warm-neutral)'
+      },
+      {
+        title: 'Hydrating Ceramide Lip Tint Balm',
+        productType: 'Lipstick',
+        formulationType: 'Nourishing Tinted Butter',
+        keyActives: 'Ceramide NP + Shea Butter Sterols + Vitamin E',
+        textureNote: 'Sheer dewy wash with instant barrier cushion',
+        finish: 'Dewy Satin',
+        idealSkinType: 'Chapped, wind-burned, sensitive lips',
+        ratingScore: 9.5,
+        shadeNote: 'Shade shown: Petal Nectar (subtle flushed pink)'
+      }
+    ],
+    faqs: [
+      { question: 'Why do traditional formulas flake compared to a modern hydrating matte lipstick?', answer: 'Conventional matte lipsticks rely on evaporating solvents and clay binders that sap mucosal hydration. An authentic hydrating matte lipstick incorporates biomimetic plant lipids and elastomeric spheres that retain water while deflecting glare.' },
+      { question: 'What is the single most important rule for how to keep lips hydrated with matte lipstick?', answer: 'The key to how to keep lips hydrated with matte lipstick is never applying pigment over actively peeling or parched lips. Always prep with a warm compress, prime with a humectant layer, and select a certified hydrating lipstick formulation.' }
+    ],
+    contraindications: ['Applying over peeling, bleeding lips without pre-hydrating first with lipid balm'],
+    initialComments: [
+      { id: 'c-lip-1', author: 'Sophie Valois', skinType: 'Very Dry Lips', date: '2 days ago', content: 'I had given up on matte lipsticks because my lips looked like a dry desert within an hour. The velvet elastomer formula mentioned here is a total game changer.', likes: 28 },
+      { id: 'c-lip-2', author: 'Marcus Chen', skinType: 'Makeup Artist', date: 'Yesterday', content: 'The breakdown of the vermilion border anatomy is brilliant. That is why prepping with hyaluronic acid before lipstick makes such a huge difference.', likes: 19 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['velvet-lipstick-formulation-science']
+  },
+  {
+    id: 'ultimate-serum-layering-radiance',
+    slug: 'the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides',
+    title: 'The Ultimate Serum Layering Guide: Hyaluronic Acid, Vitamin C & Multi-Peptides for 24-Hour Radiance',
+    dek: 'The definitive serum layering guide: molecular weights, osmotic gradients, and how pairing hyaluronic acid and vitamin c with active facial serums maximizes cellular absorption.',
+    productType: 'Serum',
+    category: 'Active Skincare',
+    publishDate: 'Autumn 2026',
+    readTime: '8 min read',
     author: {
       name: 'Dr. Clara Vance, MD',
       role: 'Board-Certified Dermatologist',
       credentials: 'FAAD, Associate Professor of Cutaneous Biology',
       avatarInitials: 'CV'
     },
-    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
-    imageAlt: 'Amber glass jar of whipped nourishing lipid barrier retinoid balm with wooden spatula',
-    imageCaption: 'Fig. 1 — Modern lipid-buffered retinoid formulations prioritize stratum corneum integrity over aggressive surface exfoliation.',
-    leadPullQuote: 'For two decades, dermatology preached that flaking was a badge of efficacy. We now understand that chronic subclinical barrier irritation accelerates inflammaging rather than reversing it.',
+    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
+    imageAlt: 'Pristine glass dropper with dewy glistening hydrating serum drops over natural limestone',
+    imageCaption: 'Fig. 2 — Serums deliver the highest concentration of active molecules per cubic milliliter of any skincare product tier.',
+    leadPullQuote: 'A serum is only as good as its vehicle. Applying a 500-Dalton peptide after a heavy occlusive cream is the equivalent of throwing money against a locked door.',
     keyTakeaways: [
-      'Micro-encapsulated retinaldehyde requires only one metabolic conversion step to retinoic acid yet yields 60% less transepidermal water loss than free tretinoin.',
-      'The "sandwich method" (lipid cream + retinoid + occlusive) attenuates retinoid dermatitis without reducing cellular collagen synthesis.',
-      'Applying a topical active twice weekly consistently for nine months creates denser dermal elastin than nightly aggressive cycling that prompts intermittent barrier breakdown.'
+      'Following a disciplined serum layering guide prevents molecular obstruction: layer from thinnest aqueous texture to highest lipid density.',
+      'Pairing low-molecular hyaluronic acid and vitamin c in the morning shields living skin from UV-generated free radicals.',
+      'Active facial serums must be applied sixty seconds apart to permit complete stratum corneum diffusion before moisturizer occlusion.'
     ],
-    targetSkinConcerns: ['Fine Lines', 'Loss of Elasticity', 'Uneven Skin Texture', 'Adult Blemish Control'],
+    targetSkinConcerns: ['Dehydration Lines', 'Dull Complexion', 'Loss of Bouncy Skin Turgor', 'Uneven Skin Tone'],
     heroIngredients: [
-      { name: 'Retinaldehyde (Retinal)', molecularPurpose: 'Direct precursor to retinoic acid with natural antibacterial properties', clinicalConcentration: '0.05% – 0.1%' },
-      { name: 'Cholesterol & Ceramide NP', molecularPurpose: 'Replenishes intercellular lipid mortar during active cellular turnover', clinicalConcentration: '2:4:2 physiologic ratio' },
-      { name: 'Ectoin', molecularPurpose: 'Osmolyte shield preventing protein denaturation in retinoid-treated keratinocytes', clinicalConcentration: '1.0% – 2.0%' }
+      { name: 'Multi-Molecular Hyaluronic Acid', molecularPurpose: 'Seven molecular weights hydrating from stratum corneum down to papillary dermis', clinicalConcentration: '2.0% balanced complex' },
+      { name: 'THD Ascorbate (Vitamin C)', molecularPurpose: 'Lipid-soluble antioxidant neutralizing solar free radicals and boosting collagen', clinicalConcentration: '7% – 10%' },
+      { name: 'Copper Tripeptide-1 (GHK-Cu)', molecularPurpose: 'Rebuilds broken extracellular matrix proteins and increases skin elasticity', clinicalConcentration: '1.0% – 2.0%' }
     ],
     sections: [
       {
-        heading: 'The Paradigm Shift from Desquamation to Cytoprotection',
+        heading: 'Why Active Facial Serums Are the Engine Room of Beauty Routines',
         paragraphs: [
-          'Throughout the late 1990s and early 2000s, clinical dermatology approached Vitamin A with an almost punitive ethos: if the patient was not actively shedding the outer layers of the epidermis within fourteen days of starting prescription tretinoin, the concentration was deemed insufficient. Today, cutaneous biology has completely dismantled that paradigm. The stratum corneum is not a passive layer of dead debris waiting to be scrubbed away; it is a finely tuned neuro-immunological shield.',
-          'When we induce chronic, uncontrolled desquamation through overly aggressive retinoid protocols, we activate sustained cytokine release (primarily IL-1alpha and TNF-alpha). This low-grade epidermal inflammation actively degrades fibroblasts—the very cells tasked with synthesizing Type I and Type III procollagen. In short, peeling aggressively to look younger may inadvertently accelerate long-term cellular exhaustion.'
+          'While cleansers wash away impurities and moisturizers provide barrier seal, active facial serums are engineered for transdermal delivery. Formulated without heavy waxes, fillers, or thick occlusives, active facial serums carry small, concentrated active molecules that travel through the stratum corneum and follicular pathways.',
+          'However, the modern beauty consumer often makes the mistake of "cocktailing"—slathering four different serums at once. This practice can overwhelm the skin with conflicting pH values and osmotic pressures, resulting in pilling and contact sensitization.'
         ],
         callout: {
-          label: 'Clinical Observation',
-          quoteOrText: 'Cellular retinoic acid receptor activation occurs at picomolar intracellular concentrations. Aggressive surface burning yields zero additional receptor occupancy.',
-          clinicalReference: 'Journal of Cutaneous Investigative Dermatology, 2025'
+          label: 'Absorption Principle',
+          quoteOrText: 'The 500-Dalton Rule dictates that only molecules under 500 Da can penetrate intact stratum corneum. Advanced serums utilize liposomes and encapsulation to bypass this limit.',
+          clinicalReference: 'Journal of Controlled Release'
         }
       },
       {
-        heading: 'Retinol, Retinal, or Tretinoin: Mapping the Conversion Cascade',
+        heading: 'The 3-Minute Chronology: Layering Hyaluronic Acid and Vitamin C Correctly',
         paragraphs: [
-          'To understand modern retinoid selection, one must inspect the enzymatic cascade within human skin cells. Topical Retinyl Palmitate requires three separate enzymatic conversions to reach active All-Trans Retinoic Acid. Standard Retinol requires two conversions, during which up to 85% of active potency is lost to oxidation. Retinaldehyde (retinal), by contrast, requires merely a single oxidation step by retinal dehydrogenases located in viable keratinocytes.',
-          'Crucially, retinaldehyde possesses an inherent anti-microbial aldehyde moiety that neutralizes Cutibacterium acnes while promoting rapid cellular turnover. When micro-encapsulated inside cyclodextrin or lipid spheres, it delivers comparable clinical improvement in wrinkle depth and photo-damage to 0.025% prescription tretinoin with a fraction of the erythema.'
+          'To layer serums with clinical precision: always begin on damp skin immediately after cleansing or misting. Pairing hyaluronic acid and vitamin c requires understanding solubility: apply aqueous humectant serums first (like multi-molecular hyaluronic acid or fermented essences). Wait sixty seconds for the water phase to absorb.',
+          'Second, apply targeted active treatment serums (such as Vitamin C in the morning or peptide architectures at night). Finally, lock these active ingredients into the living epidermal layers with a lipid moisturizer or facial oil.'
         ]
       },
       {
-        heading: 'The Modern Sandwich Protocol & Micro-Dosing Regimen',
+        heading: 'Formulation Synergies and Order in an Advanced Serum Layering Guide',
         paragraphs: [
-          'Dermatologists now recommend what we call the "Adaptive Low-Frequency Rhythm." Rather than enduring nightly redness, patients introduce encapsulated retinal at 0.05% every third night for four weeks, buffered over a physiological lipid moisturizer rich in cholesterol and linoleic acid.',
-          'By stabilizing the lipid bilayers with ceramides prior to active diffusion, the retinoid penetrates through follicular channels uniformly rather than concentrating in micro-fissures in compromised stratum corneum. The outcome is continuous dermal remodeling without downtime.'
+          'In any reliable serum layering guide, formulation synergies reign supreme: Niacinamide + Hyaluronic Acid strengthens barrier integrity while deeply plumping; Vitamin C + Vitamin E + Ferulic amplifies photo-defense up to eightfold.',
+          'Incompatibilities to separate: Direct pure L-Ascorbic Acid (low pH < 3.2) should not be layered at the exact same moment as Copper Peptides (which require neutral pH 6.0). Alternate them between morning and evening rituals.'
         ]
       }
     ],
-    dermatologistPerspective: 'Prescription 0.1% tretinoin remains irreplaceable for acute cystic acne under direct supervision. But for preventative longevity and structural dermal firmness across thirty years of life, buffered retinaldehyde combined with lamellar barrier lipids offers vastly superior compliance and zero barrier compromise.',
+    dermatologistPerspective: 'Two well-formulated active facial serums chosen specifically for your cutaneous goals will always outperform five random trendy droppers applied haphazardly.',
     routineStep: 'Active Serum',
     productFormulations: [
       {
-        title: 'Micro-Liposomal Retinal Velvet Emulsion',
-        formulationType: 'Encapsulated Serum-Crème',
-        keyActives: '0.075% Retinaldehyde + 2% Ectoin + 3% Phospholipids',
-        textureNote: 'Silky, quick-absorbing saffron-tinted lotion',
-        idealSkinType: 'Sensitive to combination, early photoaging'
+        title: 'Multi-Depth Hyaluronic Plumping Elixir',
+        productType: 'Serum',
+        formulationType: 'Multi-Molecular Hydrating Ampoule',
+        keyActives: '7-Tier Hyaluronic Complex + Beta-Glucan + Ectoin',
+        textureNote: 'Water-light viscous drop that sinks in with zero stickiness',
+        finish: 'Dewy Satin',
+        idealSkinType: 'All skin types, especially dehydrated and sensitized',
+        ratingScore: 9.9
       },
       {
-        title: 'Prescription Buffer Barrier Balm',
-        formulationType: 'Physiological Lipid Ointment',
-        keyActives: 'Ceramides NP/AP/EOP + Phytosterols + Bisabolol',
-        textureNote: 'Cushioning whipped balm with zero tackiness',
-        idealSkinType: 'Compromised, dry, retinoid-initiating skin'
+        title: 'Radiance C + Ferulic Antioxidant Serum',
+        productType: 'Serum',
+        formulationType: 'Lipid-Soluble Glow Concentrate',
+        keyActives: '8% THD Ascorbate + 0.5% Ferulic Acid + Ergothioneine',
+        textureNote: 'Silky dry-oil serum giving instant golden luminescence',
+        finish: 'Natural Luminous',
+        idealSkinType: 'Dull, sun-exposed, pigmentation-prone skin',
+        ratingScore: 9.7
       }
     ],
     faqs: [
-      { question: 'Can I use retinal around the periorbital bone?', answer: 'Yes, if formulated in an ophthalmologist-tested lipid vehicle. Avoid direct eyelid margins to prevent meibomian gland inflammation.' },
-      { question: 'Does retinoid micro-dosing thin the skin over time?', answer: 'No. While it compacts the outermost dead stratum corneum, it dramatically thickens the viable epidermis and increases collagen density in the dermis.' }
+      { question: 'Why does my serum roll into little balls (pilling)?', answer: 'Pilling occurs when high-molecular weight polymers (like carbomers or xanthan gum) in one serum react with silicones or oils in your moisturizer before fully absorbing. Give each layer 60 seconds to dry.' },
+      { question: 'Can I combine hyaluronic acid and vitamin c in the same morning routine?', answer: 'Yes, they are highly synergistic. Apply low-viscosity hyaluronic acid first onto damp skin, followed sixty seconds later by your antioxidant Vitamin C serum.' }
     ],
-    contraindications: ['Pregnancy / Nursing', 'Active Eczema Flare-ups', 'Direct simultaneous application with 15%+ L-Ascorbic Acid'],
+    contraindications: ['Applying pure hyaluronic acid onto dry skin in arid desert climates without sealing with cream'],
     initialComments: [
-      { id: 'c1', author: 'Evelyn St. Clair', skinType: 'Dry & Reactive', date: '3 days ago', content: 'Switching to buffered retinal twice weekly completely eliminated the peeling I endured with tretinoin for 6 months. My skin finally looks plump instead of parched.', likes: 14 },
-      { id: 'c2', author: 'Julian Miller', skinType: 'Combination / Acne-Prone', date: 'Yesterday', content: 'The explanation of the enzymatic conversion cascade makes so much sense. Appreciate the real science instead of marketing buzzwords.', likes: 9 }
-    ]
+      { id: 'c-serum-1', author: 'Elena Rostova', skinType: 'Dehydrated / Reactive', date: '3 days ago', content: 'Applying my hyaluronic serum onto damp skin instead of completely dry skin fixed my tightness within two days. Thank you for this guide!', likes: 24 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['ultimate-serum-layering-radiance']
   },
   {
-    id: 'barrier-first-ceramides-lipid-replenishment',
-    slug: 'barrier-first-why-ceramide-and-lipid-cremes-outperform-exfoliants',
-    title: 'Barrier First: Why Ceramide & Lipid-Replenishing Cremes Outperform Aggressive Exfoliants',
-    dek: 'The scientific case for halting daily chemical peeling in favor of the golden 2:4:2 equimolar ratio of ceramides, cholesterol, and free fatty acids.',
-    category: 'Barrier Repair',
+    id: 'talc-free-finishing-compact-powders',
+    slug: 'talc-free-finishing-compacts-how-micro-milled-silica-and-borosilicates-blur-pores',
+    title: 'Talc-Free Finishing Compacts: How Micro-Milled Silica & Borosilicates Blur Pores Without Caking',
+    dek: 'The engineering of modern talc free compact powder: replacing chalky fillers with a micro milled silica compact that acts as an invisible pore blurring finishing powder without caking.',
+    productType: 'Compact Powder',
+    category: 'Base & Complexion',
     publishDate: 'Autumn 2026',
     readTime: '6 min read',
     author: {
@@ -100,251 +204,92 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Society of Cosmetic Chemists Fellow',
       avatarInitials: 'HB'
     },
-    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
-    imageAlt: 'Amber dropper bottle and frosted cosmetic flacon on travertine stone pedestal in warm light',
-    imageCaption: 'Fig. 2 — Bilayer lamellar emulsions replicate the natural lipid matrix of healthy human epidermis.',
-    leadPullQuote: 'Healthy skin is luminous because its outer surface is structurally planar and light reflects off coherent lipid sheets—not because you acid-stripped away the top five cell tiers.',
+    heroImage: '/src/assets/images/beauty_compact_powder_1791630604457.jpg',
+    imageAlt: 'Open luxury pressed powder compact with mirror and soft velour puff on travertine stone',
+    imageCaption: 'Fig. 3 — Micro-milled spherical silica particles absorb excess oil while transmitting natural ambient light.',
+    leadPullQuote: 'A great compact should never look like powder on the skin. It should act as an invisible optical filter that diffuses shine while retaining healthy three-dimensional skin glow.',
     keyTakeaways: [
-      'The stratum corneum is composed of corneocytes surrounded by an intercellular mortar of ceramides (50%), cholesterol (25%), and free fatty acids (15%).',
-      'Using a ceramide moisturizer that lacks physiological ratios of cholesterol often fails to restore lamellar phase order.',
-      'Symptomatic "dullness" is almost always optical light scattering caused by disordered, parched lipid bilayers rather than excess cellular buildup.'
+      'Switching to a talc free compact powder prevents makeup from settling into smile lines and extracting essential cellular hydration.',
+      'A true pore blurring finishing powder relies on spherical silica particles that scatter ambient light isotropically.',
+      'Using a micro milled silica compact surface-treated with amino acids guarantees zero chalkiness on deeper Fitzpatrick skin tones.'
     ],
-    targetSkinConcerns: ['Transepidermal Water Loss', 'Stinging & Sensitization', 'Post-Procedure Recovery', 'Rosacea Tendency'],
+    targetSkinConcerns: ['Midday T-Zone Shine', 'Enlarged Visible Pores', 'Makeup Settling in Creases', 'Cakey Powdery Finish'],
     heroIngredients: [
-      { name: 'Ceramide NP, AP, & EOP', molecularPurpose: 'Primary structural sphingolipids sealing moisture within intercellular spaces', clinicalConcentration: 'Equimolar with sterols' },
-      { name: 'Cholesterol & Plant Phytosterols', molecularPurpose: 'Fluidizes rigid lipid sheets allowing flexible skin movement without microscopic tearing', clinicalConcentration: '25% of lipid matrix' },
-      { name: 'Linoleic & Oleic Fatty Acids', molecularPurpose: 'Precursors to natural anti-inflammatory eicosanoids', clinicalConcentration: 'Cold-pressed botanical sources' }
+      { name: 'Spherical Silica Particles', molecularPurpose: 'Optical light scatterer absorbing twice its weight in facial oil without clumping', clinicalConcentration: 'Sub-10 micron particle size' },
+      { name: 'Synthetic Fluorphlogopite', molecularPurpose: 'Talc replacement offering crystal clarity and featherweight skin glide', clinicalConcentration: 'Surface-treated with amino acids' },
+      { name: 'Jojoba Ester Coating', molecularPurpose: 'Hydrophobic lipid envelope preventing the powder from clinging to dry flakes', clinicalConcentration: '2.0% coating matrix' }
     ],
     sections: [
       {
-        heading: 'The Architecture of the "Brick and Mortar" Stratum Corneum',
+        heading: 'The Re-Invention of the Handbag Compact: Why Talc Free Compact Powder Leads',
         paragraphs: [
-          'In cosmetic marketing, exfoliation is heralded as the universal panacea for radiance. If skin looks dull, you are told to swipe 10% glycolic acid; if it looks textured, 2% salicylic acid twice daily is prescribed. Yet in laboratory patch studies, over-exfoliated skin exhibits an immediate spike in Transepidermal Water Loss (TEWL) and a collapse in antimicrobial peptide synthesis (such as LL-37 defensins).',
-          'Under confocal microscopy, glowing skin is not skin devoid of dead cells; it is skin whose intercellular lipid mortar is arranged in continuous, crystalline orthorhombic sheets. When these lipids are depleted by harsh surfactants or excessive AHAs, corneocytes curl up at their perimeter like dry autumn leaves. This irregular micro-topography scatters incident light in random angles, producing what consumers perceive as "dullness."'
+          'For over a century, pressed compact powders were formulated around a single staple ingredient: cosmetic-grade talc. While talc is cheap and smooth, it has an inherent opacity that dulls natural complexion radiance. Furthermore, talc draws water out of the epidermis, prompting dry skin to flake and oily skin to overproduce sebum in retaliation.',
+          'In 2026, the clean cosmetic revolution established talc free compact powder as the new industry benchmark. By replacing talc with spherical silica, zinc stearate, and tapioca starch cross-polymers, chemists engineered powders that feel like weightless air between the fingers.'
         ],
         callout: {
-          label: 'Biochemical Truth',
-          quoteOrText: 'True optical glow is a reflection phenomenon of coherent lipid sheets. Polishing away your protective mantle destroys optical specular reflectance.',
-          clinicalReference: 'International Journal of Cosmetic Science'
+          label: 'Particle Physics',
+          quoteOrText: 'Spherical particles act like microscopic ball bearings. Instead of dragging across the skin, they glide effortlessly into pore valleys, scattering incident light.',
+          clinicalReference: 'Cosmetics & Toiletries Science Review'
         }
       },
       {
-        heading: 'The Critical 2:4:2 Golden Molar Ratio',
+        heading: 'Particle Physics: Engineering a Pore Blurring Finishing Powder',
         paragraphs: [
-          'Not all ceramide creams are formulated equally. Landmark studies conducted by Dr. Peter Elias and fellow dermatologists revealed that introducing ceramides alone can actually delay barrier repair if not balanced with equimolar amounts of cholesterol and free fatty acids.',
-          'The ideal physiological formulation mimics the 2:4:2 molar ratio: two parts ceramides, four parts cholesterol, and two parts free fatty acids. In damaged skin, cholesterol is often the rate-limiting lipid; without adequate sterols, the newly applied ceramides crystallize into brittle patches rather than integrating into living bilayers.'
+          'What separates an ordinary powder from an elite pore blurring finishing powder is particle geometry. Platelet-shaped minerals like talc stack unevenly on top of skin pores, creating a flat, dusty mask.',
+          'In contrast, modern pore blurring finishing powder formulations utilize perfectly spherical silica beads that nestle into epidermal irregularities, redirecting specular reflectance into diffuse ambient luminosity.'
         ]
       },
       {
-        heading: 'How to Rebuild a Devastated Skin Barrier in 14 Days',
+        heading: 'Translucent vs. Tinted: Applying a Micro Milled Silica Compact',
         paragraphs: [
-          'When patients present with stinging upon water contact, tight post-wash sensations, and sudden breakouts, step one is a complete active moratorium: halt all AHAs, BHAs, retinoids, and high-dose ascorbic acid.',
-          'Cleanse strictly with a non-foaming surfactant-free cleansing milk or oat lipid balm. Layer a damp thermal mist, followed by a lamellar emulsion rich in squalane and Ceramide NP. Within 72 hours, filaggrin degradation and natural moisturizing factor (NMF) regeneration commence.'
+          'When selecting a micro milled silica compact, consumers often weigh translucent against tinted formulas. True translucent compacts excel at targeted T-zone shine control without altering liquid foundation undertones.',
+          'The velour puff included in a luxury micro milled silica compact is designed for targeted pressing rather than sweeping. Pressing deposits the spherical matrix uniformly, locking base cosmetics without disrupting coverage.'
         ]
       }
     ],
-    dermatologistPerspective: 'Before you treat discoloration, wrinkles, or breakouts, you must first construct a resilient barrier. An irritated barrier leaks water and permits environmental antigens to penetrate, keeping the skin in a persistent subclinical state of panic.',
-    routineStep: 'Moisturizer',
+    dermatologistPerspective: 'If you have acne-prone skin, ensure your compact is talc-free and non-comedogenic. Wash your velour puff weekly with gentle cleanser to prevent bacteria transfer back onto the pressed powder pan.',
+    routineStep: 'Base Makeup',
     productFormulations: [
       {
-        title: 'Lamellar Barrier Restorative Cream',
-        formulationType: 'Physiologic Lipid Multi-Lamellar Emulsion',
-        keyActives: 'Ceramide Trio + 4% Cholesterol + Centella Asiatica Asiaticoside',
-        textureNote: 'Cushioning velvet cream that melts into a second-skin veil',
-        idealSkinType: 'Compromised, dry, irritated, or post-laser skin'
+        title: 'Soft-Focus Airbrush Finishing Compact',
+        productType: 'Compact Powder',
+        formulationType: 'Micro-Milled Talc-Free Pressed Powder',
+        keyActives: 'Spherical Silica + Synthetic Fluorphlogopite + Jojoba Esters',
+        textureNote: 'Ultra-fine silk powder that vanishes into skin upon contact',
+        finish: 'Soft Focus Blurred',
+        idealSkinType: 'Normal, combination, oily, and sensitive skin',
+        ratingScore: 9.9,
+        shadeNote: 'Available in Translucent Blur and 6 Skin-Calibrated Undertones'
       },
       {
-        title: 'Oat Lipid Colloidal Cleansing Milk',
-        formulationType: 'Surfactant-Free Emulsified Wash',
-        keyActives: 'Colloidal Oatmeal + Beta-Glucan + Jojoba Esters',
-        textureNote: 'Creamy soothing wash leaving zero film or dryness',
-        idealSkinType: 'Hypersensitive, reactive, eczema-prone skin'
+        title: 'Luminous Hydration Setting Compact',
+        productType: 'Compact Powder',
+        formulationType: 'Hyaluronic-Infused Baked Powder',
+        keyActives: 'Hyaluronic Spheres + Squalane + Rice Bran Starch',
+        textureNote: 'Creamy pressed veil that never accentuates fine lines',
+        finish: 'Natural Luminous',
+        idealSkinType: 'Dry, mature, and dehydrated complexions',
+        ratingScore: 9.6,
+        shadeNote: 'Shade shown: Alabaster Light Glow'
       }
     ],
     faqs: [
-      { question: 'Why does my skin burn when I apply moisturizer to a damaged barrier?', answer: 'When intercellular lipids are stripped, bare nerve endings (C-fibers) in the dermis are exposed to pH variations and preservatives in standard creams. Switch to sterile, preservative-minimal lipid balms until healed.' },
-      { question: 'Can oily skin use rich ceramide moisturizers?', answer: 'Yes. Oily skin often produces excess sebum specifically because of dehydration and barrier breakdown. Look for lightweight gel-creams featuring pure Ceramide NP and squalane.' }
+      { question: 'Will a talc free compact powder make my dry skin look older?', answer: 'Talc-heavy powders will accentuate lines. However, a modern talc free compact powder coated in squalane or jojoba esters reflects light away from wrinkles, providing a youthful soft-focus blur.' },
+      { question: 'How does a pore blurring finishing powder control oil without dehydrating?', answer: 'Spherical silica selectively adsorbs oxidized liquid sebum at the skin surface while leaving bound cellular water intact within stratum corneum corneocytes.' }
     ],
-    contraindications: ['Simultaneous daily application of physical scrub beads and high-percentage glycolic acid'],
+    contraindications: ['Applying heavily over uncured, wet sunscreen or greasy facial oil'],
     initialComments: [
-      { id: 'c3', author: 'Marianne Dubois', skinType: 'Very Sensitive', date: '4 days ago', content: 'Stopping daily chemical exfoliants and moving to a 2:4:2 lipid cream literally saved my face after overdoing retinol. My skin has never looked healthier.', likes: 21 },
-      { id: 'c4', author: 'Dr. Kevin Zhao', skinType: 'Normal / Barrier Focused', date: '2 days ago', content: 'Spot-on explanation of the light-scattering physics. That is exactly what we teach cosmetic dermatology residents.', likes: 18 }
-    ]
+      { id: 'c-compact-1', author: 'Audrey Hepburn enthusiast', skinType: 'Combination / Oily T-Zone', date: '3 days ago', content: 'The tip about pressing with the puff instead of dragging changed my entire makeup routine! No more foundation sliding around my nose.', likes: 32 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['talc-free-finishing-compact-powders']
   },
   {
-    id: 'glass-skin-blueprint-ferments-kbeauty',
-    slug: 'the-glass-skin-blueprint-fermented-galactomyces-centella-and-hydration',
-    title: 'The Glass Skin Blueprint: Fermented Galactomyces, Centella, and Multi-Layer Hydration',
-    dek: 'Deconstructing Korean skincare innovation: how postbiotics, low-molecular polyglutamic acid, and madecassoside achieve translucent skin clarity.',
-    category: 'K-Beauty Innovations',
-    publishDate: 'Autumn 2026',
-    readTime: '8 min read',
-    author: {
-      name: 'Min-Ji Song',
-      role: 'K-Beauty Formulation Researcher & Columnist',
-      credentials: 'Seoul National University Institute of Dermatological Sciences',
-      avatarInitials: 'MS'
-    },
-    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
-    imageAlt: 'Dropper with pristine glass serum drop over textured neutral limestone surface',
-    imageCaption: 'Fig. 3 — Multi-depth hydration layers create internal hydrostatic pressure within epidermal cells for a lit-from-within effect.',
-    leadPullQuote: 'True glass skin is not a greasy highlighter sitting on dry cheeks; it is hyper-hydrated, translucent keratinocyte turgor allowing natural subcutaneous vascular warmth to shine through.',
-    keyTakeaways: [
-      'Fermented Galactomyces yeast filtrate breaks down amino acids and oligosaccharides into ultra-fine molecules that penetrate stratum corneum without heavy occlusives.',
-      'Centella Asiatica isolates (Madecassoside, Asiaticoside, Asiatic Acid) suppress nitric oxide synthase, visibly calming underlying facial flushing.',
-      'Polyglutamic acid holds up to 4,000 times its weight in water—four times that of traditional high-weight hyaluronic acid—and inhibits hyaluronidase enzymes.'
-    ],
-    targetSkinConcerns: ['Dehydration Lines', 'Internal Tightness', 'Facial Redness', 'Rough Texture'],
-    heroIngredients: [
-      { name: 'Galactomyces Ferment Filtrate', molecularPurpose: 'Postbiotic nutrient broth optimizing epidermal microbiome diversity and melanin dispersal', clinicalConcentration: '85% – 93% aqueous base' },
-      { name: 'Madecassoside (Centella Asiatica)', molecularPurpose: 'Triterpenoid accelerating cutaneous wound closure and microcapillary stabilization', clinicalConcentration: '0.2% – 0.5% pure isolate' },
-      { name: 'Polyglutamic Acid (PGA)', molecularPurpose: 'Creates a flexible biopolymer moisture lattice on the skin mantle', clinicalConcentration: '0.5% – 1.0%' }
-    ],
-    sections: [
-      {
-        heading: 'Translucency versus Shine: The Optical Physics of "Yuri Pibu"',
-        paragraphs: [
-          'In Korean aesthetic dermatology, "Yuri Pibu" (glass skin) describes a skin condition characterized by exceptional pore refinement, uniform melanin distribution, and intense cellular hydration that produces an almost poreless, glass-like translucency. Western interpretations frequently mistake this for heavy topical oils or glimmering cosmetic silicones.',
-          'In reality, when individual corneocytes in the upper epidermis are fully saturated with water and NMF, they expand radially like plump grapes instead of withered raisins. This hydrostatic expansion smooths the surface profile, eliminates microscopic skin shadows, and enables ambient light to penetrate into the upper papillary dermis and bounce back with a diffused, luminous glow.'
-        ],
-        callout: {
-          label: 'Fermentation Science',
-          quoteOrText: 'Fermentation lowers active molecular weights below 500 Daltons while synthesizing organic enzymes that softly digest surface desmosomes without acid irritation.',
-          clinicalReference: 'Asian Journal of Beauty & Cosmetology'
-        }
-      },
-      {
-        heading: 'The Power of Fermented Postbiotics in Melanin Dispersion',
-        paragraphs: [
-          'Central to the Korean multi-step ritual is the first-treatment essence, typically formulated with over 80% Galactomyces or Bifida ferment lysates. The micro-organisms utilize complex botanical carbohydrates to produce low-molecular lactic acid, bio-peptides, Vitamin B complexes, and beta-glucan.',
-          'Clinical trials demonstrate that high-purity Galactomyces suppresses tyrosinase gene transcription, leading to more uniform melanosome dispersion without the cytotoxic melanocyte risks associated with hydroquinone.'
-        ]
-      },
-      {
-        heading: 'The 7-Skin Technique Re-Imagined for Modern Lifestyles',
-        paragraphs: [
-          'The iconic Korean "7-Skin Method"—applying seven consecutive thin layers of watery toner—was often criticized as excessive. Modern formulation advances allow us to condense this benefit into a refined 3-layer technique: one micro-exfoliating fermented essence, one peptide-rich plumping tonic, and one Centella barrier milk.',
-          'Pressing each lightweight aqueous layer with warm palms before applying the next establishes an osmotic gradient, drawing water deep into the epidermis where it is subsequently sealed with a lightweight ceramide mist.'
-        ]
-      }
-    ],
-    dermatologistPerspective: 'Patients coming in with chronic dullness often do not need more acids; they need water. Ferments and triterpenes like madecassoside calm the subclinical irritation that causes uneven cellular turnover, restoring uniform light bounce.',
-    routineStep: 'Toner/Essence',
-    productFormulations: [
-      {
-        title: 'Galactomyces Micro-Ferment Essence',
-        formulationType: 'First Treatment Bio-Essence',
-        keyActives: '92% Galactomyces Ferment + 2% Niacinamide + Adenosine',
-        textureNote: 'Water-light liquid that absorbs instantaneously',
-        idealSkinType: 'All skin types, especially dull and texture-troubled skin'
-      },
-      {
-        title: 'Centella Cica Calming Barrier Ampoule',
-        formulationType: 'Soothe & Plump Concentrated Serum',
-        keyActives: '75% Centella Extract + Madecassoside + Polyglutamic Acid',
-        textureNote: 'Viscous dewy drop that leaves a bouncy, non-sticky sheen',
-        idealSkinType: 'Sensitive, redness-prone, dehydrated complexions'
-      }
-    ],
-    faqs: [
-      { question: 'Can people prone to fungal acne (Malassezia folliculitis) use fermented essences?', answer: 'Those with diagnosed Malassezia overgrowth should exercise caution with yeast-derived ferments like Galactomyces, as certain metabolic byproducts can nourish Malassezia. Opt for pure Centella or Beta-Glucan essences instead.' },
-      { question: 'How is Polyglutamic Acid different from Hyaluronic Acid?', answer: 'Hyaluronic acid holds water within the tissue; polyglutamic acid forms a breathable, supple film on top of the skin that locks moisture in and stops the body from breaking down its own hyaluronic stores.' }
-    ],
-    contraindications: ['Diagnosed active Malassezia folliculitis (for yeast ferments only)'],
-    initialComments: [
-      { id: 'c5', author: 'Soo-Jin Park', skinType: 'Dehydrated Combination', date: '5 days ago', content: 'Finally an article that clarifies that glass skin is about intracellular hydration rather than drowning your face in oil! Love the scientific breakdown of ferments.', likes: 16 }
-    ]
-  },
-  {
-    id: 'decoding-vitamin-c-ascorbic-vs-thd',
-    slug: 'decoding-vitamin-c-l-ascorbic-acid-vs-thd-ascorbate-and-ferulic-stabilization',
-    title: 'Decoding Vitamin C: L-Ascorbic Acid vs. THD Ascorbate & Ferulic Stabilization',
-    dek: 'Why your orange oxidized serum might be causing free-radical damage, and how lipid-soluble derivatives are challenging Duke University’s classic patent.',
-    category: 'Antioxidant Serums',
-    publishDate: 'Autumn 2026',
-    readTime: '7 min read',
-    author: {
-      name: 'Dr. Marcus Sterling, PhD',
-      role: 'Senior Antioxidant Photobiologist',
-      credentials: 'Oxford Cutaneous Photochemistry Laboratory',
-      avatarInitials: 'MS'
-    },
-    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
-    imageAlt: 'Golden serum dropper bottle capturing sunlight reflections',
-    imageCaption: 'Fig. 4 — Photostability of antioxidant complexes is paramount; oxidized ascorbic acid (brown/amber) acts as a pro-oxidant.',
-    leadPullQuote: 'If your Vitamin C serum resembles dark iced tea, throw it out immediately. Oxidized dehydroascorbic acid does not scavenge free radicals; it actively contributes to cellular lipid peroxidation.',
-    keyTakeaways: [
-      'Pure L-Ascorbic Acid requires an acidic pH below 3.5 and stabilization by 0.5% Ferulic Acid and 1% Alpha-Tocopherol to penetrate human skin effectively.',
-      'Tetrahexyldecyl (THD) Ascorbate is a lipid-soluble Vitamin C ester that penetrates fifty times deeper into viable dermis at neutral skin-friendly pH (~5.5).',
-      'Antioxidants work as an enzymatic recycling cascade: Vitamin C donates electrons to Vitamin E, while Ferulic Acid recycles both molecules back into active states.'
-    ],
-    targetSkinConcerns: ['Hyperpigmentation & Sun Spots', 'Photodamage Defense', 'Collagen Synthesis Stimulation', 'Dull Tone'],
-    heroIngredients: [
-      { name: 'L-Ascorbic Acid vs. THD Ascorbate', molecularPurpose: 'Cofactor for prolyl and lysyl hydroxylase in collagen synthesis, tyrosinase inhibitor', clinicalConcentration: '15% (L-AA) or 5% – 10% (THD)' },
-      { name: 'Ferulic Acid', molecularPurpose: 'Plant phenolic antioxidant doubling UV photoprotection when paired with Vitamin C & E', clinicalConcentration: '0.5% – 1.0%' },
-      { name: 'Alpha-Tocopherol (Vitamin E)', molecularPurpose: 'Lipid-phase scavenger protecting cellular membranes against singlet oxygen', clinicalConcentration: '1.0%' }
-    ],
-    sections: [
-      {
-        heading: 'The Duke University Patent and the Stability Dilemma',
-        paragraphs: [
-          'In 2005, Dr. Sheldon Pinnell and Duke University published the landmark formulation parameters that defined modern topical antioxidant therapy: 15% L-Ascorbic Acid, 1% Alpha-Tocopherol, and 0.5% Ferulic Acid at a strict pH below 3.5. This precise ratio provides an eight-fold increase in skin photoprotection against solar UV radiation.',
-          'However, the hydrophilic nature and low pH of pure ascorbic acid present serious real-world complications. An acidic pH of 2.8–3.2 frequently triggers neuro-sensory stinging, erythema, and blemish flares in patients with rosacea or compromised lipid barriers. Furthermore, once exposed to air and light, ascorbic acid rapidly degrades into dehydroascorbic acid and diketogulonic acid, staining the skin and emitting an unpleasant metallic odor.'
-        ],
-        callout: {
-          label: 'Photobiology Insight',
-          quoteOrText: 'Applying topical antioxidant serums underneath broad-spectrum SPF neutralizes the 45% of free radicals that standard UV filters allow through.',
-          clinicalReference: 'Journal of the American Academy of Dermatology'
-        }
-      },
-      {
-        heading: 'The Ascent of Tetrahexyldecyl (THD) Ascorbate',
-        paragraphs: [
-          'For consumers seeking the brightening and collagen-boosting benefits of Vitamin C without the acidic irritation, cosmetic chemists developed Tetrahexyldecyl (THD) Ascorbate. THD is modified with branched lipophilic chains, mirroring the natural lipid matrix of our sebum and stratum corneum.',
-          'Because like dissolves like, THD penetrates directly through the lipid mortar into viable dermal fibroblasts, where intracellular esterases convert it directly into pure ascorbic acid. Laboratory assays demonstrate that THD induces higher intracellular collagen synthesis than equivalent doses of free ascorbic acid while remaining stable in formulation for over eighteen months.'
-        ]
-      },
-      {
-        heading: 'Strategic Daily Timing and Application Etiquette',
-        paragraphs: [
-          'Vitamin C should fundamentally be viewed as a morning shield. When applied thirty minutes prior to sun exposure, it creates an antioxidant reservoir within viable tissue that cannot be washed or wiped off for up to 72 hours.',
-          'Layer your Vitamin C immediately after a gentle morning rinse, allow it two minutes to anchor into the stratum corneum, follow with a lightweight peptide moisturizer, and seal meticulously with broad-spectrum mineral SPF.'
-        ]
-      }
-    ],
-    dermatologistPerspective: 'If you have resilient, oily, or normal skin, an authentic 15% L-ascorbic + ferulic formula is the gold standard for rapid pigment clearance. But if your skin turns red at the slightest provocation, switch to a 7% THD Ascorbate in a squalane vehicle and never look back.',
-    routineStep: 'Active Serum',
-    productFormulations: [
-      {
-        title: 'Precision 15% L-Ascorbic + Ferulic Elixir',
-        formulationType: 'Aqueous Acidic Antioxidant Serum',
-        keyActives: '15% L-AA + 1% Tocopherol + 0.5% Ferulic Acid (pH 3.0)',
-        textureNote: 'Water-thin active solution with fast transdermal flash',
-        idealSkinType: 'Resilient, photo-damaged, normal to oily skin'
-      },
-      {
-        title: 'Lipid-Soluble 10% THD Ascorbate Crème',
-        formulationType: 'Comfort Antioxidant Lipid Emulsion',
-        keyActives: '10% THD Ascorbate + Ergothioneine + Olive Squalane',
-        textureNote: 'Velvety cream serum that cushions the complexion',
-        idealSkinType: 'Sensitive, dry, rosacea-prone, reactive skin'
-      }
-    ],
-    faqs: [
-      { question: 'Why does my Vitamin C smell like bacon or burnt metal?', answer: 'The characteristic scent is caused by the interaction of Ferulic Acid and stabilized Ascorbic Acid in an aqueous solution. While pungent, this aroma is completely normal for fresh, unfragranced clinical formulas.' },
-      { question: 'Can I use Vitamin C and Niacinamide in the same morning routine?', answer: 'Yes! The old 1960s myth that they neutralize each other or form nicotinic acid only occurs under prolonged boiling in laboratory conditions. In modern cosmetic formulas at room temperature, they synergistically boost radiance.' }
-    ],
-    contraindications: ['Oxidized brown solutions (discard immediately)', 'Simultaneous use with benzoyl peroxide (oxidizes ascorbic acid)'],
-    initialComments: [
-      { id: 'c6', author: 'Camille Laurent', skinType: 'Sensitive & Fair', date: '6 days ago', content: 'The THD Ascorbate recommendation changed everything for me. Standard CE Ferulic broke me out into tiny red bumps, but THD gives me that clean morning glow with zero stinging.', likes: 27 }
-    ]
-  },
-  {
-    id: 'clean-mineral-sunscreens-white-cast-breakthrough',
-    slug: 'clean-mineral-sunscreens-solving-white-cast-and-uva-pf-ratings',
-    title: 'Clean Mineral Sunscreens: Solving White Cast and UVA-PF Ratings in 2026 Formulations',
-    dek: 'How non-nano zinc oxide coatings, dispersion polymers, and tint matching finally eliminated the chalky residue without compromising reef-safe photoprotection.',
-    category: 'Suncare & Photoprotection',
+    id: 'invisible-fluid-sunscreens-makeup-prep',
+    slug: 'weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields',
+    title: 'Weightless Invisible Sunscreens: Chemical vs. Mineral UV Shields for Flawless Makeup Prep',
+    dek: 'Why an invisible daily sunscreen is the ultimate primer: contrasting non greasy mineral sunscreen shields with broad spectrum spf for makeup prep that never pills.',
+    productType: 'Sunscreen',
+    category: 'Suncare & Defense',
     publishDate: 'Autumn 2026',
     readTime: '7 min read',
     author: {
@@ -354,417 +299,277 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       avatarInitials: 'AT'
     },
     heroImage: '/src/assets/images/article_sunscreen_minimal_1791560512517.jpg',
-    imageAlt: 'Matte neutral sunscreen tube with smooth rich lotion swatch on clean stone slab',
-    imageCaption: 'Fig. 5 — Dispersed micro-fine zinc oxide matrices provide critical long-wave UVA-I protection (340–400 nm).',
-    leadPullQuote: 'Eighty percent of visible skin aging is photoaging. The most advanced peptide serum in existence is meaningless if you skip the 1/4 teaspoon of daily broad-spectrum photoprotection.',
+    imageAlt: 'Matte neutral sunscreen tube with smooth cream swatch on warm stone slab in soft sunlight',
+    imageCaption: 'Fig. 4 — Modern fluid sunscreens form a flexible photoprotective mesh that grips makeup without pilling or flashback.',
+    leadPullQuote: 'If your sunscreen makes your makeup slide off by noon, you will stop wearing it. The greatest innovation in suncare is not just UV filters—it is cosmetic elegance and wearability.',
     keyTakeaways: [
-      'Zinc oxide is the only single cosmetic filter approved globally that provides uniform broad-spectrum coverage spanning UVB (290–320 nm), UVA-II (320–340 nm), and long-wave UVA-I (340–400 nm).',
-      'Modern silicone- and polyhydroxy stearic acid coatings prevent zinc particles from agglomerating, eradicating the ghostly white cast on darker Fitzpatrick skin types.',
-      'Iron oxides added to tinted mineral SPFs absorb visible high-energy blue light (400–450 nm), significantly reducing post-inflammatory hyperpigmentation and melasma relapses.'
+      'Applying an invisible daily sunscreen requires a volatile carrier system that sets to a dry-touch lattice within three minutes.',
+      'A broad spectrum spf for makeup prep must eliminate heavy emulsifiers so liquid foundations bond without separating.',
+      'Surface-coated non greasy mineral sunscreen filters provide physical photoprotection without pore clogging or chalky flashback.'
     ],
-    targetSkinConcerns: ['Photoaging Prevention', 'Melasma & Pigment Relapses', 'Blue Light Protection', 'Daily Sensitive Skin Defense'],
+    targetSkinConcerns: ['Photoaging & Dark Spots', 'Sunscreen White Cast', 'Makeup Sliding & Pilling', 'Stinging Eyes'],
     heroIngredients: [
-      { name: 'Non-Nano Zinc Oxide', molecularPurpose: 'Insoluble physical photon scatterer and absorber with innate anti-inflammatory calming properties', clinicalConcentration: '18% – 22% for SPF 50+' },
-      { name: 'Micro-Dispersed Iron Oxides', molecularPurpose: 'Yellow, red, and black pigment minerals absorbing High-Energy Visible (HEV) blue light', clinicalConcentration: '1.5% – 3.5%' },
-      { name: 'Pongamia Pinnata (Karanja) Seed Oil', molecularPurpose: 'Botanical booster enhancing SPF efficacy through natural pongamol chromophores', clinicalConcentration: '1.0% – 2.0%' }
+      { name: 'Non-Nano Zinc Oxide (20%)', molecularPurpose: 'Broad-spectrum physical photon blocker spanning UVB, UVA-II, and long-wave UVA-I', clinicalConcentration: '18% – 21% for SPF 50+' },
+      { name: 'Ectoin & Niacinamide', molecularPurpose: 'Osmoprotective antioxidant complex shielding cellular DNA against HEV blue light', clinicalConcentration: '1.5% Ectoin + 2% B3' },
+      { name: 'Hemisqualane', molecularPurpose: 'Plant-derived silicone alternative ensuring weightless glide and rapid dry-touch finish', clinicalConcentration: 'Cosmetic carrier base' }
     ],
     sections: [
       {
-        heading: 'The Spectral Superiority of Zinc Oxide',
+        heading: 'The Daily Dilemma: Formulating an Invisible Daily Sunscreen Without Residue',
         paragraphs: [
-          'While chemical filters like avobenzone, octisalate, or modern European triazine filters (Tinosorb, Uvinul) absorb UV radiation and dissipate it as thermal energy, Zinc Oxide operates as a versatile hybrid: it scatters approximately 5% of light while absorbing 95% across the entire ultraviolet spectrum.',
-          'Crucially, long-wave UVA-I rays (370–400 nm) account for 75% of solar radiation reaching the Earth’s surface. These photons penetrate deep into the reticular dermis, cleaving elastin fibers and activating matrix metalloproteinases (MMPs). Chemical filters degrade rapidly under long-wave UVA without complex stabilizing polymers; pharmaceutical-grade Zinc Oxide remains photostable from dawn until dusk.'
+          'For decades, beauty lovers faced an impossible trade-off: wear heavy sunscreen that leaves an oily sheen and disrupts foundation, or skimp on SPF and suffer irreversible photo-damage and accelerated collagen breakdown.',
+          'The breakthrough in formulating an invisible daily sunscreen came from volatile plant alkanes and hemisqualane. Instead of suffocating the skin in thick grease, these carriers evaporate after application, leaving pure UV filters bonded in a weightless, breathable mesh.'
         ],
         callout: {
-          label: 'Dermatological Fact',
-          quoteOrText: 'Zinc oxide is so biologically inert and anti-inflammatory that it is FDA-classified as a skin protectant, used historically to soothe infant diaper dermatitis.',
-          clinicalReference: 'Photodermatology, Photoimmunology & Photomedicine'
-        }
-      },
-      {
-        heading: 'The Engineering Feat: Ending the Ghostly Cast',
-        paragraphs: [
-          'For decades, physical sunscreens carried an unforgivable cosmetic drawback: a chalky, purple-toned residue on skin phototypes IV through VI. This occurred because raw zinc particles clump together into clumps exceeding 1 micron in size, scattering visible white light straight back to the observer.',
-          'In 2026 formulations, particle engineers utilize surface-treated sub-micron zinc crystals coated with jojoba esters or polyhydroxystearic acid. These surface modifications ensure the minerals disperse as an invisible, isotropic mesh. When combined with calibrated iron oxides that match undertones (neutral, warm, olive), the sunscreen functions as an invisible velvet second skin.'
-        ]
-      },
-      {
-        heading: 'Why Iron Oxides are Essential for Melasma Patients',
-        paragraphs: [
-          'For individuals battling melasma or stubborn post-inflammatory hyperpigmentation (PIH), standard untinted sunscreens are often insufficient. Scientific studies show that High-Energy Visible (HEV) blue light—emitted by solar rays as well as indoor screens—activates Opsin-3 receptors on melanocytes, triggering intense, long-lasting pigment production.',
-          'Only sunscreens containing iron oxides block this visible blue spectrum. Switching to a tinted broad-spectrum zinc oxide sunscreen is the single most transformative habit for banishing recurrent facial melasma.'
-        ]
-      }
-    ],
-    dermatologistPerspective: 'Apply a full 1/4 teaspoon for the face, and another 1/4 teaspoon for the neck and ears. If your mineral sunscreen feels too heavy, look for modern fluid formulations featuring silicone alternatives like coco-caprylate and hemisqualane.',
-    routineStep: 'SPF Photoprotection',
-    productFormulations: [
-      {
-        title: 'Universal Tinted Mineral Silk SPF 50+',
-        formulationType: 'Adaptive Tint Fluid',
-        keyActives: '21.5% Zinc Oxide + Tri-Iron Oxide Complex + Niacinamide',
-        textureNote: 'Featherlight semi-matte fluid with zero chalkiness',
-        idealSkinType: 'All Fitzpatrick phototypes, hyperpigmentation-prone skin'
-      },
-      {
-        title: 'Calming Invisible Mineral Shield SPF 45',
-        formulationType: 'Untinted Velvet Cream',
-        keyActives: '19% Non-Nano Zinc Oxide + Bisabolol + Green Tea Polyphenols',
-        textureNote: 'Cooling whipped lotion that dries down transparent',
-        idealSkinType: 'Post-procedure, acne-prone, extremely reactive skin'
-      }
-    ],
-    faqs: [
-      { question: 'Do I need to reapply mineral sunscreen every two hours if I stay indoors?', answer: 'If you sit directly next to an open window or unshaded glass, UVA rays still penetrate glass. Reapplication is essential if sweating, swimming, or spending continuous hours outdoors.' },
-      { question: 'Does mineral SPF clog pores for acne-prone patients?', answer: 'Pure zinc oxide is non-comedogenic and mildly antibacterial. Clogged pores usually stem from heavy occlusives like coconut oil or isopropyl myristate used as the carrier base. Choose lightweight oil-free suspensions.' }
-    ],
-    contraindications: ['Relying solely on SPF powder dusts for primary sun protection (insufficient volume)'],
-    initialComments: [
-      { id: 'c7', author: 'Nadia Al-Mansoor', skinType: 'Fitzpatrick Type IV / Melasma', date: '4 days ago', content: 'The section on iron oxides and Opsin-3 blue light receptors was an eye-opener. My dermatologist told me to get a tinted zinc sunscreen and within 3 months my forehead melasma finally began fading.', likes: 23 }
-    ]
-  },
-  {
-    id: 'scalp-as-skin-hair-longevity-science',
-    slug: 'scalp-as-skin-peptide-densifying-tonics-and-salicylic-clarifying-serums',
-    title: 'Scalp as Skin: Peptide Densifying Tonics & Salicylic Clarifying Serums for Hair Longevity',
-    dek: 'The trichological revolution treating the scalp as an anatomical extension of facial skin to combat follicular miniaturization and sebum stagnation.',
-    category: 'Scalp & Hair Wellness',
-    publishDate: 'Autumn 2026',
-    readTime: '6 min read',
-    author: {
-      name: 'Dr. Vivienne Le Roux',
-      role: 'Trichologist & Regenerative Hair Scientist',
-      credentials: 'International Association of Trichologists, London',
-      avatarInitials: 'VL'
-    },
-    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
-    imageAlt: 'Glass dropper bottle with concentrated clarifying hair tonic elixir on marble surface',
-    imageCaption: 'Fig. 6 — Follicular ostia require micro-exfoliation and peptide stimulation to maintain long-term anagen hair growth cycles.',
-    leadPullQuote: 'You would never leave three days of dry shampoo, oxidised sebum, and styling polymers on your face. Why do we expect our hair follicles to thrive under that exact suffocating condition?',
-    keyTakeaways: [
-      'The scalp has a higher density of sebaceous glands and hair follicles than any other cutaneous area, making it uniquely vulnerable to oxidative sebum rancidity.',
-      'Follicular miniaturization driven by dihydrotestosterone (DHT) and micro-inflammation can be mitigated by biomimetic copper tripeptides and red clover isoflavones.',
-      'Weekly 1.5% salicylic acid scalp clarifyers unclog the follicular infundibulum without stripping hair cuticle lipids.'
-    ],
-    targetSkinConcerns: ['Hair Thinning & Shedding', 'Scalp Itch & Flaking', 'Dry Shampoo Buildup', 'Excessive Sebum'],
-    heroIngredients: [
-      { name: 'Copper Tripeptide-1 (GHK-Cu)', molecularPurpose: 'Increases dermal papilla vascularization and extends the anagen active growth phase', clinicalConcentration: '0.5% – 1.0%' },
-      { name: 'Salicylic Acid (BHA)', molecularPurpose: 'Lipophilic beta-hydroxy acid dissolving dead keratinocyte plugs within hair follicles', clinicalConcentration: '1.0% – 2.0%' },
-      { name: 'Caffeine & Red Clover Extract', molecularPurpose: 'Inhibits 5-alpha reductase enzyme locally, curbing DHT follicle shrinkage', clinicalConcentration: '3.0% concentrated complex' }
-    ],
-    sections: [
-      {
-        heading: 'The Anatomy of Follicular Suffocation',
-        paragraphs: [
-          'For decades, hair care marketing focused almost exclusively on the dead protein filament: coating the hair shaft with silicones, quats, and polyquaterniums to fabricate temporary cosmetic slip. Meanwhile, the living biological root—the dermal papilla—was neglected.',
-          'The scalp contains approximately 100,000 hair follicles, each accompanied by an active sebaceous gland. When individuals rely heavily on aerosol dry shampoos (starch and talc powders), oxidized squalene and wax esters accumulate at the follicular infundibulum. This creates an anaerobic micro-environment where Malassezia yeasts proliferate, triggering perifollicular inflammation that prematurely signals hairs to enter the telogen (shedding) resting phase.'
-        ],
-        callout: {
-          label: 'Trichology Diagnostic',
-          quoteOrText: 'Perifollicular erythema is the earliest clinical herald of telogen effluvium and traction hair thinning. A healthy hair fiber requires a calm, uninflamed dermal bed.',
+          label: 'Photobiology Reality',
+          quoteOrText: 'UVA rays penetrate window glass and cloud cover every day of the year, breaking down deep dermal elastin without causing sunburn.',
           clinicalReference: 'British Journal of Dermatology'
         }
       },
       {
-        heading: 'Peptide Biomimetics: Fueling the Dermal Papilla',
+        heading: 'Non Greasy Mineral Sunscreen vs. Chemical Filters Under High Magnification',
         paragraphs: [
-          'Emerging trichological formulations utilize biomimetic signaling peptides such as Acetyl Tetrapeptide-3 combined with Trifolium Pratense (red clover) extract and Copper Tripeptide-1. In double-blind clinical trials, these complexes increased the extracellular matrix proteins anchoring the hair bulb into the dermis.',
-          'Unlike traditional harsh alcohol-laden minoxidil solutions that often cause contact dermatitis and sudden shedding upon cessation, water-based peptide serums nourish micro-capillary flow and calm oxidative stress without systemic side effects.'
+          'When evaluating non greasy mineral sunscreen technologies, particle dispersion is everything. Traditional zinc oxide leaves a thick white film because agglomerated particles reflect visible light.',
+          'Modern non greasy mineral sunscreen formulas coat sub-micron zinc particles in amino acids or jojoba esters, allowing visible light to pass freely through while completely deflecting invisible ultraviolet rays.'
         ]
       },
       {
-        heading: 'The Weekly Scalp Detox Ritual',
+        heading: 'Seamless Layering: Applying Broad Spectrum SPF for Makeup Longevity',
         paragraphs: [
-          'A modern scalp routine mimics facial skincare: a weekly pre-shampoo salicylic acid drops application left for ten minutes to melt sebum casts, followed by a sulfate-free chelating cleanse, and completed with leave-in overnight peptide drops applied directly to the parted scalp.',
-          'Consistently practicing this ritual restores scalp sebum balance and stimulates thicker, more resilient hair shaft diameters within three to six hair growth cycles.'
+          'To ensure your broad spectrum spf for makeup application does not roll into pills, respect the 3-minute setting window. After applying your 1/4 teaspoon across the face and neck, refrain from immediately buffing in base makeup.',
+          'Once the photoprotective lattice has bonded with the stratum corneum, liquid foundation, tint, or compact powder can be layered on top with zero formula disruption.'
         ]
       }
     ],
-    dermatologistPerspective: 'Do not massage heavy culinary oils (like coconut or olive oil) onto an inflamed, itchy scalp. Malassezia feed on the lipids in those oils. Use lightweight biomimetic water tonics with rosemary hydrolat, peptides, and clarifying beta-hydroxy acids.',
-    routineStep: 'Active Serum',
+    dermatologistPerspective: 'Ninety percent of visible premature skin aging is caused by chronic daylight exposure. Find a sunscreen texture you adore and wear it every single morning—rain, shine, or indoors near windows.',
+    routineStep: 'SPF Photoprotection',
     productFormulations: [
       {
-        title: 'Follicular Clarifying BHA Pre-Cleanse Drops',
-        formulationType: 'Rinse-Off Scalp Acid Exfoliant',
-        keyActives: '1.5% Salicylic Acid + Rosemary Leaf Hydrolat + Zinc PCA',
-        textureNote: 'Water-gel drop with precision applicator tip',
-        idealSkinType: 'Flaky, oily, buildup-burdened scalps'
+        title: 'Daily Invisible Shield SPF 50+ Fluid',
+        productType: 'Sunscreen',
+        formulationType: 'Featherlight Matte Fluid',
+        keyActives: 'Non-Nano Zinc Oxide + Ectoin + Green Tea Polyphenols',
+        textureNote: 'Watery milk that dries down to an imperceptible velvet veil',
+        finish: 'Invisible Glow',
+        idealSkinType: 'All skin types, especially sensitive and makeup-wearers',
+        ratingScore: 9.9
       },
       {
-        title: 'Biomimetic Copper Peptide Densifying Tonic',
-        formulationType: 'Leave-In Water-Light Scalp Serum',
-        keyActives: '1% GHK-Cu + Red Clover Isoflavones + Caffeine',
-        textureNote: 'Non-greasy, invisible watery tonic that leaves zero residue',
-        idealSkinType: 'Thinning hair, post-partum shedding, aging scalps'
+        title: 'Hydra-Silk Priming Sunscreen SPF 45',
+        productType: 'Sunscreen',
+        formulationType: 'Moisturizer & SPF 2-in-1 Cream',
+        keyActives: 'Broad-Spectrum Filters + Hyaluronic Acid + Squalane',
+        textureNote: 'Cushioning dewy cream that preps dry skin for makeup',
+        finish: 'Dewy Satin',
+        idealSkinType: 'Dry, mature, and normal skin',
+        ratingScore: 9.6
       }
     ],
     faqs: [
-      { question: 'Will applying a scalp serum make my roots look greasy?', answer: 'Water-based peptide tonics absorb cleanly within sixty seconds without leaving any oily film or weighing down volume when applied to a clean damp or dry scalp.' },
-      { question: 'How long until I see results from peptide hair serums?', answer: 'Because the hair growth cycle spans roughly three months, reductions in shedding are visible by week 8, while new baby hairs and increased density appear around months 4 to 6.' }
+      { question: 'Why is an invisible daily sunscreen better than relying on foundation with SPF?', answer: 'You would have to apply seven to ten times the standard amount of foundation to achieve labeled protection, resulting in an unwearable mask. An invisible daily sunscreen ensures full clinical protection without heaviness.' },
+      { question: 'Can a non greasy mineral sunscreen work on dark skin without a white cast?', answer: 'Yes. Modern surface-coated, non-nano zinc formulas suspend particles so finely that they transmit all visible light frequencies, eliminating the ashy cast entirely.' }
     ],
-    contraindications: ['Open scalp lesions or active psoriasis plaques (consult a dermatologist before acid application)'],
+    contraindications: ['Skipping sunscreen on cloudy days or when sitting indoors near glass windows'],
     initialComments: [
-      { id: 'c8', author: 'Liam Gallagher', skinType: 'Oily Scalp / Fine Hair', date: '3 days ago', content: 'Replacing dry shampoo addiction with weekly salicylic clarifying drops completely stopped my scalp itching and hair fall. Great breakdown of follicle biology.', likes: 12 }
-    ]
+      { id: 'c-spf-1', author: 'Nadia Al-Mansoor', skinType: 'Fitzpatrick Type IV', date: 'Yesterday', content: 'Zero white cast, zero greasy film, and my foundation actually looks smoother over it. This is everything sunscreen should be.', likes: 35 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['invisible-fluid-sunscreens-makeup-prep']
   },
   {
-    id: 'niacinamide-plateau-2-to-5-percent',
-    slug: 'the-niacinamide-plateau-why-2-to-5-percent-outperforms-20-percent-mega-serums',
-    title: 'The Niacinamide Plateau: Why 2% to 5% Concentration Outperforms 20% Mega-Serums',
-    dek: 'Examining the "more is better" marketing trap in active skincare: why high-dose Vitamin B3 triggers flushing, barrier irritation, and breakout spikes.',
-    category: 'Formulation Science',
-    publishDate: 'Autumn 2026',
-    readTime: '6 min read',
-    author: {
-      name: 'Helena Berg, MSc',
-      role: 'Cosmetic Chemist & Formulation Director',
-      credentials: 'Society of Cosmetic Chemists Fellow',
-      avatarInitials: 'HB'
-    },
-    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
-    imageAlt: 'Dropper dispensing pure clear cosmetic serum onto pristine travertine stone',
-    imageCaption: 'Fig. 7 — Dose-response curves show biological saturation of cellular NAD+ conversion at 4% Niacinamide.',
-    leadPullQuote: 'In human pharmacology, the dose makes the poison. In cosmetic chemistry, dumping 20% niacinamide into a formula does not give you four times the benefit of 5%—it just gives you a face full of histamine flushing.',
-    keyTakeaways: [
-      'Virtually all landmark double-blind clinical trials proving Niacinamide reduces hyperpigmentation, sebum production, and pore laxity were conducted at 2% to 5% concentrations.',
-      'At 10% to 20%, residual free nicotinic acid contaminants and receptor saturation trigger transient facial flushing and inflammatory papules in sensitive patients.',
-      'Niacinamide acts as a vital precursor to NAD+ and NADP+, coenzymes indispensable for ATP production and cellular DNA repair.'
-    ],
-    targetSkinConcerns: ['Enlarged Pore Appearance', 'Sebum Regulation', 'Post-Blemish Red Marks (PIE)', 'Redness & Flushing'],
-    heroIngredients: [
-      { name: 'Niacinamide (Vitamin B3)', molecularPurpose: 'Increases dermal ceramides, blocks melanosome transfer, regulates sebocyte lipogenesis', clinicalConcentration: '2.0% – 5.0%' },
-      { name: 'Zinc PCA', molecularPurpose: 'Synergistic sebum inhibitor and astringent mineral suppressing bacterial colonization', clinicalConcentration: '0.5% – 1.0%' },
-      { name: 'Allantoin', molecularPurpose: 'Keratolytic calming agent buffering against potential active sensitivity', clinicalConcentration: '0.2% – 0.5%' }
-    ],
-    sections: [
-      {
-        heading: 'The Arms Race of Cosmetic Concentrations',
-        paragraphs: [
-          'Over the past six years, the direct-to-consumer skincare market devolved into a numbers arms race. When 2% niacinamide proved effective, brands introduced 5%. When 5% became standard, competitors launched 10%. Today, shelves are flooded with 15% and 20% "ultra-strength" concentrates, convincing consumers that a higher percentage is synonymous with superior efficacy.',
-          'In cosmetic pharmacology, however, dose-response curves are rarely linear; they are sigmoidal or asymptotic. Once the cellular nicotinamide phosphoribosyltransferase pathway is saturated, surplus molecules provide zero incremental biological benefit and simply linger on the skin surface, increasing the likelihood of osmotic irritation.'
-        ],
-        callout: {
-          label: 'Formulation Chemistry',
-          quoteOrText: 'Even trace raw-material impurities of nicotinic acid (niacin) in high-dose 10–20% serums trigger vasodilation and mast cell degranulation, mimicking rosacea.',
-          clinicalReference: 'Cosmetics & Toiletries Science Review'
-        }
-      },
-      {
-        heading: 'What the Authentic Clinical Science Actually Proves',
-        paragraphs: [
-          'Let us review the peer-reviewed clinical record: Landmark studies by Hakozaki et al. demonstrated that 5% Niacinamide significantly interrupted melanosome transfer from melanocytes to keratinocytes after four weeks. Draelos et al. demonstrated that 2% Niacinamide significantly decreased sebum excretion rates and oiliness.',
-          'Nowhere in reputable medical dermatological literature does a randomized, vehicle-controlled clinical trial indicate that 20% Niacinamide is required or beneficial. In fact, dermatology clinics report a notable surge in patients presenting with mysterious persistent red bumps after starting 10%+ niacinamide products.'
-        ]
-      },
-      {
-        heading: 'The Harmonious Multi-Active Paradigm',
-        paragraphs: [
-          'Rather than relying on one overpowering solitary active at maximum concentration, modern smart formulations favor harmonious synergies: 3% Niacinamide paired with 1% Zinc PCA, 2% Tranexamic Acid, and soothing Centella Asiatica.',
-          'This multi-target approach treats pigment, oil production, and barrier resilience simultaneously without overwhelming the skin mantle.'
-        ]
-      }
-    ],
-    dermatologistPerspective: 'If you have been struggling with sudden tiny whiteheads or hot red flushes after using trendy high-potency serums, check your ingredient labels. You are likely layering three different products that all quietly contain 5% to 10% niacinamide, overloading your skin.',
-    routineStep: 'Active Serum',
-    productFormulations: [
-      {
-        title: 'Balanced 4% Niacinamide + Zinc Refiner',
-        formulationType: 'Balancing Clarifying Serum',
-        keyActives: '4% Niacinamide + 0.8% Zinc PCA + Green Tea Epigallocatechin',
-        textureNote: 'Silky water-gel that glides effortlessly and dries smooth',
-        idealSkinType: 'Oily, combination, breakout-prone, large pores'
-      },
-      {
-        title: 'Calming 2% B3 Barrier Infusion Milk',
-        formulationType: 'Comforting Pre-Moisturizer Fluid',
-        keyActives: '2% Niacinamide + Oat Beta-Glucan + Ceramide Complex',
-        textureNote: 'Milky hydrating veil providing instantaneous redness relief',
-        idealSkinType: 'Sensitive, rosacea-prone, reactive skin'
-      }
-    ],
-    faqs: [
-      { question: 'Why does my skin flush red when using some niacinamide serums?', answer: 'High concentrations often contain micro-fractions of unreacted nicotinic acid, or the formula may have hydrolyzed into nicotinic acid if exposed to heat or extreme pH, causing prostaglandin-mediated vasodilation.' },
-      { question: 'Is 2% really enough to fade acne spots?', answer: 'Yes. 2% to 4% consistently used twice daily over eight weeks inhibits melanosome transfer by up to 68% without irritation.' }
-    ],
-    contraindications: ['Known sensitivity or severe flushing reaction to Vitamin B3 derivatives'],
-    initialComments: [
-      { id: 'c9', author: 'Elena Rostova', skinType: 'Dry & Reactive', date: '5 days ago', content: 'I threw out my 10% niacinamide bottle after reading this. Switched to a 3% formula with zinc and the burning redness around my nose cleared up within 48 hours.', likes: 19 }
-    ]
-  },
-  {
-    id: 'skin-first-base-makeup-hybrids',
-    slug: 'skin-first-base-makeup-serum-foundations-squalane-tints-and-micro-reflectives',
-    title: 'Skin-First Base Makeup: Serum Foundations, Squalane Tints & Micro-Reflective Hybrids',
-    dek: 'The convergence of skincare and cosmetics: replacing suffocating film-formers with squalane, hyaluronic microspheres, and breathable pigment lattices.',
-    category: 'Clean Cosmetics',
+    id: 'dewy-cheek-phenomenon-liquid-blush',
+    slug: 'the-dewy-cheek-phenomenon-liquid-and-cream-blushes-with-hyaluronic-acid',
+    title: 'The Dewy Cheek Phenomenon: Liquid & Cream Blushes with Hyaluronic Acid Infusion',
+    dek: 'Why makeup enthusiasts embrace dewy liquid blush: how hydrating cream blush and hyaluronic cheek tint formulas meld into cheekbones for a vascular, lit-from-within flush.',
+    productType: 'Blush',
+    category: 'Color Cosmetics',
     publishDate: 'Autumn 2026',
     readTime: '6 min read',
     author: {
       name: 'Genevieve Moreau',
-      role: 'Editorial Makeup Artist & Cosmetic Chemist',
-      credentials: 'Paris Fashion Week Master Backstage Director',
+      role: 'Master Backstage Makeup Chemist',
+      credentials: 'Paris Haute Couture Beauty Director',
       avatarInitials: 'GM'
     },
-    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
-    imageAlt: 'Open luxury glass cosmetic jar displaying silky whipped tinted balm texture with wooden applicator',
-    imageCaption: 'Fig. 8 — Modern skin tints coat mineral iron pigments in biomimetic lipids so makeup melds seamlessly into the skin mantle.',
-    leadPullQuote: 'The era of the matte, impenetrable foundation mask is dead. Modern makeup is designed not to conceal your skin, but to act as a luminous optical amplifier of your existing skincare.',
+    heroImage: '/src/assets/images/beauty_liquid_blush_1791630617637.jpg',
+    imageAlt: 'Frosted glass bottle of petal-pink liquid blush with dewy swatch and brush on natural limestone',
+    imageCaption: 'Fig. 5 — Liquid blush formulations suspend micronized pigments in hydrating botanical glycerols for effortless dermal blending.',
+    leadPullQuote: 'Youthful skin does not blush in dry, powdery squares. A natural blush comes from vascular warmth beneath living skin—and liquid blushes recreate that exact optical diffusion.',
     keyTakeaways: [
-      'Traditional foundations relied on heavy polymethylsilsesquioxane polymers that trap sweat and sebum, leading to post-makeup blemish flares ("acne cosmetica").',
-      'Modern serum tints suspend surface-treated mineral pigments inside pure sugarcane squalane and jojoba oil esters, allowing skin transpiration.',
-      'Micro-reflective borosilicate particles scatter ambient daylight to blur fine lines and pore openings without settling into expression creases.'
+      'Applying a dewy liquid blush melts pigments into natural skin barrier lipids rather than sitting on top of peach fuzz.',
+      'A nourishing hydrating cream blush enriched with squalane plumps the cheek apex and lasts through twelve hours of wear.',
+      'Formulations designed as a hyaluronic cheek tint prevent the color from drying down flat, reflecting ambient light with youthful bounce.'
     ],
-    targetSkinConcerns: ['Cakey Foundation Finish', 'Acne Cosmetica', 'Makeup Settling into Lines', 'Dull Complexion'],
+    targetSkinConcerns: ['Dull, Flat Complexion', 'Powder Clinging to Texture', 'Faded Blush by Midday', 'Lack of Natural Radiance'],
     heroIngredients: [
-      { name: 'Sugarcane Squalane', molecularPurpose: 'Biocompatible lipid carrying mineral pigments seamlessly into facial contours', clinicalConcentration: '15% – 25% of cosmetic base' },
-      { name: 'Dehydrated Hyaluronic Microspheres', molecularPurpose: 'Swells upon contact with skin moisture, plumping expression lines beneath pigment', clinicalConcentration: '1.0% – 2.0%' },
-      { name: 'Amino Acid-Coated Iron Oxides', molecularPurpose: 'Ensures true-to-tone color fidelity that resists sebum oxidation and darkening', clinicalConcentration: '6% – 12%' }
+      { name: 'Sodium Hyaluronate', molecularPurpose: 'Humectant holding 1,000x its weight in water at the cheek apex for juicy plumpness', clinicalConcentration: '1.0% concentrated grade' },
+      { name: 'Damask Rose Flower Hydrolat', molecularPurpose: 'Soothing organic distillate that calms underlying erythema while imparting soft glow', clinicalConcentration: '25% aqueous base' },
+      { name: 'Micronized Carmine-Free Minerals', molecularPurpose: 'Ethical clean pigments that diffuse into sheer, buildable washes of color', clinicalConcentration: '5% – 8%' }
     ],
     sections: [
       {
-        heading: 'The Demise of the 24-Hour Matte Polymer Mask',
+        heading: 'The Biology of Vascular Flush: Why Dewy Liquid Blush Melts Into Skin',
         paragraphs: [
-          'For over two decades, the cosmetics industry pursued an obsession with 24-hour transfer-proof wear. To achieve this, formulas were packed with high-tack silicone resins, volatile isododecane solvents, and heavy film-forming polymers. While these foundations stayed put, they effectively shrink-wrapped the epidermis.',
-          'Underneath this occlusive armor, skin was unable to shed corneocytes naturally. Sebum accumulated in the follicular canal, and by evening, the complex matrix oxidized into an unnatural chalky or orange cast. Women arrived at dermatological clinics convinced they had chronic adult acne, when in reality they were suffering from textbook acne cosmetica.'
+          'When the human body blushes naturally—due to emotion, exercise, or brisk outdoor air—capillaries in the dermal papillae dilate, casting a soft rosy bloom through the translucent epidermis. Traditional pressed powder blushes struggle to simulate this effect because their chalky matrix reflects light artificially.',
+          'A modern dewy liquid blush, by contrast, matches the refractive index of living skin sebum. When dabbed onto the cheek, the carrier emulsion merges with your skin tint or natural oils, producing a seamless bloom that looks like it emanates from within.'
         ],
         callout: {
-          label: 'Backstage Masterclass',
-          quoteOrText: 'When you treat the base as an extension of morning skincare, you need 70% less pigment. Skin breathes, moves, and retains its youthful bounce under camera lights.',
-          clinicalReference: 'Vogue Beauty Editorial Insights'
+          label: 'Backstage Technique',
+          quoteOrText: 'Warm one drop of liquid blush between your thumbs, then press directly onto the high cheekbones. It bonds with body warmth instantaneously.',
+          clinicalReference: 'Vogue Runway Beauty Masterclass'
         }
       },
       {
-        heading: 'The Engineering of Lipid-Coated Mineral Pigments',
+        heading: 'Placement Geometry: Applying Hydrating Cream Blush for Optical Lift',
         paragraphs: [
-          'The breakthrough defining 2026 clean base makeup lies in surface pigment treatment. Raw iron oxides and titanium dioxides are naturally hydrophilic and hydrophilic minerals tend to grab onto dry patches while repelling facial oils, creating patchy coverage.',
-          'By encasing each individual mineral pigment in a molecular envelope of lauroyl lysine (an amino acid derived from coconut) or sugarcane squalane, cosmetic chemists created pigments that instinctively fuse with the skin’s lipid barrier. The pigment floats evenly across the surface rather than sinking into dilated pores.'
+          'The old advice to "smile and apply blush to the apples of your cheeks" actually drags the face downward when your expression returns to neutral.',
+          'Modern beauty technique uses hydrating cream blush along the upper diagonal of the cheekbone, blending upward toward the temples. This elongates the facial structure and catches overhead light at the most flattering angle.'
         ]
       },
       {
-        heading: 'How to Layer Skin Tints with Active SPF',
+        heading: 'Formulating a Hyaluronic Cheek Tint to Prevent Base Makeup Dissolution',
         paragraphs: [
-          'A frequent mistake is blending foundation directly into wet sunscreen, diluting the protective UV film. The correct technique is simple: allow your broad-spectrum mineral SPF three full minutes to set and form a dry, even film.',
-          'Then, dispense two drops of serum tint between your fingertips and press softly from the center of the face outward. The squalane base glides effortlessly over the set SPF without disrupting photoprotection.'
+          'To ensure a hyaluronic cheek tint does not dissolve the foundation beneath it, apply it while your base is still fresh, using tapping motions rather than wiping.',
+          'A soft synthetic dual-fiber stippling brush or the warmth of your clean ring finger is the optimal tool for a diffuse, airbrushed finish that stays vibrant all day.'
         ]
       }
     ],
-    dermatologistPerspective: 'If you wear makeup daily, transition to a breathable serum tint with amino acid-coated minerals. Patients frequently see their persistent cheek congestion vanish within three weeks simply by removing heavy acrylates and drying alcohol film-formers from their daily base.',
-    routineStep: 'Cleanser',
+    dermatologistPerspective: 'If you are prone to acne along the cheeks, ensure your cream blush is formulated without heavy comedogenic coconut oil or synthetic red lake dyes. Choose mineral-pigmented fluids with non-comedogenic squalane.',
+    routineStep: 'Color & Lips',
     productFormulations: [
       {
-        title: 'Luminous Squalane Serum Tint',
-        formulationType: 'Skincare-Infused Fluid Base',
-        keyActives: '100% Olive Squalane Base + Lauroyl Lysine Minerals + Niacinamide',
-        textureNote: 'Featherweight serum drop that leaves a natural lit-from-within sheen',
-        idealSkinType: 'Dry, normal, mature, sensitive skin'
+        title: 'Dew Drop Serum Liquid Blush',
+        productType: 'Blush',
+        formulationType: 'Skincare-Infused Petal Fluid',
+        keyActives: 'Sodium Hyaluronate + Rose Hydrolat + Plant Squalane',
+        textureNote: 'Water-gel drop that blends seamlessly with zero streakiness',
+        finish: 'Dewy Satin',
+        idealSkinType: 'All skin types, especially dry and dull complexions',
+        ratingScore: 9.8,
+        shadeNote: 'Shade shown: Petal Bloom (soft English rose)'
       },
       {
-        title: 'Micro-Reflective Dew Concealing Balm',
-        formulationType: 'Hydrating Spot & Undereye Veil',
-        keyActives: 'Hyaluronic Spheres + Phytosterols + Caffeine Isolate',
-        textureNote: 'Melt-on-contact cream balm that never creases into fine lines',
-        idealSkinType: 'All skin types, especially dry under-eyes'
+        title: 'Velvet Cheek & Lip Melting Balm',
+        productType: 'Blush',
+        formulationType: 'Multi-Use Whipped Butter',
+        keyActives: 'Murumuru Butter + Vitamin E + Mineral Iron Oxides',
+        textureNote: 'Rich cream that transforms to a soft velvety wash on skin',
+        finish: 'Velvet Matte',
+        idealSkinType: 'Normal to oily skin wanting long wear',
+        ratingScore: 9.5,
+        shadeNote: 'Shade shown: Spiced Terracotta'
       }
     ],
     faqs: [
-      { question: 'Does a serum foundation provide enough sun protection on its own?', answer: 'Never rely on makeup for sun protection. You would need to apply seven to ten times the cosmetic amount to achieve the labeled SPF rating, which would look unwearably heavy. Always apply dedicated SPF underneath.' },
-      { question: 'Will squalane in a foundation trigger breakouts on oily skin?', answer: 'Squalane is chemically saturated and completely non-comedogenic (unlike squalene, which oxidizes). It balances sebum production without clogging pores.' }
+      { question: 'Can I apply dewy liquid blush over set powder?', answer: 'Liquid blush is easiest to blend over liquid foundation or bare skin. However, modern silicone-elastomer dewy liquid blush formulas can be softly tapped over powder without lifting.' },
+      { question: 'Why does a hydrating cream blush last longer than dry powder rouge?', answer: 'Powder blush sits loosely on the skin surface and rubs off with friction, whereas a hydrating cream blush binds with skin lipids for durable, moisture-resistant adhesion.' }
     ],
-    contraindications: ['Layering immediately over uncured sunscreen (wait 3 minutes for SPF film formation)'],
+    contraindications: ['Aggressive rubbing or wiping that disrupts foundation layers underneath'],
     initialComments: [
-      { id: 'c10', author: 'Sabrina Thorne', skinType: 'Dry & Flaky', date: 'Yesterday', content: 'This completely changed my routine. Conventional foundations clung to every dry flake on my chin. The squalane serum tint makes my skin look twenty years old again.', likes: 15 }
-    ]
+      { id: 'c-blush-1', author: 'Camille Laurent', skinType: 'Dry & Fair', date: '3 days ago', content: 'The Petal Bloom shade gives the most natural, healthy flush I have ever seen. Powder blush is officially retired from my vanity!', likes: 27 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['dewy-cheek-phenomenon-liquid-blush']
   },
   {
-    id: 'peptide-architectures-matrixyl-copper-elasticity',
-    slug: 'peptide-architectures-matrixyl-3000-copper-tripeptide-and-cellular-elasticity',
-    title: 'Peptide Architectures: Matrixyl 3000, Copper Tripeptide-1, and Cellular Elasticity',
-    dek: 'Deciphering matrikines, neurotransmitter-inhibiting peptides, and signal chains to stimulate collagen without retinoid irritation.',
-    category: 'Biomimetic Actives',
+    id: 'skin-first-base-makeup-hybrids',
+    slug: 'skin-first-base-makeup-serum-foundations-and-squalane-tints',
+    title: 'Skin-First Base Hybrids: Serum Foundations and Squalane Tints That Never Cling to Dryness',
+    dek: 'The convergence of skincare and complexion cosmetics: how serum foundation for dry skin pairs with a squalane skin tint to provide breathable light coverage makeup that never flakes.',
+    productType: 'Foundation & Tint',
+    category: 'Base & Complexion',
     publishDate: 'Autumn 2026',
     readTime: '7 min read',
     author: {
-      name: 'Dr. Marcus Sterling, PhD',
-      role: 'Senior Antioxidant Photobiologist',
-      credentials: 'Oxford Cutaneous Photochemistry Laboratory',
-      avatarInitials: 'MS'
+      name: 'Genevieve Moreau',
+      role: 'Master Backstage Makeup Chemist',
+      credentials: 'Paris Haute Couture Beauty Director',
+      avatarInitials: 'GM'
     },
     heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
-    imageAlt: 'Luxury frosted skincare bottle on stone pedestal showcasing peptide bio-serum',
-    imageCaption: 'Fig. 9 — Signal peptides bind specific transmembrane receptors on human fibroblasts to trigger de novo collagen synthesis.',
-    leadPullQuote: 'Retinoids force the engine into higher revolutions; peptides quietly hand the mechanics the exact blueprints and building supplies to rebuild the chassis.',
+    imageAlt: 'Luxury frosted skincare dropper bottle and cosmetic flacon on travertine pedestal',
+    imageCaption: 'Fig. 6 — Hybrid foundations blend the coverage of base makeup with the transdermal nourishment of active facial serums.',
+    leadPullQuote: 'The era of the heavy cakey foundation mask is dead. Modern makeup is designed not to hide your skin, but to act as a luminous optical amplifier of your existing skincare.',
     keyTakeaways: [
-      'Signal peptides (Palmitoyl Tripeptide-1 and Palmitoyl Tetrapeptide-7) mimic fragments of broken collagen, signaling fibroblasts that structural damage has occurred and stimulating fresh repair.',
-      'Copper Tripeptide-1 (GHK-Cu) acts as a powerful gene regulator, stimulating glycosaminoglycans, collagen Type I, and degrading abnormal scarred collagen clumps.',
-      'Peptides are entirely non-sensitizing and do not induce photosensitivity, making them ideal for morning use and delicate periorbital tissue.'
+      'Formulating a serum foundation for dry skin requires up to 70% active skincare base, allowing living tissue to transpire freely.',
+      'A squalane skin tint hydrates the barrier while amino acid-coated minerals resist midday oxidation and orange discoloration.',
+      'Choosing breathable light coverage makeup with hyaluronic microspheres plumps fine lines rather than settling into smile creases.'
     ],
-    targetSkinConcerns: ['Crepey Skin & Laxity', 'Loss of Structural Firmness', 'Retinoid Intolerance', 'Periorbital Crow\'s Feet'],
+    targetSkinConcerns: ['Cakey Foundation Look', 'Makeup Settling into Wrinkles', 'Foundation Clinging to Dry Patches', 'Acne Cosmetica'],
     heroIngredients: [
-      { name: 'Copper Tripeptide-1 (GHK-Cu)', molecularPurpose: 'Chelated copper complex upregulating dermal remodeling and superoxide dismutase', clinicalConcentration: '1.0% – 2.0%' },
-      { name: 'Palmitoyl Tripeptide-38 (Matrixyl Synthe\'6)', molecularPurpose: 'Rebuilds skin structural matrix at the dermal-epidermal junction (DEJ)', clinicalConcentration: '2.0%' },
-      { name: 'Acetyl Hexapeptide-8 (Argireline)', molecularPurpose: 'Neurotransmitter-inhibiting peptide softening dynamic expression lines', clinicalConcentration: '5.0% – 10.0%' }
+      { name: '100% Plant Squalane', molecularPurpose: 'Biomimetic carrier lipid providing seamless glide and zero pore blockage', clinicalConcentration: '20% of cosmetic emulsion' },
+      { name: 'Lauroyl Lysine Coated Minerals', molecularPurpose: 'Amino acid coating ensuring pigments repel water and bond with skin barrier', clinicalConcentration: '8% – 15%' },
+      { name: 'Niacinamide (Vitamin B3)', molecularPurpose: 'Soothes redness and controls excess sebum while makeup is worn', clinicalConcentration: '2.0%' }
     ],
     sections: [
       {
-        heading: 'How Peptides Communicate with Living Fibroblasts',
+        heading: 'The End of Suffocating Masks: Why Serum Foundation for Dry Skin Wins',
         paragraphs: [
-          'To understand the genius of biomimetic peptides, one must realize that human skin is an elaborate sensory communications network. As our native extracellular matrix breaks down over time, tiny fragments of cleaved collagen circulate in the interstitial fluid.',
-          'When cell-surface receptors on fibroblasts encounter these fragments, they interpret them as an urgent emergency signal: our skin matrix is eroding. Signal peptides—known as matrikines—are synthetic replicas of these exact fragmentation sequences. When applied topically, they bind to fibroblast receptors and activate mRNA transcription for fresh procollagen, elastin, and hyaluronic acid without requiring any trauma to the skin.'
+          'For decades, long-wear foundations relied on heavy acrylates and volatile silicones that effectively shrink-wrapped the face. Underneath this barrier, moisture was sapped, causing dry patches to flake aggressively.',
+          'Formulating an effective serum foundation for dry skin flips the paradigm: it begins as a nourishing lipid serum infused with squalane, hyaluronic spheres, and niacinamide, with just enough micro-coated pigment suspended inside to equalize tone without suffocating the stratum corneum.'
         ],
         callout: {
-          label: 'Biomimetic Science',
-          quoteOrText: 'Unlike retinoids which trigger a biological stress response, peptides communicate via gentle biomimetic affinity, making them virtually incapable of causing dermatitis.',
-          clinicalReference: 'Biochemical and Biophysical Research Communications'
+          label: 'Cosmetic Innovation',
+          quoteOrText: 'When pigments are coated in biomimetic amino acids, they mimic natural skin proteins, moving fluidly with every facial expression.',
+          clinicalReference: 'Society of Cosmetic Chemists'
         }
       },
       {
-        heading: 'The Regenerative Power of Copper Tripeptide-1 (GHK-Cu)',
+        heading: 'Comparing a Squalane Skin Tint to Medium-Coverage Serum Bases',
         paragraphs: [
-          'Among all cosmetic peptides, GHK-Cu stands in a category of its own. First isolated from human plasma by Dr. Loren Pickart in 1973, GHK is a tripeptide (glycyl-L-histidyl-L-lysine) with a high binding affinity for copper(II) ions. Plasma levels of GHK decline by over 60% between age twenty and sixty.',
-          'When reintroduced topically, GHK-Cu modulates over 4,000 human genes: it downregulates inflammatory cytokines (TGF-beta1), stimulates metalloproteinases that clear cross-linked senescent collagen, and accelerates dermal wound healing. The visible result is a measurable recovery in skin density and bounce.'
+          'If you want a sheer, dewy wash that lets your natural skin texture shine through, a squalane skin tint is ideal. The bio-identical squalane mimics your acid mantle, melting pigments seamlessly over dry zones without clinging.',
+          'For days requiring medium buildable coverage for redness or post-acne marks, a fluid serum foundation delivers smooth perfection while preserving dermal breathability.'
         ]
       },
       {
-        heading: 'Formulation Incompatibilities to Avoid',
+        heading: 'Preventing Oxidation and Flaking in Breathable Light Coverage Makeup',
         paragraphs: [
-          'Because peptides are delicate chains of amino acids linked by peptide bonds, they are susceptible to denaturation. Never mix Copper Tripeptide-1 simultaneously with low-pH pure L-Ascorbic Acid or high-percentage direct AHAs (glycolic or lactic acid).',
-          'Acidic environments break the chelation bond holding the copper ion, deactivating both the peptide and the antioxidant. Instead, apply your pure Vitamin C in the morning, and reserve your peptide architectures for the evening.'
+          'Foundation oxidation occurs when surface facial oils react with uncoated iron pigments and atmospheric oxygen, turning base makeup orange within two hours.',
+          'In modern breathable light coverage makeup, pigments are enveloped in lauroyl lysine (an amino acid lipid barrier). This coating shields minerals from atmospheric oxidation, ensuring the shade stays fresh from 8 AM to midnight.'
         ]
       }
     ],
-    dermatologistPerspective: 'For patients whose skin cannot tolerate retinoids due to ocular rosacea, eczema, or sensitive barriers, a multi-peptide serum containing Matrixyl Synthe\'6 and GHK-Cu is our first-line anti-aging recommendation.',
-    routineStep: 'Active Serum',
+    dermatologistPerspective: 'Patients who complain of chronic acne often discover their breakouts vanish once they transition from heavy 24-hour matte foundations to breathable, oil-balancing serum tints.',
+    routineStep: 'Base Makeup',
     productFormulations: [
       {
-        title: 'Deep Azure 2% Copper Tripeptide Matrix',
-        formulationType: 'Bio-Cellular Rebuilding Serum',
-        keyActives: '2% Pure GHK-Cu + Matrixyl Synthe\'6 + Tremella Mushroom Extract',
-        textureNote: 'Naturally vibrant cobalt blue aqueous gel with instant slip',
-        idealSkinType: 'Loss of firmness, mature, post-procedure recovery'
+        title: 'Luminous Squalane Serum Tint',
+        productType: 'Foundation & Tint',
+        formulationType: 'Skincare-Infused Fluid Base',
+        keyActives: 'Plant Squalane + Lauroyl Lysine Pigments + Niacinamide',
+        textureNote: 'Featherweight serum drop that leaves an effortless second-skin glow',
+        finish: 'Natural Luminous',
+        idealSkinType: 'Dry, normal, and mature skin',
+        ratingScore: 9.9,
+        shadeNote: 'Available in 12 Flexible Self-Adjusting Shades'
       },
       {
-        title: 'Multi-Peptide Contouring Eye Concentrate',
-        formulationType: 'Targeted Periorbital Cream-Gel',
-        keyActives: 'Argireline Amplified + Eyeseryl + Palmitoyl Tripeptide-5',
-        textureNote: 'Cooling fluid that instantly tautens and de-puffs tired eyes',
-        idealSkinType: 'Periorbital fine lines, expression lines, drooping contours'
+        title: 'Soft Blur Serum Foundation',
+        productType: 'Foundation & Tint',
+        formulationType: 'Medium Coverage Fluid Emulsion',
+        keyActives: 'Hyaluronic Microspheres + Centella Extract + Zinc PCA',
+        textureNote: 'Silky fluid providing medium buildable coverage with soft-focus finish',
+        finish: 'Soft Focus Blurred',
+        idealSkinType: 'Combination, oily, and blemish-prone skin',
+        ratingScore: 9.7,
+        shadeNote: 'Medium buildable, natural satin finish'
       }
     ],
     faqs: [
-      { question: 'Why is authentic copper peptide serum blue?', answer: 'The striking royal blue or cobalt shade is entirely natural, caused by the d-d electron transition of the copper(II) ion chelated within the peptide structure. Formulas that are colorless or clear contain negligible copper.' },
-      { question: 'Can I use peptides alongside prescription tretinoin?', answer: 'Yes! Peptides and retinoids work through completely different pathways and make a sublime evening duo. Apply the peptide serum first, allow it to absorb, then follow with your retinoid.' }
+      { question: 'Why is a serum foundation for dry skin better than traditional liquid foundation?', answer: 'Traditional foundations contain high amounts of evaporating solvents that pull moisture from already parched skin. A serum foundation for dry skin delivers continuous humectants and biocompatible squalane throughout the day.' },
+      { question: 'Will a squalane skin tint cause breakouts on acne-prone areas?', answer: 'No. Pure plant squalane is completely non-comedogenic and mimics natural human sebum, helping balance oil production rather than congesting pores.' }
     ],
-    contraindications: ['Direct simultaneous layering with low-pH L-Ascorbic Acid (pH < 3.5)', 'Direct mixing with strong chemical acid peels'],
+    contraindications: ['Applying over heavily layered oil serums that cause formula slipping'],
     initialComments: [
-      { id: 'c11', author: 'Margot Lindqvist', skinType: 'Mature / Thinning', date: '3 days ago', content: 'I have used the azure copper peptide serum for four months now. The crepey skin on my neck has tightened visibly. Wonderful deep-dive on peptide science.', likes: 25 }
-    ]
+      { id: 'c-tint-1', author: 'Sabrina Thorne', skinType: 'Dry & Flaky', date: 'Yesterday', content: 'Traditional foundation always clung to every dry flake on my chin. This serum tint glides on like a dream and makes my skin look 10 years younger.', likes: 31 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['skin-first-base-makeup-hybrids']
   },
   {
-    id: 'botanical-squalane-facial-oils-lipids',
-    slug: 'botanical-squalane-and-cold-pressed-botanical-oils-occlusion-without-comedogenicity',
-    title: 'Botanical Squalane & Cold-Pressed Botanical Oils: Occlusion without Comedogenicity',
-    dek: 'Why mineral oil and heavy waxes are giving way to plant-derived squalane, prickly pear seed oil, and rosehip CO2 extracts that nourish without clogging.',
-    category: 'Facial Oils & Lipids',
+    id: 'double-cleansing-oat-lipid-balms',
+    slug: 'the-science-of-double-cleansing-oat-lipid-balms-dissolve-waterproof-spf',
+    title: 'The Science of Double Cleansing: How Oat Lipid Balms Dissolve Waterproof Mascara & SPF Without Stripping',
+    dek: 'Why the double cleansing method protects the skin barrier: how an oat lipid cleansing balm acts as a gentle waterproof makeup remover balm that rinses 100% clean.',
+    productType: 'Cleansing Balm',
+    category: 'Cleansing & Prep',
     publishDate: 'Autumn 2026',
     readTime: '6 min read',
     author: {
@@ -773,87 +578,370 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'FAAD, Associate Professor of Cutaneous Biology',
       avatarInitials: 'CV'
     },
-    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
-    imageAlt: 'Clear amber facial oil bottle basking in soft morning illumination on sculpted stone',
-    imageCaption: 'Fig. 10 — High-linoleic botanical oils balance sebum composition while sealing trans-epidermal moisture loss.',
-    leadPullQuote: 'The human face does not hate oils; it hates oxidized, rancid, high-oleic waxes that solidify inside follicular canals. High-linoleic botanical oils are pure cellular medicine.',
+    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
+    imageAlt: 'Amber glass jar of rich whipped cleansing balm with wooden spatula on stone',
+    imageCaption: 'Fig. 7 — Oil dissolves oil: botanical lipids bond with stubborn waterproof polymers, rinsing clean upon water contact.',
+    leadPullQuote: 'You cannot remove long-wear foundation and waterproof mineral sunscreen with a gentle foaming wash. You either leave dirty residue behind or strip your acid mantle with harsh sulfates.',
     keyTakeaways: [
-      'Acne-prone skin naturally secretes sebum deficient in linoleic acid, causing squalene to oxidize into comedogenic squalene hydroperoxide.',
-      'Sugarcane-derived Squalane is fully hydrogenated, meaning it possesses zero double bonds and will not oxidize or turn rancid on your skin.',
-      'Applying a micro-drop of high-linoleic oil as the final step in a nocturnal routine reduces overnight transepidermal water loss by up to 34%.'
+      'Practicing the double cleansing method ensures insoluble long-wear pigments and physical sunscreen filters are cleared without mechanical tugging.',
+      'An oat lipid cleansing balm delivers bio-identical ceramides and avenanthramides that calm cutaneous inflammation during facial massage.',
+      'A true waterproof makeup remover balm must micro-emulsify with warm water, dissolving mascara without requiring friction from cotton pads.'
     ],
-    targetSkinConcerns: ['Overnight Moisture Loss', 'Sebum Imbalance', 'Acne-Prone Dehydration', 'Post-Exfoliation Flaking'],
+    targetSkinConcerns: ['Stubborn Waterproof Makeup', 'Clogged Pores & Blackheads', 'Tight Post-Wash Skin', 'Irritated Eye Area'],
     heroIngredients: [
-      { name: 'Sugarcane Squalane (100% Plant-Derived)', molecularPurpose: 'Biomimetic hydrocarbon identical to human sebum components, zero pore clogging', clinicalConcentration: 'Pure 100% or active base' },
-      { name: 'Prickly Pear (Opuntia Ficus-Indica) Seed Oil', molecularPurpose: 'Highest Vitamin E and betalain concentration of any botanical oil worldwide', clinicalConcentration: 'Cold-pressed virgin extraction' },
-      { name: 'Rosehip Seed CO2 Total Extract', molecularPurpose: 'Rich in all-trans retinoic acid fractions and linolenic omega fatty acids', clinicalConcentration: '10% – 20% lipid blend' }
+      { name: 'Oat Kernel Lipid Oil', molecularPurpose: 'Rich in natural ceramides and linoleic acid to cushion barrier during makeup removal', clinicalConcentration: '10% – 15%' },
+      { name: 'PEG-Free Polyglyceryl Esters', molecularPurpose: 'Gentle plant emulsifiers transforming oil into a clean-rinsing milky emulsion', clinicalConcentration: 'Balanced ratio' },
+      { name: 'Bisabolol (German Chamomile)', molecularPurpose: 'Anti-inflammatory terpene preventing periorbital redness and stinging', clinicalConcentration: '0.5%' }
     ],
     sections: [
       {
-        heading: 'The Myth of "Oil-Free" Skin Salvation',
+        heading: 'Why Single Cleansing Leaves Residue: The Double Cleansing Method Explained',
         paragraphs: [
-          'In the 1990s, the cosmetic industry launched an aggressive anti-oil campaign, convincing an entire generation that any topical lipid would immediately spawn catastrophic cystic acne. Consumers stripped their faces with harsh sulfates and slathered on oil-free silicone gels.',
-          'The result was a quiet epidemic of dehydrated-oily skin: the barrier was starved of essential fatty acids, prompting sebaceous glands to overcompensate by pumping out low-quality sebum thick with oxidized waxes. Modern lipidomics has conclusively demonstrated that acne patients actually suffer from a marked linoleic acid deficiency in their surface sebum.'
+          'Modern sunscreens and long-wear lipsticks are engineered with hydrophobic polymers designed specifically to resist water, sweat, and friction. When consumers attempt to remove them with a single foaming face wash or micellar water wipe, substantial residue remains trapped in pores.',
+          'The double cleansing method solves this by adopting a two-stage biochemical approach: an oil-soluble first step dissolves stubborn hydrophobic lattices, while a gentle water-based second step lifts away ambient pollutants and cellular debris without disrupting acid mantle pH.'
         ],
         callout: {
-          label: 'Lipidomics Finding',
-          quoteOrText: 'When sebum linoleic acid drops below 15%, follicular keratinocytes hyper-cornify and form micro-comedones. Restoring topical linoleates halts this plug cascade.',
-          clinicalReference: 'Journal of Investigative Dermatology'
+          label: 'Biochemical Truth',
+          quoteOrText: 'Cleansing wipes tug and stretch delicate periorbital skin while smearing dissolved dirt across the face. Balms cushion the skin with zero mechanical friction.',
+          clinicalReference: 'International Journal of Dermatology'
         }
       },
       {
-        heading: 'Squalene versus Squalane: The Critical Molecular Distinction',
+        heading: 'The Lipid Chemistry of an Oat Lipid Cleansing Balm',
         paragraphs: [
-          'It is imperative to understand the distinction between squalene (with an "e") and squalane (with an "a"). Squalene is an unsaturated hydrocarbon that constitutes roughly 13% of human skin sebum. However, because it contains six unstable double bonds, it oxidizes rapidly when exposed to atmospheric ozone and UV radiation, transforming into squalene peroxide—one of the most potent triggers of acne inflammation.',
-          'Squalane (with an "a"), by contrast, is produced by saturating those double bonds via hydrogen molecules. The resulting lipid is remarkably stable, resists rancidity indefinitely, is completely non-comedogenic, and mimics the weightless glide of natural skin hydration.'
+          'Cheap cleansing balms frequently rely on petroleum mineral oil and microcrystalline wax. While effective at dissolving makeup, mineral oil provides zero biological nourishment to the skin.',
+          'In contrast, an oat lipid cleansing balm formulated with cold-pressed oat oil infuses the stratum corneum with soothing avenanthramides, linoleic acid, and bio-ceramides, leaving skin calmer and more resilient after every rinse.'
         ]
       },
       {
-        heading: 'The Art of the Nocturnal Seal',
+        heading: 'Dissolving Stubborn Long-Wear SPF with a Waterproof Makeup Remover Balm',
         paragraphs: [
-          'Facial oils are not moisturizers in the strictest sense; they contain zero water and therefore cannot hydrate. Rather, they are emollients and semi-occlusives. The optimal placement in your routine is as the definitive final step: after cleansing, essences, active serums, and water-based moisturizers have been applied.',
-          'Warm three to four drops of cold-pressed oil between your palms and gently press onto the high points of your face. This forms a breathable, lipid-replenishing blanket that locks water-soluble actives into living layers throughout the night.'
+          'Step 1: Massage a blueberry-sized scoop of waterproof makeup remover balm onto completely dry skin for sixty seconds. Watch waterproof mascara, pigment, and mineral sunscreen melt effortlessly into a silky slip.',
+          'Step 2: Add warm water to emulsify the balm into a delicate milk, rinse thoroughly, and follow with a non-foaming gentle wash for clean, calmed skin.'
         ]
       }
     ],
-    dermatologistPerspective: 'If you struggle with clogged pores, steer clear of heavy coconut oil, wheat germ oil, and cocoa butter on the face. Embrace cold-pressed prickly pear, jojoba, and pure squalane. Your skin barrier will transform within seven nights.',
-    routineStep: 'Facial Oil',
+    dermatologistPerspective: 'If your skin feels squeaky clean and tight after washing, your cleanser is destroying your acid mantle. Your face should feel soft, cushioned, and calm.',
+    routineStep: 'Cleanser',
     productFormulations: [
       {
-        title: 'Pure Sugarcane Squalane Dry Oil',
-        formulationType: '100% Biomimetic Hydrocarbon Fluid',
-        keyActives: '100% Ecocert Plant Squalane',
-        textureNote: 'Water-light dry oil that absorbs in seconds with zero grease',
-        idealSkinType: 'Acne-prone, dehydrated, sensitive, combination skin'
+        title: 'Soothing Oat Lipid Cleansing Melt',
+        productType: 'Cleansing Balm',
+        formulationType: 'Rinse-Clean Solid Balm to Milk',
+        keyActives: 'Oat Kernel Oil + Bisabolol + Jojoba Esters',
+        textureNote: 'Velvet solid balm that melts on touch into a luxurious cleansing oil',
+        finish: 'Cashmere Melt',
+        idealSkinType: 'All skin types, especially sensitive and dry skin',
+        ratingScore: 9.9
       },
       {
-        title: 'Nocturnal Prickly Pear & Rosehip Lipid Elixir',
-        formulationType: 'High-Linoleic Active Cold-Pressed Blend',
-        keyActives: 'Cold-Pressed Prickly Pear + CO2 Rosehip + Blue Tansy Sabinene',
-        textureNote: 'Golden decadent botanical nectar with herbaceous soothing aroma',
-        idealSkinType: 'Dry, mature, sun-damaged, barrier-depleted skin'
+        title: 'Clarifying Camellia Emulsifying Oil',
+        productType: 'Cleansing Balm',
+        formulationType: 'Lightweight Cleansing Oil',
+        keyActives: 'Camellia Seed Oil + Sunflower Lipids + Vitamin E',
+        textureNote: 'Silky fluid oil that rinses completely clean without residue',
+        finish: 'Dewy Satin',
+        idealSkinType: 'Oily, combination, and acne-prone skin',
+        ratingScore: 9.6
       }
     ],
     faqs: [
-      { question: 'Can I use facial oil in the morning before sunscreen?', answer: 'We advise against heavy facial oils under sunscreen because concentrated lipids can dissolve or destabilize the protective UV filter film. Reserve botanical oils for your nighttime wind-down ritual.' },
-      { question: 'Will facial oil make my enlarged pores worse?', answer: 'Pure squalane and jojoba oil dissolve hardened sebaceous filaments within pores without clogging, actually making pores appear cleaner and more refined over time.' }
+      { question: 'Why is an oat lipid cleansing balm better than micellar wipes?', answer: 'Wipes rely on harsh surfactants and mechanical rubbing that causes micro-tears in fragile skin. An oat lipid cleansing balm glides effortlessly and nourishes the lipid barrier.' },
+      { question: 'Can the double cleansing method help prevent acne on congested skin?', answer: 'Yes. The first oil-soluble cleanse dissolves hardened sebum plugs and dead cellular debris in pores, preventing the bacterial proliferation that leads to breakouts.' }
     ],
-    contraindications: ['Applying before water-based serums (blocks hydrophilic penetration)', 'Using culinary cooking oils on active facial acne'],
+    contraindications: ['Wiping vigorously with rough towels instead of rinsing with warm water'],
     initialComments: [
-      { id: 'c12', author: 'Beatriz Mendez', skinType: 'Acne-Prone & Dehydrated', date: 'Yesterday', content: 'Learning the chemical difference between squalene with an E and squalane with an A was life-changing. Sugarcane squalane healed my flaky post-acne scars without a single new pimple.', likes: 31 }
-    ]
+      { id: 'c-cleanse-1', author: 'Marianne Dubois', skinType: 'Very Sensitive', date: '4 days ago', content: 'Removing my waterproof mascara used to leave my eyelids red and burning from makeup wipes. The oat balm melts everything away with zero stinging.', likes: 29 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['double-cleansing-oat-lipid-balms']
+  },
+  {
+    id: 'periorbital-awakening-eye-creams-peptides',
+    slug: 'periorbital-awakening-caffeine-and-peptides-for-undereye-shadows',
+    title: 'Periorbital Awakening: Caffeine & Micro-Circulation Peptides for Undereye Shadows and Puffiness',
+    dek: 'The anatomy of delicate undereye tissue: why pairing a caffeine eye cream for dark circles with a peptide undereye treatment and cooling eye cream for puffiness banishes morning fatigue.',
+    productType: 'Eye Cream',
+    category: 'Active Skincare',
+    publishDate: 'Autumn 2026',
+    readTime: '6 min read',
+    author: {
+      name: 'Dr. Marcus Sterling, PhD',
+      role: 'Senior Antioxidant Photobiologist',
+      credentials: 'Oxford Cutaneous Photochemistry Laboratory',
+      avatarInitials: 'MS'
+    },
+    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
+    imageAlt: 'Frosted eye cream and serum dropper on neutral travertine stone',
+    imageCaption: 'Fig. 8 — Periorbital skin is 40% thinner than facial skin, requiring specialized bio-peptides and vascular drainers.',
+    leadPullQuote: 'Undereye dark circles are not just pigmentation; they are a complex interplay of micro-vascular pooling, lymphatic stagnation, and thinning dermal collagen.',
+    keyTakeaways: [
+      'Using a dedicated caffeine eye cream for dark circles constricts sluggish micro-capillaries, reducing bluish venous pooling within 20 minutes.',
+      'A biomimetic peptide undereye treatment reinforces extracellular collagen, thickening thin skin so underlying blood vessels stay concealed.',
+      'Pairing active peptides with a cooling eye cream for puffiness doubles lymphatic drainage speed without mechanical friction.'
+    ],
+    targetSkinConcerns: ['Undereye Puffiness & Bags', 'Bluish Vascular Dark Circles', 'Crow’s Feet & Fine Lines', 'Dry Crepey Undereye Skin'],
+    heroIngredients: [
+      { name: 'Anhydrous Caffeine (3%)', molecularPurpose: 'Vasoconstrictor draining stagnant lymphatic fluid and relieving morning eyelid edema', clinicalConcentration: '2.5% – 3.5%' },
+      { name: 'Eyeseryl (Acetyl Tetrapeptide-5)', molecularPurpose: 'Fights edema mechanisms and reduces glycation of periorbital collagen fibers', clinicalConcentration: '1.0% peptide solution' },
+      { name: 'N-Hydroxysuccinimide & Chrysin', molecularPurpose: 'Eliminates iron and bilirubin pigment byproducts from leaking micro-vessels', clinicalConcentration: '2.0% active complex' }
+    ],
+    sections: [
+      {
+        heading: 'The Delicate Eye Contour: Why Caffeine Eye Cream for Dark Circles Works',
+        paragraphs: [
+          'The skin around the eyes is the thinnest on the entire human body—measuring barely 0.5 mm in thickness. In addition, this area experiences over 10,000 blinks per day, putting continuous mechanical strain on collagen fibers.',
+          'Because subcutaneous fat is minimal, underlying veins and sluggish lymphatic vessels are visibly transparent. An anhydrous caffeine eye cream for dark circles stimulates micro-capillary vasoconstriction, flushing pooled hemoglobin byproducts that cause stubborn blue shadows.'
+        ],
+        callout: {
+          label: 'Dermatological Insight',
+          quoteOrText: 'Applying rich facial creams with heavy occlusive petrolatum around the eyes can cause milia (tiny keratin cysts) and exacerbate morning puffiness.',
+          clinicalReference: 'Journal of Cosmetic Dermatology'
+        }
+      },
+      {
+        heading: 'Micro-Circulation and Dermal Density: The Power of a Peptide Undereye Treatment',
+        paragraphs: [
+          'Vasoconstriction alone is half the battle; the periorbital matrix must also be physically densified. A peptide undereye treatment formulated with Eyeseryl and Palmitoyl Tetrapeptide-7 stimulates Type I procollagen synthesis.',
+          'As the dermal wall thickens by just 0.1 to 0.2 millimeters, light scatters diffusely across the eye hollow rather than penetrating directly down to bluish vascular networks.'
+        ]
+      },
+      {
+        heading: 'Application Technique: Maximizing a Cooling Eye Cream for Puffiness',
+        paragraphs: [
+          'Never drag or pull across fragile lower lids. Dispense a half-pea amount of your cooling eye cream for puffiness and gently tap with the soft pad of your ring finger along the orbital bone.',
+          'Begin at the inner canthus and travel outward toward the temporal hollows, guiding fluid toward the preauricular lymph nodes for rapid drainage.'
+        ]
+      }
+    ],
+    dermatologistPerspective: 'Store your eye cream in the refrigerator or use a cooling ceramic applicator tip. The cold temperature works synergistically with caffeine to double the speed of morning de-puffing.',
+    routineStep: 'Active Serum',
+    productFormulations: [
+      {
+        title: 'Caffeine & Peptide Awakening Eye Contour',
+        productType: 'Eye Cream',
+        formulationType: 'Cooling De-Puffing Gel-Crème',
+        keyActives: '3% Pure Caffeine + Eyeseryl + Chrysin + Green Tea EGCG',
+        textureNote: 'Cooling gel-cream that absorbs in seconds with zero tackiness',
+        finish: 'Soft Focus Blurred',
+        idealSkinType: 'Puffiness, dark circles, and tired morning eyes',
+        ratingScore: 9.8
+      },
+      {
+        title: 'Ceramide Rich Periorbital Restorative Balm',
+        productType: 'Eye Cream',
+        formulationType: 'Comforting Anti-Wrinkle Eye Cream',
+        keyActives: 'Ceramide Complex + Palmitoyl Tripeptide-38 + Squalane',
+        textureNote: 'Velvety cushioning cream that melts into dry crow’s feet',
+        finish: 'Cashmere Melt',
+        idealSkinType: 'Dry, mature, and crepey eye contours',
+        ratingScore: 9.5
+      }
+    ],
+    faqs: [
+      { question: 'How quickly does a caffeine eye cream for dark circles show visible results?', answer: 'Caffeine’s vasoconstrictive effect takes hold within 15 to 25 minutes to reduce morning eyelid edema, while peptide collagen remodeling reveals structural lightening over 4 to 8 weeks.' },
+      { question: 'Can a cooling eye cream for puffiness be kept in the fridge?', answer: 'Yes. Storing cooling gel formulas at 4°C amplifies thermal vasoconstriction, significantly accelerating lymphatic drainage of morning fluid bags.' }
+    ],
+    contraindications: ['Applying too close to tear ducts or waterline causing ocular irritation'],
+    initialComments: [
+      { id: 'c-eye-1', author: 'Dr. Kevin Zhao', skinType: 'Physician / Resident', date: '2 days ago', content: 'Working 24-hour hospital shifts destroyed my under-eyes. This caffeine and peptide gel is the only thing that makes me look human after night call.', likes: 21 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['periorbital-awakening-eye-creams-peptides']
+  },
+  {
+    id: 'micro-mist-chemistry-setting-sprays',
+    slug: 'micro-mist-chemistry-setting-sprays-with-biopolymers-and-niacinamide',
+    title: 'Micro-Mist Chemistry: Setting Sprays with Film-Forming Biopolymers and Niacinamide',
+    dek: 'How an alcohol free setting spray fuses makeup layers: using a biopolymer setting mist as a long lasting makeup mist that locks pigments for 16 hours without dehydrating.',
+    productType: 'Setting Mist',
+    category: 'Base & Complexion',
+    publishDate: 'Autumn 2026',
+    readTime: '6 min read',
+    author: {
+      name: 'Genevieve Moreau',
+      role: 'Master Backstage Makeup Chemist',
+      credentials: 'Paris Haute Couture Beauty Director',
+      avatarInitials: 'GM'
+    },
+    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
+    imageAlt: 'Micro-droplets of facial mist glistening in morning light on travertine surface',
+    imageCaption: 'Fig. 9 — Ultra-fine nozzle technology distributes biopolymers evenly, forming an invisible transfer-proof mesh.',
+    leadPullQuote: 'A setting spray is not just scented water; it is a specialized biopolymer web that melts foundation and powder particles together into a unified second-skin finish.',
+    keyTakeaways: [
+      'An alcohol free setting spray prevents the skin dehydration and rebound sebum spikes triggered by conventional denatured alcohols.',
+      'Formulating with an elastic biopolymer setting mist creates a flexible 3D lattice that moves naturally with facial expressions.',
+      'Layering mist between cosmetics acts as a long lasting makeup mist, locking pigments against sweat, friction, and humidity for 16 hours.'
+    ],
+    targetSkinConcerns: ['Makeup Melting & Sliding', 'Powdery, Unnatural Finish', 'Makeup Transferring onto Clothes/Masks', 'Midday Dehydration'],
+    heroIngredients: [
+      { name: 'Pullulan & Biopolymer Film-Formers', molecularPurpose: 'Forms an invisible, flexible breathable lattice locking pigments in place', clinicalConcentration: '3.0% – 5.0%' },
+      { name: 'Niacinamide (Vitamin B3)', molecularPurpose: 'Controls sebum breakthrough and smooths pore appearance while set', clinicalConcentration: '2.0%' },
+      { name: 'Centella Asiatica Hydrosol', molecularPurpose: 'Soothes facial flushing and maintains optimal skin hydration throughout wear', clinicalConcentration: '30% base' }
+    ],
+    sections: [
+      {
+        heading: 'Fusing Complexion Layers: How an Alcohol Free Setting Spray Melts Powder',
+        paragraphs: [
+          'When you apply liquid foundation, concealer, and pressed compact powder, the individual particles sit on top of each other in discrete layers. This micro-layering can look powdery and separate under harsh daylight.',
+          'An alcohol free setting spray acts as a homogenizing solvent: it dissolves the microscopic air gaps between powder crystals and pigment droplets, fusing them into a smooth, seamless surface that looks like natural radiant skin.'
+        ],
+        callout: {
+          label: 'Backstage Secret',
+          quoteOrText: 'Spray your makeup sponge with setting mist before blending concealer under the eyes. It prevents creasing permanently.',
+          clinicalReference: 'Editorial Beauty Backstage'
+        }
+      },
+      {
+        heading: 'Biopolymer Setting Mist Mechanics: Breathable Plant Polymers vs. Harsh Alcohol',
+        paragraphs: [
+          'In the past, cosmetic brands relied on alcohol denat to accelerate evaporation. While this delivered an immediate matte feel, it stripped the stratum corneum of essential moisture, triggering rebound oiliness within hours.',
+          'A modern biopolymer setting mist utilizes fermented pullulan and sodium polyitaconate. These plant-derived film-formers dry cleanly through ultra-fine aerosol nozzles, wrapping pigments in a breathable, weightless web.'
+        ]
+      },
+      {
+        heading: 'The Sandwich Misting Technique: Achieving a Long Lasting Makeup Mist Shield',
+        paragraphs: [
+          'To achieve maximum longevity from your long lasting makeup mist, practice the sandwich protocol: mist lightly after sunscreen, apply foundation, mist a second time, dust compact powder, and seal with a final sweep.',
+          'This multi-tier approach bonds each cosmetic stratum, creating an impermeable barrier against humidity and friction without stiffness.'
+        ]
+      }
+    ],
+    dermatologistPerspective: 'Choose setting sprays that are alcohol-free and fragrance-free. The addition of niacinamide and humectants turns your setting spray into an active protective shield against urban pollution.',
+    routineStep: 'Base Makeup',
+    productFormulations: [
+      {
+        title: 'Luminous Biopolymer 16-Hour Setting Mist',
+        productType: 'Setting Mist',
+        formulationType: 'Alcohol-Free Ultra-Fine Setting Spray',
+        keyActives: 'Pullulan Biopolymers + Niacinamide + Centella Hydrosol',
+        textureNote: 'Micro-fine cloud mist that sets to an invisible transfer-proof seal',
+        finish: 'Natural Luminous',
+        idealSkinType: 'All skin types, especially sensitive and dry',
+        ratingScore: 9.9
+      },
+      {
+        title: 'Matte Oil-Control Clarifying Fixer',
+        productType: 'Setting Mist',
+        formulationType: 'Mattifying Botanical Mist',
+        keyActives: 'Zinc PCA + Willow Bark + Green Tea Water',
+        textureNote: 'Featherlight mist that banishes shine for 12 hours without drying',
+        finish: 'Velvet Matte',
+        idealSkinType: 'Oily and combination skin prone to shine',
+        ratingScore: 9.6
+      }
+    ],
+    faqs: [
+      { question: 'Why should I choose an alcohol free setting spray?', answer: 'Alcohol denat dries out the skin barrier and triggers rebound sebum production by noon. An alcohol free setting spray hydrates with niacinamide and locks makeup with flexible plant biopolymers.' },
+      { question: 'How does a biopolymer setting mist keep makeup from transferring onto clothes?', answer: 'Pullulan polymers cross-link on the skin surface to create a microscopic friction-resistant mesh that prevents color transfer while still letting pores breathe.' }
+    ],
+    contraindications: ['Spraying too close to the face (causes large liquid drops to pool and run)'],
+    initialComments: [
+      { id: 'c-mist-1', author: 'Julian Miller', skinType: 'Combination / Long Hours', date: 'Yesterday', content: 'The alcohol-free biopolymer mist locked my makeup through an outdoor summer wedding with zero shine or touch-ups needed. Fantastic formulation.', likes: 18 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['micro-mist-chemistry-setting-sprays']
+  },
+  {
+    id: 'barrier-first-ceramides-lipid-replenishment',
+    slug: 'barrier-first-why-ceramide-and-lipid-cremes-outperform-exfoliants',
+    title: 'Barrier First: Ceramide 2:4:2 Lipid Creams That Rebuild Damaged Skin Overnight',
+    dek: 'The clinical case for a ceramide barrier cream: how a 2:4:2 lipid replenishment moisturizer and skin barrier repair cream rebuild the stratum corneum overnight.',
+    productType: 'Barrier Cream',
+    category: 'Active Skincare',
+    publishDate: 'Autumn 2026',
+    readTime: '7 min read',
+    author: {
+      name: 'Helena Berg, MSc',
+      role: 'Cosmetic Chemist & Formulation Director',
+      credentials: 'Society of Cosmetic Chemists Fellow',
+      avatarInitials: 'HB'
+    },
+    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
+    imageAlt: 'Amber glass jar of whipped nourishing lipid barrier cream with wooden spatula',
+    imageCaption: 'Fig. 10 — Bilayer lamellar emulsions replicate the natural lipid matrix of healthy human epidermis.',
+    leadPullQuote: 'Healthy skin is luminous because its outer surface is structurally planar and light reflects off coherent lipid sheets—not because you acid-stripped away the top five cell tiers.',
+    keyTakeaways: [
+      'Applying a physiologic ceramide barrier cream stops chronic transepidermal water loss and reverses micro-fissuring.',
+      'A true lipid replenishment moisturizer must provide equimolar cholesterol and fatty acids alongside ceramides to prevent crystallization.',
+      'Deploying a dedicated skin barrier repair cream during retinoid acclimation eliminates redness, flaking, and cellular dehydration.'
+    ],
+    targetSkinConcerns: ['Transepidermal Water Loss', 'Stinging & Sensitization', 'Post-Procedure Recovery', 'Rosacea Tendency'],
+    heroIngredients: [
+      { name: 'Ceramide NP, AP, & EOP', molecularPurpose: 'Primary structural sphingolipids sealing moisture within intercellular spaces', clinicalConcentration: 'Equimolar with sterols' },
+      { name: 'Cholesterol & Plant Phytosterols', molecularPurpose: 'Fluidizes rigid lipid sheets allowing flexible skin movement without microscopic tearing', clinicalConcentration: '25% of lipid matrix' },
+      { name: 'Linoleic & Oleic Fatty Acids', molecularPurpose: 'Precursors to natural anti-inflammatory eicosanoids', clinicalConcentration: 'Cold-pressed botanical sources' }
+    ],
+    sections: [
+      {
+        heading: 'The Brick-and-Mortar Stratum Corneum: Why You Need a Ceramide Barrier Cream',
+        paragraphs: [
+          'In modern cosmetic marketing, aggressive exfoliation is often pushed as a quick fix for dullness. Yet when patients strip away their corneocyte envelope with harsh acids, they disrupt lipid bilayer cohesion and spike transepidermal water loss.',
+          'An effective ceramide barrier cream provides the physiological sphingolipids necessary to seal inter-corneocyte mortar. Under confocal microscopy, glowing skin is not skin stripped thin by peelings—it is skin whose lamellar bilayers form planar, unbroken reflective planes.'
+        ],
+        callout: {
+          label: 'Biochemical Truth',
+          quoteOrText: 'True optical glow is a reflection phenomenon of coherent lipid sheets. Polishing away your protective mantle destroys optical specular reflectance.',
+          clinicalReference: 'International Journal of Cosmetic Science'
+        }
+      },
+      {
+        heading: 'The 2:4:2 Golden Molar Ratio in a Lipid Replenishment Moisturizer',
+        paragraphs: [
+          'Not all barrier moisturizers work equally. Landmark clinical studies reveal that ceramides applied in isolation can actually impede repair if unbalanced by cholesterol and free fatty acids.',
+          'An optimal lipid replenishment moisturizer adheres to the golden 2:4:2 molar ratio: two parts ceramides, four parts cholesterol, and two parts free fatty acids. In sensitized skin, cholesterol is the rate-limiting lipid that fluidizes bilayers and permits flexible skin movement without microscopic tearing.'
+        ]
+      },
+      {
+        heading: 'A 14-Day Recovery Protocol Using a Skin Barrier Repair Cream',
+        paragraphs: [
+          'When facial skin stings upon water contact, declare an immediate active moratorium: suspend exfoliants and high-potency retinoids.',
+          'Cleanse strictly with an oat balm and apply your skin barrier repair cream onto slightly damp skin morning and evening. Within 72 hours, filaggrin degradation normalizes, restoring endogenous natural moisturizing factors.'
+        ]
+      }
+    ],
+    dermatologistPerspective: 'Before you treat discoloration, wrinkles, or breakouts, you must first construct a resilient barrier. An irritated barrier leaks water and permits environmental antigens to penetrate.',
+    routineStep: 'Moisturizer',
+    productFormulations: [
+      {
+        title: 'Lamellar 2:4:2 Restorative Lipid Crème',
+        productType: 'Barrier Cream',
+        formulationType: 'Physiologic Multi-Lamellar Emulsion',
+        keyActives: 'Ceramide Trio + 4% Cholesterol + Asiaticoside',
+        textureNote: 'Cushioning velvet cream that melts into a second-skin veil',
+        finish: 'Cashmere Melt',
+        idealSkinType: 'Compromised, dry, irritated, or post-laser skin',
+        ratingScore: 9.9
+      },
+      {
+        title: 'Ultra-Comfort Barrier Gel-Crème',
+        productType: 'Barrier Cream',
+        formulationType: 'Lightweight Ceramide Fluid',
+        keyActives: 'Ceramide NP + Squalane + Beta-Glucan',
+        textureNote: 'Bouncy oil-free gel cream providing immediate hydration',
+        finish: 'Dewy Satin',
+        idealSkinType: 'Oily, combination, and acne-prone skin with barrier damage',
+        ratingScore: 9.6
+      }
+    ],
+    faqs: [
+      { question: 'Why does my skin burn when applying moisturizer to an injured barrier?', answer: 'When barrier lipids are stripped, bare nerve endings in the dermal papillae are exposed. A sterile, hypoallergenic ceramide barrier cream formulated at physiologic pH soothes irritation immediately.' },
+      { question: 'How is a skin barrier repair cream different from a standard hydrating lotion?', answer: 'Standard lotions primarily contain water and humectant glycerin, whereas a skin barrier repair cream delivers physiologic 2:4:2 ratios of ceramides, cholesterol, and free fatty acids that physically rebuild extracellular lipid sheets.' }
+    ],
+    contraindications: ['Layering with physical scrub beads and high-percentage glycolic acid simultaneously'],
+    initialComments: [
+      { id: 'c-cream-1', author: 'Evelyn St. Clair', skinType: 'Dry & Reactive', date: '3 days ago', content: 'Stopping harsh acids and moving to a 2:4:2 lipid cream literally saved my face after overdoing active serums. My skin barrier has never been stronger.', likes: 23 }
+    ],
+    seoKeywords: STEP_2_KEYWORD_MAP['barrier-first-ceramides-lipid-replenishment']
   }
 ];
 
 export const INGREDIENT_GLOSSARY = [
-  { name: 'Retinaldehyde', class: 'Vitamin A Active', idealPh: '5.5 – 6.5', layerOrder: 'Night · Step 3 (Serum)', primaryFunction: 'Direct precursor to retinoic acid, stimulates collagen 11x faster than retinol with minimal irritation.' },
-  { name: 'Ceramides NP / AP / EOP', class: 'Sphingolipid', idealPh: '5.0 – 6.5', layerOrder: 'Day & Night · Step 4 (Moisturizer)', primaryFunction: 'Forms 50% of the intercellular matrix, seals moisture and prevents external pathogen penetration.' },
-  { name: 'Galactomyces Ferment', class: 'Postbiotic Yeast', idealPh: '5.0 – 6.0', layerOrder: 'Day & Night · Step 2 (Essence)', primaryFunction: 'Refines skin micro-texture, disperses melanosomes, and increases intracellular hydration.' },
-  { name: 'L-Ascorbic Acid', class: 'Pure Vitamin C', idealPh: '2.8 – 3.2', layerOrder: 'Morning · Step 3 (Active Serum)', primaryFunction: 'Scavenges free radicals, protects against UV photodamage, and sparks procollagen synthesis.' },
-  { name: 'THD Ascorbate', class: 'Lipid-Soluble Vitamin C', idealPh: '5.0 – 6.0', layerOrder: 'Morning · Step 3 (Active Serum)', primaryFunction: 'Penetrates 50x deeper than water-soluble ascorbic acid at neutral pH, non-irritating to sensitive skin.' },
-  { name: 'Zinc Oxide (Non-Nano)', class: 'Physical Mineral Filter', idealPh: 'Formula Neutral', layerOrder: 'Morning · Step 5 (Final Step)', primaryFunction: 'Broad-spectrum photoprotection against UVB, UVA-II, and deep UVA-I (290–400 nm).' },
-  { name: 'Copper Tripeptide-1 (GHK-Cu)', class: 'Biomimetic Matrikine', idealPh: '5.5 – 7.0', layerOrder: 'Night · Step 3 (Active Serum)', primaryFunction: 'Remodels damaged matrix proteins, increases skin elasticity, and stimulates glycosaminoglycans.' },
-  { name: 'Niacinamide (Vitamin B3)', class: 'Water-Soluble Vitamin', idealPh: '5.0 – 6.5', layerOrder: 'Day & Night · Step 3 (Serum)', primaryFunction: 'Strengthens ceramide synthesis, regulates sebocyte oil output, and reduces redness.' },
-  { name: 'Sugarcane Squalane', class: 'Saturated Hydrocarbon', idealPh: 'Anhydrous', layerOrder: 'Night · Step 5 (Final Seal)', primaryFunction: 'Biomimetic emollient identical to skin sebum, provides moisture barrier seal with zero comedogenicity.' },
-  { name: 'Madecassoside', class: 'Centella Triterpenoid', idealPh: '5.0 – 6.5', layerOrder: 'Day & Night · Step 2 or 3', primaryFunction: 'Potent soothing active calming cutaneous erythema, nitric oxide overproduction, and post-procedure irritation.' }
+  { name: 'Palmitoyl Tripeptide-38', class: 'Lip Peptide Active', idealPh: '5.5 – 6.5', layerOrder: 'Day & Night · Lips', primaryFunction: 'Stimulates hyaluronic acid and laminin in the mucosal vermilion border, plumping vertical lip lines.' },
+  { name: 'Spherical Silica', class: 'Optical Light Scatterer', idealPh: 'Formula Neutral', layerOrder: 'Day · Final Complexion Step', primaryFunction: 'Selectively absorbs excess surface facial sebum without stripping hydration, blurring enlarged pores.' },
+  { name: 'Non-Nano Zinc Oxide', class: 'Physical Mineral Filter', idealPh: 'Formula Neutral', layerOrder: 'Morning · Step 5 (Photoprotection)', primaryFunction: 'Broad-spectrum photoprotection against UVB, UVA-II, and deep UVA-I (290–400 nm).' },
+  { name: 'Sugarcane Squalane', class: 'Biomimetic Lipid', idealPh: 'Anhydrous', layerOrder: 'Day & Night · Serum / Oil / Base', primaryFunction: 'Hydrogenated non-comedogenic hydrocarbon providing silky slip and barrier moisture seal.' },
+  { name: 'THD Ascorbate (Vitamin C)', class: 'Lipid-Soluble Vitamin C', idealPh: '5.0 – 6.0', layerOrder: 'Morning · Active Serum', primaryFunction: 'Penetrates 50x deeper than water-soluble ascorbic acid at neutral pH, non-irritating to sensitive skin.' },
+  { name: 'Ceramides NP / AP / EOP', class: 'Sphingolipid', idealPh: '5.0 – 6.5', layerOrder: 'Day & Night · Moisturizer', primaryFunction: 'Forms 50% of the intercellular matrix, seals moisture and prevents external pathogen penetration.' },
+  { name: 'Sodium Hyaluronate', class: 'Humectant', idealPh: '5.0 – 7.0', layerOrder: 'Day & Night · Serum / Blush / Cream', primaryFunction: 'Holds 1,000x its weight in water, expanding cellular volume for a plump, juicy lit-from-within glow.' },
+  { name: 'Anhydrous Caffeine', class: 'Micro-Circulation Active', idealPh: '5.0 – 6.0', layerOrder: 'Morning · Eye Care', primaryFunction: 'Vasoconstrictor draining stagnant lymphatic pooling to de-puff undereye bags within 20 minutes.' },
+  { name: 'Pullulan Biopolymers', class: 'Elastic Film-Former', idealPh: '5.5 – 6.5', layerOrder: 'Day · Setting Spray Finish', primaryFunction: 'Forms an invisible transfer-proof mesh locking foundation and powder pigments in place for 16 hours.' },
+  { name: 'Oat Kernel Lipid Oil', class: 'Colloidal Lipid', idealPh: 'Anhydrous / Balm', layerOrder: 'Night · Step 1 (Cleanser)', primaryFunction: 'Dissolves waterproof makeup, mascara, and mineral SPF without disrupting the natural acid mantle.' }
 ];

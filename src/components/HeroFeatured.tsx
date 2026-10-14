@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Bookmark, Clock, UserCheck } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
+import { getArticleUrl } from '../utils/seoRouter';
 
 interface HeroFeaturedProps {
   article: BeautyArticle;
@@ -15,6 +16,8 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
   isSaved,
   onToggleSave
 }) => {
+  const articleUrl = getArticleUrl(article);
+
   return (
     <section className="border-b border-[#E8E2D9] pb-12 lg:pb-16 pt-6 lg:pt-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -42,7 +45,16 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
           {/* Typographic Column (7 cols) */}
           <div className="lg:col-span-7 space-y-6">
             <h1 className="font-editorial-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-stone-900 leading-[1.15] text-balance">
-              {article.title}
+              <a
+                href={articleUrl}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onReadArticle(article);
+                }}
+                className="hover:underline decoration-stone-300 underline-offset-4"
+              >
+                {article.title}
+              </a>
             </h1>
 
             <p className="text-stone-600 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
@@ -82,7 +94,7 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                 <button
                   onClick={() => onToggleSave(article.id)}
                   aria-label={isSaved ? 'Remove from saved' : 'Save article'}
-                  className={`p-2.5 border rounded-sm transition-colors ${
+                  className={`p-2.5 border rounded-sm transition-colors cursor-pointer ${
                     isSaved
                       ? 'border-stone-800 bg-stone-900 text-white'
                       : 'border-[#E8E2D9] text-stone-700 hover:border-stone-400 bg-white/70'
@@ -90,22 +102,30 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                 >
                   <Bookmark className="w-4 h-4" />
                 </button>
-                <button
-                  onClick={() => onReadArticle(article)}
+                <a
+                  href={articleUrl}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle(article);
+                  }}
                   className="flex items-center gap-2 px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium uppercase tracking-wider rounded-sm transition-all group shadow-sm"
                 >
                   <span>Read Full Investigation</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Visual Column (5 cols) */}
           <div className="lg:col-span-5 relative">
-            <div 
-              onClick={() => onReadArticle(article)}
-              className="relative cursor-pointer group overflow-hidden border border-[#E8E2D9] bg-stone-100"
+            <a 
+              href={articleUrl}
+              onClick={(e) => {
+                e.preventDefault();
+                onReadArticle(article);
+              }}
+              className="block relative cursor-pointer group overflow-hidden border border-[#E8E2D9] bg-stone-100"
             >
               <div className="aspect-[4/3] lg:aspect-[1/1] w-full relative">
                 <img
@@ -116,7 +136,7 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                 />
                 <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors" />
               </div>
-            </div>
+            </a>
             <figcaption className="mt-2.5 text-xs text-stone-500 font-editorial-serif italic">
               {article.imageCaption}
             </figcaption>

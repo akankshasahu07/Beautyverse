@@ -1,6 +1,7 @@
 import React from 'react';
 import { Bookmark, Clock, ArrowUpRight } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
+import { getArticleUrl } from '../utils/seoRouter';
 
 interface ArticleCardProps {
   article: BeautyArticle;
@@ -15,13 +16,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   isSaved,
   onToggleSave
 }) => {
+  const articleUrl = getArticleUrl(article);
+
   return (
     <article className="group flex flex-col justify-between border border-[#E8E2D9] bg-white hover:border-stone-400/80 transition-all duration-300 p-5 sm:p-6 relative">
       <div>
         {/* Unboxed Metadata Strip (Zero-Pill Discipline) */}
         <div className="flex items-center justify-between text-[11px] text-stone-500 mb-3 uppercase tracking-wider font-editorial-sans">
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-stone-900 font-medium">{article.category}</span>
+            <span className="text-stone-900 font-semibold">{article.productType}</span>
+            <span aria-hidden="true" className="text-stone-300">·</span>
+            <span>{article.category}</span>
             <span aria-hidden="true" className="text-stone-300">·</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3 text-stone-400" />
@@ -44,9 +49,13 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         </div>
 
         {/* Thumbnail Image slot with resilient fallback */}
-        <div 
-          onClick={() => onRead(article)}
-          className="relative aspect-[16/10] w-full overflow-hidden mb-4 bg-stone-100 cursor-pointer border border-[#E8E2D9]/60"
+        <a 
+          href={articleUrl}
+          onClick={(e) => {
+            e.preventDefault();
+            onRead(article);
+          }}
+          className="block relative aspect-[16/10] w-full overflow-hidden mb-4 bg-stone-100 cursor-pointer border border-[#E8E2D9]/60"
         >
           <img
             src={article.heroImage}
@@ -54,14 +63,20 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
-        </div>
+        </a>
 
         {/* Primary Headline */}
-        <h2 
-          onClick={() => onRead(article)}
-          className="font-editorial-serif text-xl sm:text-2xl font-medium tracking-tight text-stone-900 leading-snug cursor-pointer group-hover:text-stone-700 transition-colors text-balance mb-2.5"
-        >
-          {article.title}
+        <h2 className="font-editorial-serif text-xl sm:text-2xl font-medium tracking-tight text-stone-900 leading-snug cursor-pointer group-hover:text-stone-700 transition-colors text-balance mb-2.5">
+          <a
+            href={articleUrl}
+            onClick={(e) => {
+              e.preventDefault();
+              onRead(article);
+            }}
+            className="hover:underline decoration-stone-300 underline-offset-4"
+          >
+            {article.title}
+          </a>
         </h2>
 
         {/* Deck / Summary */}
@@ -85,13 +100,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             <span>{article.publishDate}</span>
           </div>
 
-          <button
-            onClick={() => onRead(article)}
+          <a
+            href={articleUrl}
+            onClick={(e) => {
+              e.preventDefault();
+              onRead(article);
+            }}
             className="flex items-center gap-1 text-xs font-medium text-stone-900 hover:text-stone-600 group-hover:translate-x-0.5 transition-all"
           >
             <span>Read</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </button>
+          </a>
         </div>
       </div>
     </article>

@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { Send, Check, ShieldCheck } from 'lucide-react';
-import { BeautyCategory } from '../types/article';
+import { BeautyProductType } from '../types/article';
+import { getHomeUrl, getArticlesHubUrl } from '../utils/seoRouter';
 
 interface FooterProps {
-  onSelectCategory: (category: BeautyCategory | 'All') => void;
+  onNavigateHome: () => void;
+  onNavigateArticlesWithProduct: (pType: BeautyProductType | 'All') => void;
   onOpenRoutineMatcher: () => void;
   onOpenLexicon: () => void;
+  onOpenKeywordMap?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
-  onSelectCategory,
+  onNavigateHome,
+  onNavigateArticlesWithProduct,
   onOpenRoutineMatcher,
-  onOpenLexicon
+  onOpenLexicon,
+  onOpenKeywordMap
 }) => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -31,11 +36,20 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-12 border-b border-[#E8E2D9]">
           {/* Brand Colophon */}
           <div className="md:col-span-4 space-y-4">
-            <span className="font-editorial-serif text-2xl font-medium tracking-tight text-stone-900 block">
-              ÉLIXIR & DERMA
-            </span>
+            <a 
+              href={getHomeUrl()}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome();
+              }}
+              className="text-left inline-block"
+            >
+              <span className="font-editorial-serif text-2xl font-medium tracking-tight text-stone-900 block hover:text-stone-700">
+                ÉLIXIR & DERMA
+              </span>
+            </a>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed max-w-sm">
-              An independent dermatological publication exploring the cellular biology, molecular biochemistry, and cosmetic formulations of modern beauty.
+              An independent dermatological publication exploring the cellular biology, molecular biochemistry, and cosmetic formulations of modern beauty products—including lipsticks, serums, compact powders, sunscreens, and hybrid cosmetics.
             </p>
             <div className="flex items-center gap-2 text-xs text-stone-500 pt-1">
               <ShieldCheck className="w-4 h-4 text-emerald-800 shrink-0" />
@@ -43,51 +57,71 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
           </div>
 
-          {/* Editorial Category Links */}
+          {/* Product Category Links */}
           <div className="md:col-span-2 space-y-3">
             <div className="text-xs uppercase tracking-widest font-semibold text-stone-900">
-              Investigations
+              Beauty Products
             </div>
             <ul className="space-y-2 text-xs text-stone-600 font-light">
               <li>
-                <button
-                  onClick={() => onSelectCategory('Active Skincare')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Lipstick')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Lipstick');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Active Skincare
-                </button>
+                  Lipstick Formulations
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Barrier Repair')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Serum')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Serum');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Barrier Science
-                </button>
+                  Active Facial Serums
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Suncare & Photoprotection')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Compact Powder')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Compact Powder');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Photoprotection
-                </button>
+                  Finishing Compacts
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Antioxidant Serums')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Sunscreen')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Sunscreen');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Antioxidant Serums
-                </button>
+                  Fluid Sunscreens & SPF
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Biomimetic Actives')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Blush')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Blush');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Biomimetic Actives
-                </button>
+                  Dewy Liquid Blushes
+                </a>
               </li>
             </ul>
           </div>
@@ -101,42 +135,64 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={onOpenRoutineMatcher}
-                  className="hover:text-stone-900 transition-colors text-left"
+                  className="hover:text-stone-900 transition-colors text-left cursor-pointer"
                 >
-                  Routine Conflict Matcher
+                  Product Routine Matcher
                 </button>
               </li>
               <li>
                 <button
                   onClick={onOpenLexicon}
-                  className="hover:text-stone-900 transition-colors text-left"
+                  className="hover:text-stone-900 transition-colors text-left cursor-pointer"
                 >
                   Active Molecule Lexicon
                 </button>
               </li>
+              {onOpenKeywordMap && (
+                <li>
+                  <button
+                    onClick={onOpenKeywordMap}
+                    className="hover:text-stone-900 transition-colors text-left font-medium text-amber-900 cursor-pointer"
+                  >
+                    ★ Step 2 Keyword Map
+                  </button>
+                </li>
+              )}
               <li>
-                <button
-                  onClick={() => onSelectCategory('K-Beauty Innovations')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Foundation & Tint')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Foundation & Tint');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Fermentation Sciences
-                </button>
+                  Serum Foundation Science
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Scalp & Hair Wellness')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('Cleansing Balm')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('Cleansing Balm');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left block"
                 >
-                  Trichology & Scalp Biology
-                </button>
+                  Double Cleansing Balms
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => onSelectCategory('Clean Cosmetics')}
-                  className="hover:text-stone-900 transition-colors text-left"
+                <a
+                  href={getArticlesHubUrl('All')}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticlesWithProduct('All');
+                  }}
+                  className="hover:text-stone-900 transition-colors text-left font-medium text-stone-800 block"
                 >
-                  Skin-First Base Hybrids
-                </button>
+                  Browse All 10 Articles
+                </a>
               </li>
             </ul>
           </div>
@@ -147,7 +203,7 @@ export const Footer: React.FC<FooterProps> = ({
               The Weekly Clinical Dispatch
             </div>
             <p className="text-xs text-stone-600 font-light leading-relaxed">
-              Curated Sunday formulations, clinical study debriefs, and cosmetic chemistry investigations delivered directly to your inbox.
+              Curated Sunday formulations, cosmetic chemistry investigations, and beauty product teardowns delivered directly to your inbox.
             </p>
 
             <form onSubmit={handleSubscribe} className="pt-1">
@@ -182,7 +238,27 @@ export const Footer: React.FC<FooterProps> = ({
             © 2026 ÉLIXIR & DERMA Publishing Corp. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span>Peer-Reviewed Cutaneous Biology</span>
+            <a 
+              href={getHomeUrl()}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateHome();
+              }}
+              className="hover:text-stone-900"
+            >
+              Home
+            </a>
+            <span aria-hidden="true">·</span>
+            <a 
+              href={getArticlesHubUrl('All')}
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateArticlesWithProduct('All');
+              }}
+              className="hover:text-stone-900"
+            >
+              10 Blog Articles
+            </a>
             <span aria-hidden="true">·</span>
             <span>ISSN 2984-9102</span>
             <span aria-hidden="true">·</span>

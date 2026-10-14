@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Trash2, ArrowRight, Bookmark } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
+import { getArticleUrl } from '../utils/seoRouter';
 
 interface SavedDrawerProps {
   isOpen: boolean;
@@ -58,18 +59,23 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                 key={article.id}
                 className="p-4 border border-[#E8E2D9] bg-white rounded-sm hover:border-stone-400 transition-colors group flex flex-col justify-between"
               >
-                <div 
-                  onClick={() => {
-                    onSelectArticle(article);
-                    onClose();
-                  }}
-                  className="cursor-pointer"
-                >
-                  <div className="text-[10px] uppercase tracking-wider text-stone-500 mb-1">
-                    {article.category} · {article.readTime}
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-stone-500 mb-1 flex items-center justify-between">
+                    <span>{article.category} · {article.readTime}</span>
+                    <span className="font-mono lowercase text-[9px] text-stone-400">/article/{article.slug}</span>
                   </div>
                   <h3 className="font-editorial-serif text-base font-medium text-stone-900 group-hover:text-stone-700 leading-snug mb-2">
-                    {article.title}
+                    <a
+                      href={getArticleUrl(article)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        onSelectArticle(article);
+                        onClose();
+                      }}
+                      className="hover:underline decoration-stone-300 underline-offset-2"
+                    >
+                      {article.title}
+                    </a>
                   </h3>
                   <p className="text-xs text-stone-500 font-light line-clamp-2">
                     {article.dek}
@@ -85,16 +91,18 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                     <span>Remove</span>
                   </button>
 
-                  <button
-                    onClick={() => {
+                  <a
+                    href={getArticleUrl(article)}
+                    onClick={(e) => {
+                      e.preventDefault();
                       onSelectArticle(article);
                       onClose();
                     }}
                     className="flex items-center gap-1 text-xs font-medium text-stone-900 hover:text-stone-700"
                   >
                     <span>Read</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             ))

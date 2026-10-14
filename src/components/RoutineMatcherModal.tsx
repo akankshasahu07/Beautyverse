@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Sparkles, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
+import { getArticleUrl } from '../utils/seoRouter';
 
 interface RoutineMatcherModalProps {
   isOpen: boolean;
@@ -58,19 +59,19 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
   // Determine matched articles
   const matchedArticles = articles.filter(a => {
     if (primaryGoal === 'Restore Skin Barrier') {
-      return a.category === 'Barrier Repair' || a.category === 'Facial Oils & Lipids';
+      return a.productType === 'Barrier Cream' || a.productType === 'Cleansing Balm';
     }
     if (primaryGoal === 'Fade Pigment & Sun Spots') {
-      return a.category === 'Antioxidant Serums' || a.category === 'Suncare & Photoprotection';
+      return a.productType === 'Serum' || a.productType === 'Sunscreen';
     }
     if (primaryGoal === 'Smooth Fine Lines & Firm') {
-      return a.category === 'Active Skincare' || a.category === 'Biomimetic Actives';
+      return a.productType === 'Lipstick' || a.productType === 'Eye Cream';
     }
     if (primaryGoal === 'Control Blemishes & Pores') {
-      return a.category === 'Formulation Science' || a.category === 'Scalp & Hair Wellness';
+      return a.productType === 'Compact Powder' || a.productType === 'Setting Mist';
     }
     // Deep hydration
-    return a.category === 'K-Beauty Innovations' || a.category === 'Barrier Repair';
+    return a.productType === 'Serum' || a.productType === 'Blush' || a.productType === 'Foundation & Tint';
   }).slice(0, 3);
 
   return (
@@ -185,23 +186,23 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
             <div>
-              <div className="font-semibold text-stone-800 mb-1">Morning (AM Protection)</div>
+              <div className="font-semibold text-stone-800 mb-1">Morning (AM Protection & Complexion)</div>
               <ol className="list-decimal list-inside space-y-1 text-stone-600 font-light">
-                <li>Non-foaming milk cleanse</li>
-                <li>Fermented hydrating mist or essence</li>
-                <li>Antioxidant serum (e.g. 5% THD Ascorbate or Niacinamide)</li>
-                <li>Lightweight ceramide barrier cream</li>
-                <li><strong>Mineral SPF 50+ (Broad Spectrum Zinc)</strong></li>
+                <li>Non-foaming gentle cleanse</li>
+                <li>Hydrating / Vitamin C <strong>Serum</strong></li>
+                <li>Lightweight <strong>Barrier Cream</strong></li>
+                <li>Invisible Fluid <strong>Sunscreen SPF 50+</strong></li>
+                <li>Finishing <strong>Compact Powder</strong> & Velvet <strong>Lipstick</strong></li>
               </ol>
             </div>
             <div>
-              <div className="font-semibold text-stone-800 mb-1">Night (PM Repair & Remodel)</div>
+              <div className="font-semibold text-stone-800 mb-1">Night (PM Melt, Repair & Remodel)</div>
               <ol className="list-decimal list-inside space-y-1 text-stone-600 font-light">
-                <li>Gentle lipid cleansing balm</li>
-                <li>Calming Centella or peptide fluid</li>
-                <li>Targeted active (e.g. Retinal or Copper Peptides)</li>
-                <li>2:4:2 Lipid restorative cream</li>
-                <li>3 drops Sugarcane Squalane oil seal</li>
+                <li>Oat Lipid <strong>Cleansing Balm</strong> (melts SPF & lipstick)</li>
+                <li>Active Treatment / Peptide <strong>Serum</strong></li>
+                <li>Awakening Peptide <strong>Eye Cream</strong></li>
+                <li>2:4:2 Lipid <strong>Barrier Cream</strong></li>
+                <li>Nourishing Peptide <strong>Lip Treatment</strong></li>
               </ol>
             </div>
           </div>
@@ -214,24 +215,27 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
           </div>
           <div className="space-y-2">
             {matchedArticles.map((art) => (
-              <div
+              <a
                 key={art.id}
-                onClick={() => {
+                href={getArticleUrl(art)}
+                onClick={(e) => {
+                  e.preventDefault();
                   onSelectArticle(art);
                   onClose();
                 }}
-                className="p-3 border border-[#E8E2D9] hover:border-stone-400 bg-white rounded-sm cursor-pointer transition-colors flex items-center justify-between group"
+                className="p-3 border border-[#E8E2D9] hover:border-stone-400 bg-white rounded-sm cursor-pointer transition-colors flex items-center justify-between group block"
               >
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-stone-500">
-                    {art.category} · {art.readTime}
+                  <div className="text-[10px] uppercase tracking-wider text-stone-500 flex items-center gap-2">
+                    <span>{art.category} · {art.readTime}</span>
+                    <span className="font-mono lowercase text-[9px] text-stone-400">/article/{art.slug}</span>
                   </div>
                   <div className="font-editorial-serif text-sm font-medium text-stone-900 group-hover:text-stone-700">
                     {art.title}
                   </div>
                 </div>
                 <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-1 group-hover:text-stone-900 transition-all shrink-0 ml-3" />
-              </div>
+              </a>
             ))}
           </div>
         </div>
