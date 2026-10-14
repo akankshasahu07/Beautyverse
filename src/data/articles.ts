@@ -20,9 +20,9 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     heroImage: '/src/assets/images/beauty_lipstick_editorial_1791630593033.jpg',
     imageAlt: 'Satin rosewood lipstick bullet in golden brass case with smooth velvet swatch on warm travertine marble',
     imageCaption: 'Fig. 1 — Modern velvet lipsticks suspend high-purity iron oxide pigments within micro-spherical elastomer matrices for featherlight slip.',
-    leadPullQuote: 'For decades, matte lipstick meant drying alcohol solvents and chapped lips by 2 PM. Modern pigment chemistry now delivers 10-hour soft-focus velvet with zero cellular dehydration.',
+    leadPullQuote: 'For decades, matte lipstick meant drying alcohol solvents and chapped lips by 2 PM. Modern pigment chemistry now delivers comfortable hydrating matte lipstick with zero cellular dehydration.',
     keyTakeaways: [
-      'Traditional matte lipsticks relied on high loads of kaolin clay and silica that leach natural moisture from delicate vermilion border mucosa, spurring modern hydrating matte lipstick innovation.',
+      'Traditional matte formulas relied on high loads of kaolin clay and silica that leach natural moisture from delicate vermilion border mucosa, spurring modern hydrating matte lipstick innovation.',
       'Next-generation hydrating lipstick formulas replace rigid waxes with cross-linked elastomer matrices and sugarcane squalane that flex with speech and smiles.',
       'Dermatologists emphasize that learning how to keep lips hydrated with matte lipstick requires gentle warm compress prep followed by low-weight humectant layering.'
     ],
@@ -49,26 +49,27 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
         heading: 'The Chemistry of Hydrating Matte Lipstick: Elastomeric Gels and Encapsulated Squalane',
         paragraphs: [
           'In modern formulations, cosmetic chemists formulate hydrating matte lipstick using cross-linked elastomeric gels combined with low-melting-point botanical butters like murumuru and cupuaçu. When applied, the warmth of the lips activates the lipid matrix, depositing an ultra-thin veil of pigment that feels like whipped silk.',
-          'Rather than settling into lip lines, these specialized ingredients roll across the surface to form a flexible hydrating lipstick matrix. Even after eight hours of continuous wear, the lips remain soft, plump, and thoroughly cushioned.'
+          'Rather than settling into lip lines, these specialized ingredients roll across the surface to form a flexible hydrating lipstick matrix. Even after eight hours of continuous wear, the lips remain soft, plump, and thoroughly cushioned by sustained lipid release.'
         ]
       },
       {
         heading: 'Dermatologist Protocol: How to Keep Lips Hydrated with Matte Lipstick All Day',
         paragraphs: [
           'To understand how to keep lips hydrated with matte lipstick, preparation is everything. Start by gently polishing lips with a damp, warm muslin cloth to remove dead surface keratinocytes without causing micro-tears. Follow immediately with a drop of low-molecular-weight hyaluronic acid, allowing thirty seconds to absorb before applying your hydrating matte lipstick directly from the bullet.',
-          'Throughout the day, avoid lip licking, which accelerates evaporative water loss. If you experience dry zones after meals, lightly pat a ceramide lip balm over the center of the lips rather than rubbing the entire formula off. This preserves your pigment while reinforcing how to keep lips hydrated with matte lipstick from morning to night.'
+          'Throughout the day, avoid lip licking, which accelerates evaporative water loss. If you experience dry zones after meals, lightly pat a ceramide lip balm over the center of the lips rather than rubbing the entire formula off. This preserves your pigment while reinforcing how to keep lips hydrated with matte lipstick from morning to night.',
+          'When reapplying, choosing a high-performance hydrating lipstick ensures you replenish barrier lipids rather than layering brittle polymers over parched skin. Look for formulations tested for transepidermal water loss reduction to guarantee all-day comfort.'
         ]
       }
     ],
-    dermatologistPerspective: 'Avoid lipsticks loaded with synthetic fragrance or camphor if you suffer from chronic peeling. Look for formulations certified with food-grade plant squalane, ceramides, and unadulterated mineral pigments.',
+    dermatologistPerspective: 'Avoid lipsticks loaded with synthetic fragrance, camphor, or evaporating drying alcohols if you suffer from chronic peeling. When patients ask how to keep lips hydrated with matte lipstick, my first recommendation is to select a clean, clinically verified hydrating matte lipstick enriched with squalane and ceramides, rather than standard volatile liquid stains.',
     routineStep: 'Color & Lips',
     productFormulations: [
       {
-        title: 'Velvet Silk Peptide Lipstick',
+        title: 'Velvet Silk Peptide Hydrating Matte Lipstick',
         productType: 'Lipstick',
         formulationType: 'Cushioning Satin-Matte Bullet',
         keyActives: 'Palmitoyl Tripeptide-38 + Sugarcane Squalane + Murumuru Butter',
-        textureNote: 'Glides like a nourishing balm, sets to a soft-focus velvet veil',
+        textureNote: 'Glides like a nourishing hydrating lipstick balm, sets to a soft-focus velvet hydrating matte lipstick veil',
         finish: 'Velvet Matte',
         idealSkinType: 'All lip types, especially dry or mature lips',
         ratingScore: 9.8,
@@ -88,7 +89,8 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     ],
     faqs: [
       { question: 'Why do traditional formulas flake compared to a modern hydrating matte lipstick?', answer: 'Conventional matte lipsticks rely on evaporating solvents and clay binders that sap mucosal hydration. An authentic hydrating matte lipstick incorporates biomimetic plant lipids and elastomeric spheres that retain water while deflecting glare.' },
-      { question: 'What is the single most important rule for how to keep lips hydrated with matte lipstick?', answer: 'The key to how to keep lips hydrated with matte lipstick is never applying pigment over actively peeling or parched lips. Always prep with a warm compress, prime with a humectant layer, and select a certified hydrating lipstick formulation.' }
+      { question: 'What is the single most important rule for how to keep lips hydrated with matte lipstick?', answer: 'The key to how to keep lips hydrated with matte lipstick is never applying pigment over actively peeling or parched lips. Always prep with a warm compress, prime with a humectant layer, and select a certified hydrating lipstick formulation.' },
+      { question: 'Can a true hydrating lipstick deliver an opaque velvet finish without shine?', answer: 'Yes. Advanced hydrating lipstick engineering decouples optical finish from moisture content. Spherical silica and elastomer gels diffuse incoming light to create a non-drying, high-impact hydrating matte lipstick finish.' }
     ],
     contraindications: ['Applying over peeling, bleeding lips without pre-hydrating first with lipid balm'],
     initialComments: [
