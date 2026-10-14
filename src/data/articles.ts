@@ -290,8 +290,8 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
   {
     id: 'invisible-fluid-sunscreens-makeup-prep',
     slug: 'weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields',
-    title: 'Weightless Invisible Sunscreens: Chemical vs. Mineral UV Shields for Flawless Makeup Prep',
-    dek: 'Why an invisible daily sunscreen is the ultimate primer: contrasting non greasy mineral sunscreen shields with broad spectrum spf for makeup prep that never pills.',
+    title: 'The Ultimate Sunscreen for Flawless Makeup: Invisible UV Defense That Never Pills or Casts',
+    dek: 'How cosmetic chemists formulated the perfect sunscreen for flawless makeup: pairing an invisible daily sunscreen for makeup with ultra-fine particle dispersion to deliver a mineral sunscreen with no white cast.',
     productType: 'Sunscreen',
     category: 'Suncare & Defense',
     publishDate: 'Autumn 2026',
@@ -305,11 +305,11 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     heroImage: '/src/assets/images/article_sunscreen_minimal_1791560512517.jpg',
     imageAlt: 'Matte neutral sunscreen tube with smooth cream swatch on warm stone slab in soft sunlight',
     imageCaption: 'Fig. 4 — Modern fluid sunscreens form a flexible photoprotective mesh that grips makeup without pilling or flashback.',
-    leadPullQuote: 'If your sunscreen makes your makeup slide off by noon, you will stop wearing it. The greatest innovation in suncare is not just UV filters—it is cosmetic elegance and wearability.',
+    leadPullQuote: 'If your UV shield causes foundation to slide, pill, or turn chalky by noon, wearability fails. Modern photodermatology has finally engineered the ideal sunscreen for flawless makeup with zero residue.',
     keyTakeaways: [
-      'Applying an invisible daily sunscreen requires a volatile carrier system that sets to a dry-touch lattice within three minutes.',
-      'A broad spectrum spf for makeup prep must eliminate heavy emulsifiers so liquid foundations bond without separating.',
-      'Surface-coated non greasy mineral sunscreen filters provide physical photoprotection without pore clogging or chalky flashback.'
+      'Formulating a true sunscreen for flawless makeup requires volatile lipid carriers that evaporate cleanly, leaving an ultra-thin photoprotective lattice.',
+      'Choosing a compatible sunscreen for makeup prep eliminates the heavy emulsifiers and film-formers that traditionally cause liquid foundations to slide or separate.',
+      'Surface-treated zinc micro-dispersions now guarantee a sunscreen with no white cast across all Fitzpatrick skin phototypes without photographic flashback.'
     ],
     targetSkinConcerns: ['Photoaging & Dark Spots', 'Sunscreen White Cast', 'Makeup Sliding & Pilling', 'Stinging Eyes'],
     heroIngredients: [
@@ -319,41 +319,41 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     ],
     sections: [
       {
-        heading: 'The Daily Dilemma: Formulating an Invisible Daily Sunscreen Without Residue',
+        heading: 'The Science of Engineering a Sunscreen for Flawless Makeup',
         paragraphs: [
-          'For decades, beauty lovers faced an impossible trade-off: wear heavy sunscreen that leaves an oily sheen and disrupts foundation, or skimp on SPF and suffer irreversible photo-damage and accelerated collagen breakdown.',
-          'The breakthrough in formulating an invisible daily sunscreen came from volatile plant alkanes and hemisqualane. Instead of suffocating the skin in thick grease, these carriers evaporate after application, leaving pure UV filters bonded in a weightless, breathable mesh.'
+          'For decades, beauty lovers faced an impossible cosmetic compromise: wear a heavy, chalky UV shield that ruins foundation texture, or skip SPF entirely and suffer irreversible solar photo-damage. Creating a modern sunscreen for flawless makeup required dismantling traditional suncare chemistry from the ground up.',
+          'Instead of loading formulas with greasy petrolatum bases or unyielding waxes, cosmetic chemists now formulate the premier sunscreen for makeup using volatile hemisqualane and plant alkanes. These light carriers evaporate rapidly upon application, leaving UV filters suspended in an imperceptible, breathable web that grips complexion products like a high-performance primer.'
         ],
         callout: {
           label: 'Photobiology Reality',
-          quoteOrText: 'UVA rays penetrate window glass and cloud cover every day of the year, breaking down deep dermal elastin without causing sunburn.',
+          quoteOrText: 'A daily sunscreen for flawless makeup must withstand cellular micro-movements. Modern polymer networks flex with facial expressions so makeup stays anchored without creasing.',
           clinicalReference: 'British Journal of Dermatology'
         }
       },
       {
-        heading: 'Non Greasy Mineral Sunscreen vs. Chemical Filters Under High Magnification',
+        heading: 'The Breakthrough in Formulating a Sunscreen with No White Cast on All Skin Tones',
         paragraphs: [
-          'When evaluating non greasy mineral sunscreen technologies, particle dispersion is everything. Traditional zinc oxide leaves a thick white film because agglomerated particles reflect visible light.',
-          'Modern non greasy mineral sunscreen formulas coat sub-micron zinc particles in amino acids or jojoba esters, allowing visible light to pass freely through while completely deflecting invisible ultraviolet rays.'
+          'Traditional physical filters earned a notorious reputation for leaving an ashy, purplish tint on medium to deep skin tones. Achieving an authentic sunscreen with no white cast required revolutionizing mineral particle physics.',
+          'By coating sub-micron non-nano zinc oxide in biomimetic amino acids and jojoba esters, formulators prevent particle agglomeration. This allows visible light wavelengths to pass freely through the film without reflection, producing a truly translucent sunscreen with no white cast while deflecting harmful UVA and UVB radiation.'
         ]
       },
       {
-        heading: 'Seamless Layering: Applying Broad Spectrum SPF for Makeup Longevity',
+        heading: 'Application Protocol: Layering Sunscreen for Makeup Longevity and Grip',
         paragraphs: [
-          'To ensure your broad spectrum spf for makeup application does not roll into pills, respect the 3-minute setting window. After applying your 1/4 teaspoon across the face and neck, refrain from immediately buffing in base makeup.',
-          'Once the photoprotective lattice has bonded with the stratum corneum, liquid foundation, tint, or compact powder can be layered on top with zero formula disruption.'
+          'To maximize the benefits of your sunscreen for makeup application, observing the three-minute setting rule is essential. Dispense 1/4 teaspoon across the face, neck, and ears, massaging in sweeping upward strokes.',
+          'Allow the formula three full minutes to set before introducing tinted moisturizers, liquid foundations, or powders. This setting window allows your sunscreen for flawless makeup to establish its cohesive protective lattice, guaranteeing foundation glides on evenly with zero pilling, flaking, or mid-day breakdown.'
         ]
       }
     ],
-    dermatologistPerspective: 'Ninety percent of visible premature skin aging is caused by chronic daylight exposure. Find a sunscreen texture you adore and wear it every single morning—rain, shine, or indoors near windows.',
+    dermatologistPerspective: 'Ninety percent of premature skin aging stems from daylight exposure. Finding an elegant sunscreen for flawless makeup—particularly a lightweight sunscreen for makeup that functions as a sunscreen with no white cast—is the single most impactful anti-aging step you can take.',
     routineStep: 'SPF Photoprotection',
     productFormulations: [
       {
-        title: 'Daily Invisible Shield SPF 50+ Fluid',
+        title: 'Daily Invisible Shield Sunscreen for Flawless Makeup SPF 50+',
         productType: 'Sunscreen',
         formulationType: 'Featherlight Matte Fluid',
         keyActives: 'Non-Nano Zinc Oxide + Ectoin + Green Tea Polyphenols',
-        textureNote: 'Watery milk that dries down to an imperceptible velvet veil',
+        textureNote: 'Featherlight watery milk that sets to a velvet-smooth primer; an ideal sunscreen for makeup with no white cast',
         finish: 'Invisible Glow',
         idealSkinType: 'All skin types, especially sensitive and makeup-wearers',
         ratingScore: 9.9
@@ -363,19 +363,20 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
         productType: 'Sunscreen',
         formulationType: 'Moisturizer & SPF 2-in-1 Cream',
         keyActives: 'Broad-Spectrum Filters + Hyaluronic Acid + Squalane',
-        textureNote: 'Cushioning dewy cream that preps dry skin for makeup',
+        textureNote: 'Cushioning dewy fluid engineered as a nourishing daily sunscreen for makeup lovers',
         finish: 'Dewy Satin',
         idealSkinType: 'Dry, mature, and normal skin',
         ratingScore: 9.6
       }
     ],
     faqs: [
-      { question: 'Why is an invisible daily sunscreen better than relying on foundation with SPF?', answer: 'You would have to apply seven to ten times the standard amount of foundation to achieve labeled protection, resulting in an unwearable mask. An invisible daily sunscreen ensures full clinical protection without heaviness.' },
-      { question: 'Can a non greasy mineral sunscreen work on dark skin without a white cast?', answer: 'Yes. Modern surface-coated, non-nano zinc formulas suspend particles so finely that they transmit all visible light frequencies, eliminating the ashy cast entirely.' }
+      { question: 'Why is a dedicated sunscreen for flawless makeup better than SPF inside foundation?', answer: 'To achieve the SPF rating on a foundation bottle, you would need to apply seven to ten times the standard amount of makeup, creating an unnatural, cakey mask. A dedicated sunscreen for flawless makeup delivers certified medical protection with an invisible weightless finish.' },
+      { question: 'How do I choose the best sunscreen for makeup that will not pill?', answer: 'The best sunscreen for makeup features lightweight volatile carriers rather than heavy dimethicones or sticky emollients. Give the sunscreen three minutes to bond before buffing in your base makeup to prevent rolling and pilling.' },
+      { question: 'Can mineral UV filters truly deliver a sunscreen with no white cast on deep skin?', answer: 'Yes. By utilizing surface-treated, non-agglomerated zinc oxide suspended in ester matrices, modern formulations produce an authentic sunscreen with no white cast that melts invisibly into all skin tones without photographic flashback.' }
     ],
     contraindications: ['Skipping sunscreen on cloudy days or when sitting indoors near glass windows'],
     initialComments: [
-      { id: 'c-spf-1', author: 'Nadia Al-Mansoor', skinType: 'Fitzpatrick Type IV', date: 'Yesterday', content: 'Zero white cast, zero greasy film, and my foundation actually looks smoother over it. This is everything sunscreen should be.', likes: 35 }
+      { id: 'c-spf-1', author: 'Nadia Al-Mansoor', skinType: 'Fitzpatrick Type IV', date: 'Yesterday', content: 'Zero white cast, zero greasy film, and my foundation actually looks smoother over it. Finding a genuine sunscreen with no white cast that doubles as the ultimate sunscreen for flawless makeup changed my routine completely.', likes: 35 }
     ],
     seoKeywords: STEP_2_KEYWORD_MAP['invisible-fluid-sunscreens-makeup-prep']
   },

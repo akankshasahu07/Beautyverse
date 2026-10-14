@@ -123,17 +123,17 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
   'invisible-fluid-sunscreens-makeup-prep': {
     pageId: 'invisible-fluid-sunscreens-makeup-prep',
     pageUrl: '/article/weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields',
-    pageName: 'Sunscreen Editorial Investigation',
-    mainKeyword: 'invisible daily sunscreen',
-    relatedKeyword1: 'broad spectrum spf for makeup',
-    relatedKeyword2: 'non greasy mineral sunscreen',
-    seoTitle: 'Invisible Daily Sunscreen for Makeup: Broad-Spectrum SPF & Non-Greasy Minerals | ÉLIXIR & DERMA',
-    metaDescription: 'Find the ultimate invisible daily sunscreen for seamless makeup prep. Compare non greasy mineral sunscreen filters with broad spectrum spf for makeup longevity.',
-    primaryHeadingH1: 'Weightless Invisible Sunscreens: Chemical vs. Mineral UV Shields for Flawless Makeup Prep',
+    pageName: 'Sunscreen for Flawless Makeup Guide',
+    mainKeyword: 'sunscreen for flawless makeup',
+    relatedKeyword1: 'sunscreen for makeup',
+    relatedKeyword2: 'sunscreen with no white cast',
+    seoTitle: 'Sunscreen for Flawless Makeup: Priming SPF & Sunscreen with No White Cast | ÉLIXIR & DERMA',
+    metaDescription: 'Discover the ultimate sunscreen for flawless makeup. Compare weightless formulas, find the best sunscreen for makeup wearers, and enjoy sunscreen with no white cast.',
+    primaryHeadingH1: 'The Ultimate Sunscreen for Flawless Makeup: Invisible UV Defense That Never Pills or Casts',
     sectionHeadingsH2: [
-      'The Daily Dilemma: Formulating an Invisible Daily Sunscreen Without Residue',
-      'Non Greasy Mineral Sunscreen vs. Chemical Filters Under High Magnification',
-      'Seamless Layering: Applying Broad Spectrum SPF for Makeup Longevity'
+      'The Science of Engineering a Sunscreen for Flawless Makeup',
+      'The Breakthrough in Formulating a Sunscreen with No White Cast on All Skin Tones',
+      'Application Protocol: Layering Sunscreen for Makeup Longevity and Grip'
     ],
     searchIntent: 'Commercial Investigation',
     productCategory: 'Sunscreen'
