@@ -102,7 +102,7 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                     className="flex items-center gap-1 text-xs font-medium text-stone-900 hover:text-stone-700"
                     aria-label={`Read full article: ${article.title}`}
                   >
-                    <span>Read</span>
+                    <span>Read Article</span>
                     <span className="sr-only">: {article.title}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>

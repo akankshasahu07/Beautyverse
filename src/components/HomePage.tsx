@@ -537,7 +537,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   className="flex items-center gap-1 font-medium text-stone-900 group-hover:translate-x-1 transition-transform"
                   aria-label={`Read full article: ${art.title}`}
                 >
-                  <span>Read</span>
+                  <span>Read Article</span>
                   <span className="sr-only">: {art.title}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>

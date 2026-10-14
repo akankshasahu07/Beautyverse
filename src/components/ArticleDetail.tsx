@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  ArrowLeft, Bookmark, Share2, Volume2, VolumeX, Play, Pause, 
+  ArrowLeft, ArrowRight, Bookmark, Share2, Volume2, VolumeX, Play, Pause, 
   Check, MessageSquare, ChevronDown, ChevronUp, AlertCircle, 
-  Sparkles, Stethoscope, Layers, Send, Link2, Key
+  Sparkles, Stethoscope, Layers, Send, Link2, Key, Compass, BookOpen
 } from 'lucide-react';
 import { BeautyArticle, ArticleComment } from '../types/article';
 import { getArticleUrl, getArticlesHubUrl } from '../utils/seoRouter';
@@ -313,6 +313,37 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
 
       {/* Main Reading Container (Constrained measure 65-75ch) */}
       <main className="max-w-3xl mx-auto px-6 lg:px-8 py-10 lg:py-16">
+        {/* Semantic Breadcrumb Trail with Descriptive Anchor Text */}
+        <nav aria-label="Breadcrumb" className="mb-4 text-xs font-editorial-sans text-stone-500 flex items-center gap-1.5 flex-wrap">
+          <a
+            href={getArticlesHubUrl('All')}
+            onClick={(e) => {
+              e.preventDefault();
+              onBack();
+            }}
+            className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
+            aria-label="Navigate to all 10 beauty blog articles"
+          >
+            All 10 Blog Articles
+          </a>
+          <span aria-hidden="true" className="text-stone-300 dark:text-stone-700">/</span>
+          <a
+            href={getArticlesHubUrl(article.productType)}
+            onClick={(e) => {
+              e.preventDefault();
+              onBack();
+            }}
+            className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
+            aria-label={`Explore ${article.productType} articles collection`}
+          >
+            {article.productType} Formulations
+          </a>
+          <span aria-hidden="true" className="text-stone-300 dark:text-stone-700">/</span>
+          <span className="text-stone-700 dark:text-stone-300 font-medium truncate max-w-[240px]" aria-current="page">
+            {article.title}
+          </span>
+        </nav>
+
         {/* Unboxed Metadata Header (Zero-Pill Discipline) */}
         <div className="text-[11px] uppercase tracking-widest text-stone-500 mb-4 font-editorial-sans flex items-center gap-2 flex-wrap">
           <span className="text-stone-900 dark:text-stone-100 font-semibold">{article.productType}</span>
@@ -635,6 +666,48 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 )}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Related Formulations & Cross-Article Reading with Descriptive Anchor Text */}
+        <div className="mt-14 p-6 border border-[#E8E2D9] dark:border-stone-800 bg-[#FAF8F5]/80 dark:bg-stone-900/60 rounded-sm">
+          <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-stone-900 dark:text-stone-100 mb-2">
+            <Sparkles className="w-4 h-4 text-stone-700 dark:text-stone-300" />
+            <span>Related Formulation Science & Guides</span>
+          </div>
+          <p className="text-xs text-stone-600 dark:text-stone-400 font-light mb-4">
+            Deepen your skincare and cosmetics knowledge by exploring related laboratory investigations across the ELIXIR & DERMA catalog:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {allArticles
+              .filter(a => a.id !== article.id)
+              .slice(0, 2)
+              .map(rel => (
+                <a
+                  key={rel.id}
+                  href={getArticleUrl(rel)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectArticle(rel);
+                  }}
+                  className="p-3.5 border border-[#E8E2D9] dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-stone-400 dark:hover:border-stone-600 transition-colors group flex flex-col justify-between"
+                  aria-label={`Read related investigation: ${rel.title}`}
+                >
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-stone-500 mb-1 flex items-center justify-between">
+                      <span>{rel.productType}</span>
+                      <span>{rel.readTime}</span>
+                    </div>
+                    <div className="font-editorial-serif text-sm font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 line-clamp-2 leading-snug mb-2">
+                      {rel.title}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs font-medium text-stone-800 dark:text-stone-200 group-hover:underline pt-2 border-t border-[#E8E2D9]/60 dark:border-stone-800">
+                    <span>Explore {rel.productType} Guide</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </a>
+              ))}
           </div>
         </div>
 
