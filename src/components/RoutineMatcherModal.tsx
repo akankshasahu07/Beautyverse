@@ -224,6 +224,7 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
                   onClose();
                 }}
                 className="p-3 border border-[#E8E2D9] hover:border-stone-400 bg-white rounded-sm cursor-pointer transition-colors flex items-center justify-between group block"
+                aria-label={`Read recommended investigation: ${art.title}`}
               >
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-stone-500 flex items-center gap-2">

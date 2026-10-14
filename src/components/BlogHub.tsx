@@ -142,6 +142,7 @@ export const BlogHub: React.FC<BlogHubProps> = ({
                     ? 'bg-stone-900 text-white border-stone-900 font-medium'
                     : 'bg-white/80 text-stone-600 border-[#E8E2D9] hover:border-stone-400 hover:text-stone-900'
                 }`}
+                aria-label={`Filter articles by product category: ${pType === 'All' ? 'All Formulations' : pType}`}
               >
                 {pType === 'All' ? 'All (10)' : pType}
               </a>

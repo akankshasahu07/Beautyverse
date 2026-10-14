@@ -73,6 +73,7 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                         onClose();
                       }}
                       className="hover:underline decoration-stone-300 underline-offset-2"
+                      aria-label={`Read saved article: ${article.title}`}
                     >
                       {article.title}
                     </a>
@@ -99,8 +100,10 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                       onClose();
                     }}
                     className="flex items-center gap-1 text-xs font-medium text-stone-900 hover:text-stone-700"
+                    aria-label={`Read full article: ${article.title}`}
                   >
                     <span>Read</span>
+                    <span className="sr-only">: {article.title}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>

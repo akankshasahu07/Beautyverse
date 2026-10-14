@@ -52,6 +52,7 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                   onReadArticle(article);
                 }}
                 className="hover:underline decoration-stone-300 underline-offset-4"
+                aria-label={`Read article: ${article.title}`}
               >
                 {article.title}
               </a>
@@ -109,8 +110,10 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                     onReadArticle(article);
                   }}
                   className="flex items-center gap-2 px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium uppercase tracking-wider rounded-sm transition-all group shadow-sm"
+                  aria-label={`Read full investigation: ${article.title}`}
                 >
                   <span>Read Full Investigation</span>
+                  <span className="sr-only">: {article.title}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </a>
               </div>
@@ -126,7 +129,9 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                 onReadArticle(article);
               }}
               className="block relative cursor-pointer group overflow-hidden border border-[#E8E2D9] bg-stone-100"
+              aria-label={`Read article: ${article.title}`}
             >
+              <span className="sr-only">Read investigation: {article.title}</span>
               <div className="aspect-[4/3] lg:aspect-[1/1] w-full relative">
                 <img
                   src={article.heroImage}

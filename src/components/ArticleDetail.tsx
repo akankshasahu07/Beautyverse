@@ -173,6 +173,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               onBack();
             }}
             className="flex items-center gap-1.5 text-xs uppercase tracking-wider font-medium text-stone-600 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white transition-colors"
+            aria-label="Back to all 10 blog articles catalog"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>All Articles</span>
@@ -346,6 +347,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 href={getArticleUrl(article)}
                 className="font-mono text-[11px] text-stone-800 dark:text-stone-200 underline decoration-stone-300 underline-offset-2 truncate"
                 title="Unique, descriptive, SEO-friendly URL"
+                aria-label={`Canonical article permalink: /article/${article.slug}`}
               >
                 /article/{article.slug}
               </a>
@@ -735,6 +737,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               onSelectArticle(prevArticle);
             }}
             className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-left hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900 block"
+            aria-label={`Previous investigation: ${prevArticle.title}`}
           >
             <div className="text-[10px] uppercase tracking-widest text-stone-500 mb-1 flex items-center gap-1">
               <ArrowLeft className="w-3 h-3 group-hover:-translate-x-0.5 transition-transform" />
@@ -752,6 +755,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               onSelectArticle(nextArticle);
             }}
             className="p-5 border border-[#E8E2D9] dark:border-stone-800 text-right hover:border-stone-400 transition-colors group bg-white dark:bg-stone-900 block"
+            aria-label={`Next investigation: ${nextArticle.title}`}
           >
             <div className="text-[10px] uppercase tracking-widest text-stone-500 mb-1 flex items-center justify-end gap-1">
               <span>Next Investigation</span>

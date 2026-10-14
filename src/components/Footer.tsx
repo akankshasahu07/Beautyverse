@@ -43,6 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigateHome();
               }}
               className="text-left inline-block"
+              aria-label="ÉLIXIR & DERMA — Homepage"
             >
               <span className="font-editorial-serif text-2xl font-medium tracking-tight text-stone-900 block hover:text-stone-700">
                 ÉLIXIR & DERMA
@@ -71,6 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Lipstick');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Lipstick Formulations"
                 >
                   Lipstick Formulations
                 </a>
@@ -83,6 +85,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Serum');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Active Facial Serums"
                 >
                   Active Facial Serums
                 </a>
@@ -95,6 +98,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Compact Powder');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Finishing Compacts"
                 >
                   Finishing Compacts
                 </a>
@@ -107,6 +111,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Sunscreen');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Fluid Sunscreens & SPF"
                 >
                   Fluid Sunscreens & SPF
                 </a>
@@ -119,6 +124,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Blush');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Dewy Liquid Blushes"
                 >
                   Dewy Liquid Blushes
                 </a>
@@ -166,6 +172,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Foundation & Tint');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Serum Foundation Science"
                 >
                   Serum Foundation Science
                 </a>
@@ -178,6 +185,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('Cleansing Balm');
                   }}
                   className="hover:text-stone-900 transition-colors text-left block"
+                  aria-label="Explore Double Cleansing Balms"
                 >
                   Double Cleansing Balms
                 </a>
@@ -190,6 +198,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onNavigateArticlesWithProduct('All');
                   }}
                   className="hover:text-stone-900 transition-colors text-left font-medium text-stone-800 block"
+                  aria-label="Browse All 10 Blog Articles"
                 >
                   Browse All 10 Articles
                 </a>
@@ -245,6 +254,7 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigateHome();
               }}
               className="hover:text-stone-900"
+              aria-label="Navigate to Homepage"
             >
               Home
             </a>
@@ -256,6 +266,7 @@ export const Footer: React.FC<FooterProps> = ({
                 onNavigateArticlesWithProduct('All');
               }}
               className="hover:text-stone-900"
+              aria-label="Browse all 10 blog articles"
             >
               10 Blog Articles
             </a>

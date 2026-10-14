@@ -179,6 +179,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onReadArticle(leadArticle);
                   }}
                   className="hover:underline decoration-stone-300 underline-offset-4"
+                  aria-label={`Read cover feature: ${leadArticle.title}`}
                 >
                   {leadArticle.title}
                 </a>
@@ -233,8 +234,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                       onReadArticle(leadArticle);
                     }}
                     className="flex items-center gap-2 px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium uppercase tracking-wider rounded-sm transition-all group shadow-sm"
+                    aria-label={`Read Lipstick Investigation: ${leadArticle.title}`}
                   >
                     <span>Read Lipstick Investigation</span>
+                    <span className="sr-only">: {leadArticle.title}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </a>
                 </div>
@@ -250,7 +253,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onReadArticle(leadArticle);
                 }}
                 className="block relative cursor-pointer group overflow-hidden border border-[#E8E2D9] bg-stone-100 shadow-xs"
+                aria-label={`Read featured cover story: ${leadArticle.title}`}
               >
+                <span className="sr-only">Read featured investigation: {leadArticle.title}</span>
                 <div className="aspect-[4/3] w-full relative">
                   <img
                     src={HOME_HERO_IMAGE}
@@ -311,7 +316,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onReadArticle(item.article);
                   }}
                   className="block aspect-[4/3] w-full overflow-hidden bg-stone-100 mb-4 cursor-pointer relative border border-[#E8E2D9]/70"
+                  aria-label={`Explore ${item.title}: ${item.article.title}`}
                 >
+                  <span className="sr-only">Explore {item.title}: {item.article.title}</span>
                   <img
                     src={item.image}
                     alt={item.imageAlt || item.article.imageAlt}
@@ -342,6 +349,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       onReadArticle(item.article);
                     }}
                     className="hover:underline decoration-stone-300 underline-offset-4"
+                    aria-label={`Read formulation review: ${item.title} — ${item.article.title}`}
                   >
                     {item.title}
                   </a>
@@ -365,8 +373,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onReadArticle(item.article);
                   }}
                   className="flex items-center gap-1 font-medium text-stone-900 hover:text-stone-600 group-hover:translate-x-0.5 transition-all shrink-0"
+                  aria-label={`Read article about ${item.title}: ${item.article.title}`}
                 >
                   <span>Read Article</span>
+                  <span className="sr-only">: {item.article.title}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -404,6 +414,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onReadArticle(art);
                   }}
                   className="bg-white p-4 border border-[#E8E2D9] hover:border-stone-400 transition-colors cursor-pointer flex flex-col justify-between group block"
+                  aria-label={`Read evaluation of ${primaryProduct.title}: ${art.title}`}
                 >
                   <div>
                     <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-stone-500 mb-1">
@@ -428,7 +439,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                       Finish: <strong className="text-stone-700">{primaryProduct.finish}</strong>
                     </span>
                     <span className="text-stone-900 font-medium group-hover:underline flex items-center gap-0.5">
-                      Read
+                      <span>Read Review</span>
+                      <span className="sr-only">: {art.title}</span>
                     </span>
                   </div>
                 </a>
@@ -490,6 +502,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         onReadArticle(art);
                       }}
                       className="hover:underline decoration-stone-300 underline-offset-4"
+                      aria-label={`Read article: ${art.title}`}
                     >
                       {art.title}
                     </a>
@@ -522,8 +535,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onReadArticle(art);
                   }}
                   className="flex items-center gap-1 font-medium text-stone-900 group-hover:translate-x-1 transition-transform"
+                  aria-label={`Read full article: ${art.title}`}
                 >
                   <span>Read</span>
+                  <span className="sr-only">: {art.title}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

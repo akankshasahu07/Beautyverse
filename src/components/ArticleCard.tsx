@@ -56,7 +56,9 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             onRead(article);
           }}
           className="block relative aspect-[16/10] w-full overflow-hidden mb-4 bg-stone-100 cursor-pointer border border-[#E8E2D9]/60"
+          aria-label={`Read article: ${article.title}`}
         >
+          <span className="sr-only">Read article: {article.title}</span>
           <img
             src={article.heroImage}
             alt={article.imageAlt}
@@ -78,6 +80,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               onRead(article);
             }}
             className="hover:underline decoration-stone-300 underline-offset-4"
+            aria-label={`Read article: ${article.title}`}
           >
             {article.title}
           </a>
@@ -111,8 +114,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
               onRead(article);
             }}
             className="flex items-center gap-1 text-xs font-medium text-stone-900 hover:text-stone-600 group-hover:translate-x-0.5 transition-all"
+            aria-label={`Read full article: ${article.title}`}
           >
             <span>Read</span>
+            <span className="sr-only">: {article.title}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>

@@ -80,6 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
             onNavigateHome();
           }}
           className="text-left group cursor-pointer focus:outline-none"
+          aria-label="ÉLIXIR & DERMA — Homepage"
         >
           <span className="font-editorial-serif text-2xl lg:text-3xl font-medium tracking-tight text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap shrink-0 block">
             ÉLIXIR & DERMA
@@ -97,6 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1 ${
               currentView === 'home' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Navigate to Homepage"
           >
             <Compass className="w-3.5 h-3.5" />
             <span>Home</span>
@@ -111,6 +113,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1 ${
               currentView === 'articles' && selectedProductType === 'All' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Explore all 10 blog articles"
           >
             <BookOpen className="w-3.5 h-3.5" />
             <span>10 Blog Articles</span>
@@ -125,6 +128,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 ${
               selectedProductType === 'Lipstick' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Filter articles by Lipsticks"
           >
             Lipsticks
           </a>
@@ -138,6 +142,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 ${
               selectedProductType === 'Serum' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Filter articles by Serums"
           >
             Serums
           </a>
@@ -151,6 +156,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 ${
               selectedProductType === 'Compact Powder' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Filter articles by Compact Powder"
           >
             Compacts
           </a>
@@ -164,6 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
             className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 ${
               selectedProductType === 'Sunscreen' ? 'text-stone-950 font-semibold underline underline-offset-8 decoration-stone-900' : ''
             }`}
+            aria-label="Filter articles by Sunscreens"
           >
             Sunscreens
           </a>
