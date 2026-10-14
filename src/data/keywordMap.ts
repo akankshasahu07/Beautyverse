@@ -127,7 +127,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
     mainKeyword: 'sunscreen for flawless makeup',
     relatedKeyword1: 'sunscreen for makeup',
     relatedKeyword2: 'sunscreen with no white cast',
-    seoTitle: 'Sunscreen for Flawless Makeup: Priming SPF & Sunscreen with No White Cast | ÉLIXIR & DERMA',
+    seoTitle: 'Sunscreen for Flawless Makeup | Chemical vs. Mineral UV Shields – ELIXIR & DERMA',
     metaDescription: 'Discover the ultimate sunscreen for flawless makeup. Compare weightless formulas, find the best sunscreen for makeup wearers, and enjoy sunscreen with no white cast.',
     primaryHeadingH1: 'The Ultimate Sunscreen for Flawless Makeup: Invisible UV Defense That Never Pills or Casts',
     sectionHeadingsH2: [
