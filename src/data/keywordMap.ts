@@ -88,7 +88,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
     relatedKeyword1: 'face serum layering',
     relatedKeyword2: 'layering serums with hyaluronic acid, vitamin C, and peptides',
     seoTitle: 'Serum Layering Guide | Hyaluronic Acid, Vitamin C & Peptides – ELIXIR & DERMA',
-    metaDescription: 'Master the clinical art of serum layering. Learn step-by-step face serum layering protocols and the exact order for layering serums with hyaluronic acid, vitamin C, and peptides.',
+    metaDescription: 'Learn serum layering with our face serum layering guide, including how to layer hyaluronic acid, vitamin C, and peptides for a balanced skincare routine.',
     primaryHeadingH1: 'The Definitive Serum Layering Guide: Mastering Face Serum Layering for Maximum Radiance',
     sectionHeadingsH2: [
       'The Molecular Science Behind Effective Serum Layering',
