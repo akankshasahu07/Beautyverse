@@ -50,9 +50,25 @@ export function slugify(text: string): string {
 }
 
 /**
+ * Short unique URLs mapping for core spotlight blogs.
+ */
+export const SHORT_ARTICLE_URLS: Record<string, string> = {
+  'velvet-lipstick-formulation-science': '/lipstick',
+  'lipstick': '/lipstick',
+  'ultimate-serum-layering-radiance': '/serum',
+  'serum': '/serum',
+  'invisible-fluid-sunscreens-makeup-prep': '/sunscreen',
+  'sunscreen': '/sunscreen',
+};
+
+/**
  * Returns the unique, descriptive SEO URL path for an article.
+ * For spotlight blogs, returns short unique URLs: /lipstick, /serum, /sunscreen.
  */
 export function getArticleUrl(article: BeautyArticle): string {
+  if (SHORT_ARTICLE_URLS[article.id] || SHORT_ARTICLE_URLS[article.slug]) {
+    return SHORT_ARTICLE_URLS[article.id] || SHORT_ARTICLE_URLS[article.slug];
+  }
   return `/article/${article.slug}`;
 }
 
@@ -91,10 +107,43 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
     }
   }
 
+  // Helper to match short unique URLs or legacy slugs for the 3 spotlight articles
+  const resolveSpotlightSlug = (slugCandidate: string): BeautyArticle | undefined => {
+    if (
+      slugCandidate === 'lipstick' ||
+      slugCandidate === 'lipstick-blog' ||
+      slugCandidate === 'the-velvet-lip-revolution-hydrating-matte-polymers-and-clean-pigments' ||
+      slugCandidate === 'velvet-lipstick-formulation-science'
+    ) {
+      return articles.find(a => a.id === 'velvet-lipstick-formulation-science' || a.slug === 'lipstick');
+    }
+    if (
+      slugCandidate === 'serum' ||
+      slugCandidate === 'serum-blog' ||
+      slugCandidate === 'the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides' ||
+      slugCandidate === 'ultimate-serum-layering-radiance'
+    ) {
+      return articles.find(a => a.id === 'ultimate-serum-layering-radiance' || a.slug === 'serum');
+    }
+    if (
+      slugCandidate === 'sunscreen' ||
+      slugCandidate === 'sunscreen-blog' ||
+      slugCandidate === 'weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields' ||
+      slugCandidate === 'invisible-fluid-sunscreens-makeup-prep'
+    ) {
+      return articles.find(a => a.id === 'invisible-fluid-sunscreens-makeup-prep' || a.slug === 'sunscreen');
+    }
+    return undefined;
+  };
+
   // Check query params fallback (e.g. ?article=slug)
   const searchParams = new URLSearchParams(window.location.search);
   const articleParam = searchParams.get('article');
   if (articleParam) {
+    const spotlight = resolveSpotlightSlug(articleParam);
+    if (spotlight) {
+      return { view: 'detail', slug: spotlight.slug };
+    }
     const matched = articles.find(a => a.slug === articleParam || a.id === articleParam);
     if (matched) {
       return { view: 'detail', slug: matched.slug };
@@ -110,6 +159,10 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
   const articleMatch = path.match(/^\/(?:article|blog)\/([a-z0-9-]+)/);
   if (articleMatch) {
     const slugCandidate = articleMatch[1];
+    const spotlight = resolveSpotlightSlug(slugCandidate);
+    if (spotlight) {
+      return { view: 'detail', slug: spotlight.slug };
+    }
     const foundArticle = articles.find(a => a.slug === slugCandidate || a.id === slugCandidate);
     if (foundArticle) {
       return { view: 'detail', slug: foundArticle.slug };
@@ -121,6 +174,11 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
   if (articlesMatch) {
     const subSlug = articlesMatch[1];
     if (subSlug) {
+      const spotlight = resolveSpotlightSlug(subSlug);
+      if (spotlight) {
+        return { view: 'detail', slug: spotlight.slug };
+      }
+
       // Check if it's an article slug directly under /articles/
       const foundArticle = articles.find(a => a.slug === subSlug || a.id === subSlug);
       if (foundArticle) {
@@ -135,7 +193,7 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
     return { view: 'articles', productType: 'All' };
   }
 
-  // Route: Direct slug /:slug match (e.g. /the-velvet-lip-revolution-...)
+  // Route: Direct slug /:slug match (e.g. /home, /lipstick, /serum, /sunscreen)
   const directSlugMatch = path.match(/^\/([a-z0-9-]+)$/);
   if (directSlugMatch) {
     const slugCandidate = directSlugMatch[1];
@@ -144,6 +202,10 @@ export function parseCurrentRoute(articles: BeautyArticle[]): RouteMatch {
     }
     if (slugCandidate === 'articles') {
       return { view: 'articles', productType: 'All' };
+    }
+    const spotlight = resolveSpotlightSlug(slugCandidate);
+    if (spotlight) {
+      return { view: 'detail', slug: spotlight.slug };
     }
     if (PRODUCT_SLUG_MAP[slugCandidate]) {
       return { view: 'articles', productType: PRODUCT_SLUG_MAP[slugCandidate] };

@@ -490,7 +490,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <span>{art.readTime}</span>
                     <span aria-hidden="true">·</span>
                     <span className="font-mono lowercase text-[10px] text-stone-400 bg-stone-100 px-1.5 py-0.5 rounded-xs">
-                      /article/{art.slug}
+                      {getArticleUrl(art)}
                     </span>
                   </div>
 

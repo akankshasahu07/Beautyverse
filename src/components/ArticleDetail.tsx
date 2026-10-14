@@ -378,9 +378,9 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                 href={getArticleUrl(article)}
                 className="font-mono text-[11px] text-stone-800 dark:text-stone-200 underline decoration-stone-300 underline-offset-2 truncate"
                 title="Unique, descriptive, SEO-friendly URL"
-                aria-label={`Canonical article permalink: /article/${article.slug}`}
+                aria-label={`Canonical article permalink: ${getArticleUrl(article)}`}
               >
-                /article/{article.slug}
+                {getArticleUrl(article)}
               </a>
             </div>
 

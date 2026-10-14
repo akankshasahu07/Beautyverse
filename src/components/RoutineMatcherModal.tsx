@@ -229,7 +229,7 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-stone-500 flex items-center gap-2">
                     <span>{art.category} · {art.readTime}</span>
-                    <span className="font-mono lowercase text-[9px] text-stone-400">/article/{art.slug}</span>
+                    <span className="font-mono lowercase text-[9px] text-stone-400">{getArticleUrl(art)}</span>
                   </div>
                   <div className="font-editorial-serif text-sm font-medium text-stone-900 group-hover:text-stone-700">
                     {art.title}

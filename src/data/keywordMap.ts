@@ -62,7 +62,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
   // Page 3: Article 1 - Lipstick
   'velvet-lipstick-formulation-science': {
     pageId: 'velvet-lipstick-formulation-science',
-    pageUrl: '/article/the-velvet-lip-revolution-hydrating-matte-polymers-and-clean-pigments',
+    pageUrl: '/lipstick',
     pageName: 'Hydrating Matte Lipstick Investigation',
     mainKeyword: 'hydrating matte lipstick',
     relatedKeyword1: 'hydrating lipstick',
@@ -82,7 +82,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
   // Page 4: Article 2 - Serum
   'ultimate-serum-layering-radiance': {
     pageId: 'ultimate-serum-layering-radiance',
-    pageUrl: '/article/the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides',
+    pageUrl: '/serum',
     pageName: 'Serum Layering Guide',
     mainKeyword: 'serum layering',
     relatedKeyword1: 'face serum layering',
@@ -122,7 +122,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
   // Page 6: Article 4 - Sunscreen
   'invisible-fluid-sunscreens-makeup-prep': {
     pageId: 'invisible-fluid-sunscreens-makeup-prep',
-    pageUrl: '/article/weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields',
+    pageUrl: '/sunscreen',
     pageName: 'Sunscreen for Flawless Makeup Guide',
     mainKeyword: 'sunscreen for flawless makeup',
     relatedKeyword1: 'sunscreen for makeup',

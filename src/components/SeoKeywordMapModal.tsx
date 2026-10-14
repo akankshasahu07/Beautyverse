@@ -46,9 +46,17 @@ export const SeoKeywordMapModal: React.FC<SeoKeywordMapModalProps> = ({
   const handleNavigatePage = (url: string) => {
     navigateTo(url);
     if (onSelectArticleBySlug) {
-      const match = url.match(/^\/article\/([a-z0-9-]+)/);
-      if (match) {
-        onSelectArticleBySlug(match[1]);
+      if (url === '/lipstick') {
+        onSelectArticleBySlug('lipstick');
+      } else if (url === '/serum') {
+        onSelectArticleBySlug('serum');
+      } else if (url === '/sunscreen') {
+        onSelectArticleBySlug('sunscreen');
+      } else {
+        const match = url.match(/^\/article\/([a-z0-9-]+)/);
+        if (match) {
+          onSelectArticleBySlug(match[1]);
+        }
       }
     }
     onClose();

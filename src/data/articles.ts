@@ -4,7 +4,7 @@ import { STEP_2_KEYWORD_MAP } from './keywordMap';
 export const BEAUTY_ARTICLES: BeautyArticle[] = [
   {
     id: 'velvet-lipstick-formulation-science',
-    slug: 'the-velvet-lip-revolution-hydrating-matte-polymers-and-clean-pigments',
+    slug: 'lipstick',
     title: 'The Velvet Lip Revolution: The Science of Hydrating Matte Lipstick That Never Dries Lips',
     dek: 'How cosmetic chemists engineered comfortable hydrating matte lipstick: pairing cushioning hydrating lipstick bases with plant squalane and revealing how to keep lips hydrated with matte lipstick all day.',
     productType: 'Lipstick',
@@ -104,7 +104,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
   },
   {
     id: 'ultimate-serum-layering-radiance',
-    slug: 'the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides',
+    slug: 'serum',
     title: 'The Definitive Serum Layering Guide: Mastering Face Serum Layering for Maximum Radiance',
     dek: 'The clinical blueprint for serum layering: understanding molecular weights, mastering face serum layering by viscosity, and the scientific order for layering serums with hyaluronic acid, vitamin C, and peptides.',
     productType: 'Serum',
@@ -295,7 +295,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
   },
   {
     id: 'invisible-fluid-sunscreens-makeup-prep',
-    slug: 'weightless-invisible-sunscreens-chemical-vs-mineral-uv-shields',
+    slug: 'sunscreen',
     title: 'The Ultimate Sunscreen for Flawless Makeup: Invisible UV Defense That Never Pills or Casts',
     dek: 'How cosmetic chemists formulated the perfect sunscreen for flawless makeup: pairing an invisible daily sunscreen for makeup with ultra-fine particle dispersion to deliver a mineral sunscreen with no white cast.',
     productType: 'Sunscreen',

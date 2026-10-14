@@ -62,7 +62,7 @@ export const SavedDrawer: React.FC<SavedDrawerProps> = ({
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-stone-500 mb-1 flex items-center justify-between">
                     <span>{article.category} · {article.readTime}</span>
-                    <span className="font-mono lowercase text-[9px] text-stone-400">/article/{article.slug}</span>
+                    <span className="font-mono lowercase text-[9px] text-stone-400">{getArticleUrl(article)}</span>
                   </div>
                   <h3 className="font-editorial-serif text-base font-medium text-stone-900 group-hover:text-stone-700 leading-snug mb-2">
                     <a
