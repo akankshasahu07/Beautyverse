@@ -102,8 +102,8 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
   {
     id: 'ultimate-serum-layering-radiance',
     slug: 'the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides',
-    title: 'The Ultimate Serum Layering Guide: Hyaluronic Acid, Vitamin C & Multi-Peptides for 24-Hour Radiance',
-    dek: 'The definitive serum layering guide: molecular weights, osmotic gradients, and how pairing hyaluronic acid and vitamin c with active facial serums maximizes cellular absorption.',
+    title: 'The Definitive Serum Layering Guide: Mastering Face Serum Layering for Maximum Radiance',
+    dek: 'The clinical blueprint for serum layering: understanding molecular weights, mastering face serum layering by viscosity, and the scientific order for layering serums with hyaluronic acid, vitamin C, and peptides.',
     productType: 'Serum',
     category: 'Active Skincare',
     publishDate: 'Autumn 2026',
@@ -117,11 +117,11 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
     imageAlt: 'Pristine glass dropper with dewy glistening hydrating serum drops over natural limestone',
     imageCaption: 'Fig. 2 — Serums deliver the highest concentration of active molecules per cubic milliliter of any skincare product tier.',
-    leadPullQuote: 'A serum is only as good as its vehicle. Applying a 500-Dalton peptide after a heavy occlusive cream is the equivalent of throwing money against a locked door.',
+    leadPullQuote: 'Proper serum layering is governed by molecular physics, not marketing trends. When mastering face serum layering, sequencing active formulas incorrectly limits cellular absorption.',
     keyTakeaways: [
-      'Following a disciplined serum layering guide prevents molecular obstruction: layer from thinnest aqueous texture to highest lipid density.',
-      'Pairing low-molecular hyaluronic acid and vitamin c in the morning shields living skin from UV-generated free radicals.',
-      'Active facial serums must be applied sixty seconds apart to permit complete stratum corneum diffusion before moisturizer occlusion.'
+      'Strategic serum layering relies on molecular weight and osmotic gradients: always apply low-viscosity aqueous actives before denser lipid formulations.',
+      'Mastering daily face serum layering prevents barrier congestion and ensures each concentrated active reaches its designated stratum corneum depth.',
+      'When layering serums with hyaluronic acid, vitamin C, and peptides, respect pH compatibility: pair humectants first, then antioxidants, and reserve delicate peptides for neutral pH regimens.'
     ],
     targetSkinConcerns: ['Dehydration Lines', 'Dull Complexion', 'Loss of Bouncy Skin Turgor', 'Uneven Skin Tone'],
     heroIngredients: [
@@ -131,41 +131,42 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
     ],
     sections: [
       {
-        heading: 'Why Active Facial Serums Are the Engine Room of Beauty Routines',
+        heading: 'The Molecular Science Behind Effective Serum Layering',
         paragraphs: [
-          'While cleansers wash away impurities and moisturizers provide barrier seal, active facial serums are engineered for transdermal delivery. Formulated without heavy waxes, fillers, or thick occlusives, active facial serums carry small, concentrated active molecules that travel through the stratum corneum and follicular pathways.',
-          'However, the modern beauty consumer often makes the mistake of "cocktailing"—slathering four different serums at once. This practice can overwhelm the skin with conflicting pH values and osmotic pressures, resulting in pilling and contact sensitization.'
+          'While cleansers wash away impurities and moisturizers provide an occlusive barrier, serum layering represents the engine room of corrective skincare. Formulated without heavy waxes, fillers, or thick occlusives, active serums carry small, bioavailable molecules designed to penetrate the stratum corneum and target specific dermal concerns.',
+          'However, haphazard face serum layering—often referred to as cosmetic cocktailing—can overwhelm cutaneous receptors with conflicting pH values and osmotic pressures. Successful serum layering demands understanding solubility, molecular size, and absorption kinetics so each active layer synergizes rather than precipitates into unwanted pilling.'
         ],
         callout: {
           label: 'Absorption Principle',
-          quoteOrText: 'The 500-Dalton Rule dictates that only molecules under 500 Da can penetrate intact stratum corneum. Advanced serums utilize liposomes and encapsulation to bypass this limit.',
+          quoteOrText: 'The 500-Dalton Rule dictates that only molecules under 500 Da can penetrate intact stratum corneum. Systematic serum layering ensures small hydrophilic molecules are never blocked by heavy occlusive films.',
           clinicalReference: 'Journal of Controlled Release'
         }
       },
       {
-        heading: 'The 3-Minute Chronology: Layering Hyaluronic Acid and Vitamin C Correctly',
+        heading: 'The Dermatologist Protocol for Face Serum Layering: Thinnest to Thickest Viscosity',
         paragraphs: [
-          'To layer serums with clinical precision: always begin on damp skin immediately after cleansing or misting. Pairing hyaluronic acid and vitamin c requires understanding solubility: apply aqueous humectant serums first (like multi-molecular hyaluronic acid or fermented essences). Wait sixty seconds for the water phase to absorb.',
-          'Second, apply targeted active treatment serums (such as Vitamin C in the morning or peptide architectures at night). Finally, lock these active ingredients into the living epidermal layers with a lipid moisturizer or facial oil.'
+          'The foundational rule of face serum layering is sequencing products strictly from lowest viscosity (water-thin) to highest viscosity (lipophilic drops or viscous emulsion gels). Always begin on damp skin immediately after cleansing, which elevates cutaneous permeability by up to tenfold.',
+          'Allow approximately sixty seconds between steps in your face serum layering routine. This brief interlude allows aqueous humectants to diffuse into the upper layers of the epidermis before introducing subsequent treatments, preventing surface friction and maximizing bioavailability.'
         ]
       },
       {
-        heading: 'Formulation Synergies and Order in an Advanced Serum Layering Guide',
+        heading: 'Precision Rules for Layering Serums with Hyaluronic Acid, Vitamin C, and Peptides',
         paragraphs: [
-          'In any reliable serum layering guide, formulation synergies reign supreme: Niacinamide + Hyaluronic Acid strengthens barrier integrity while deeply plumping; Vitamin C + Vitamin E + Ferulic amplifies photo-defense up to eightfold.',
-          'Incompatibilities to separate: Direct pure L-Ascorbic Acid (low pH < 3.2) should not be layered at the exact same moment as Copper Peptides (which require neutral pH 6.0). Alternate them between morning and evening rituals.'
+          'One of the most essential routines in clinical aesthetics is mastering the sequence for layering serums with hyaluronic acid, vitamin C, and peptides. The ideal chronological order begins with multi-molecular hyaluronic acid onto freshly misted skin, creating a hydration reservoir that primes cellular turgor.',
+          'Next, introduce your Vitamin C antioxidant serum—such as THD ascorbate or stabilized L-ascorbic acid—to neutralize solar free radicals and brighten cutaneous tone. When layering serums with hyaluronic acid, vitamin C, and peptides, take special care with pH dynamics: while signaling peptides pair harmoniously with hyaluronic acid, highly acidic L-ascorbic acid (pH < 3.5) can hydrolyze delicate copper peptides. Dermatologists suggest applying Vitamin C during morning serum layering and utilizing peptides during your evening restorative ritual.',
+          'Seal the active stack with a ceramide-rich barrier cream or cold-pressed botanical oil to preserve moisture and lock in the full therapeutic benefits of your face serum layering protocol.'
         ]
       }
     ],
-    dermatologistPerspective: 'Two well-formulated active facial serums chosen specifically for your cutaneous goals will always outperform five random trendy droppers applied haphazardly.',
+    dermatologistPerspective: 'When guiding patients on face serum layering, I emphasize that discipline and molecular sequencing always outperform haphazard cocktailing. A targeted approach to serum layering—particularly when layering serums with hyaluronic acid, vitamin C, and peptides—produces lasting dermal resilience with zero irritation.',
     routineStep: 'Active Serum',
     productFormulations: [
       {
-        title: 'Multi-Depth Hyaluronic Plumping Elixir',
+        title: 'Multi-Depth Hyaluronic Hydrating Serum',
         productType: 'Serum',
         formulationType: 'Multi-Molecular Hydrating Ampoule',
         keyActives: '7-Tier Hyaluronic Complex + Beta-Glucan + Ectoin',
-        textureNote: 'Water-light viscous drop that sinks in with zero stickiness',
+        textureNote: 'Essential foundational step for face serum layering; water-light viscous drop that sinks in with zero stickiness',
         finish: 'Dewy Satin',
         idealSkinType: 'All skin types, especially dehydrated and sensitized',
         ratingScore: 9.9
@@ -175,19 +176,20 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
         productType: 'Serum',
         formulationType: 'Lipid-Soluble Glow Concentrate',
         keyActives: '8% THD Ascorbate + 0.5% Ferulic Acid + Ergothioneine',
-        textureNote: 'Silky dry-oil serum giving instant golden luminescence',
+        textureNote: 'Ideal second step in morning serum layering; silky dry-oil serum providing instant golden luminescence',
         finish: 'Natural Luminous',
         idealSkinType: 'Dull, sun-exposed, pigmentation-prone skin',
         ratingScore: 9.7
       }
     ],
     faqs: [
-      { question: 'Why does my serum roll into little balls (pilling)?', answer: 'Pilling occurs when high-molecular weight polymers (like carbomers or xanthan gum) in one serum react with silicones or oils in your moisturizer before fully absorbing. Give each layer 60 seconds to dry.' },
-      { question: 'Can I combine hyaluronic acid and vitamin c in the same morning routine?', answer: 'Yes, they are highly synergistic. Apply low-viscosity hyaluronic acid first onto damp skin, followed sixty seconds later by your antioxidant Vitamin C serum.' }
+      { question: 'What is the single most important rule for face serum layering?', answer: 'The golden rule of face serum layering is applying formulas from thinnest consistency to thickest, beginning with water-soluble humectants on damp skin and following with lipid-dense actives.' },
+      { question: 'What is the clinical protocol for layering serums with hyaluronic acid, vitamin C, and peptides?', answer: 'When layering serums with hyaluronic acid, vitamin C, and peptides, start with hyaluronic acid on damp skin to saturate the barrier. Follow with Vitamin C in the morning for antioxidant photoprotection, and schedule peptides for evening serum layering to prevent acid-mediated peptide degradation.' },
+      { question: 'How many products should be incorporated into a daily serum layering routine?', answer: 'Dermatologists recommend limiting daily serum layering to two or three high-potency formulas per routine. Layering too many active serums simultaneously increases the risk of cosmetic pilling and cutaneous sensitization.' }
     ],
     contraindications: ['Applying pure hyaluronic acid onto dry skin in arid desert climates without sealing with cream'],
     initialComments: [
-      { id: 'c-serum-1', author: 'Elena Rostova', skinType: 'Dehydrated / Reactive', date: '3 days ago', content: 'Applying my hyaluronic serum onto damp skin instead of completely dry skin fixed my tightness within two days. Thank you for this guide!', likes: 24 }
+      { id: 'c-serum-1', author: 'Elena Rostova', skinType: 'Dehydrated / Reactive', date: '3 days ago', content: 'Following this exact face serum layering order fixed my morning pilling completely. Layering hyaluronic acid before my Vitamin C on damp skin gave me the dewiest finish.', likes: 24 }
     ],
     seoKeywords: STEP_2_KEYWORD_MAP['ultimate-serum-layering-radiance']
   },

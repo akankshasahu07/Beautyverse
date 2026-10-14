@@ -84,16 +84,16 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
     pageId: 'ultimate-serum-layering-radiance',
     pageUrl: '/article/the-ultimate-serum-layering-guide-hyaluronic-acid-vitamin-c-and-peptides',
     pageName: 'Serum Layering Guide',
-    mainKeyword: 'serum layering guide',
-    relatedKeyword1: 'hyaluronic acid and vitamin c',
-    relatedKeyword2: 'active facial serums',
-    seoTitle: 'The Ultimate Serum Layering Guide: Hyaluronic Acid, Vitamin C & Peptides | ÉLIXIR & DERMA',
-    metaDescription: 'Master your daily skincare routine with our serum layering guide. Discover how pairing hyaluronic acid and vitamin c with active facial serums maximizes cellular radiance.',
-    primaryHeadingH1: 'The Ultimate Serum Layering Guide: Hyaluronic Acid, Vitamin C & Multi-Peptides for 24-Hour Radiance',
+    mainKeyword: 'serum layering',
+    relatedKeyword1: 'face serum layering',
+    relatedKeyword2: 'layering serums with hyaluronic acid, vitamin C, and peptides',
+    seoTitle: 'Serum Layering Guide: Face Serum Layering with Hyaluronic Acid, Vitamin C & Peptides | ÉLIXIR & DERMA',
+    metaDescription: 'Master the clinical art of serum layering. Learn step-by-step face serum layering protocols and the exact order for layering serums with hyaluronic acid, vitamin C, and peptides.',
+    primaryHeadingH1: 'The Definitive Serum Layering Guide: Mastering Face Serum Layering for Maximum Radiance',
     sectionHeadingsH2: [
-      'Why Active Facial Serums Are the Engine Room of Beauty Routines',
-      'The 3-Minute Chronology: Layering Hyaluronic Acid and Vitamin C Correctly',
-      'Formulation Synergies and Order in an Advanced Serum Layering Guide'
+      'The Molecular Science Behind Effective Serum Layering',
+      'The Dermatologist Protocol for Face Serum Layering: Thinnest to Thickest Viscosity',
+      'Precision Rules for Layering Serums with Hyaluronic Acid, Vitamin C, and Peptides'
     ],
     searchIntent: 'Editorial Guide',
     productCategory: 'Serum'
