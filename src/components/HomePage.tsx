@@ -547,6 +547,114 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
+      {/* Answer Engine Optimization (AEO) Knowledge Guide: Direct Answers on Tips, Reviews, and Ingredients */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8" aria-label="AEO Editorial Answers and Science Guide">
+        <div className="border border-[#E8E2D9] bg-[#FAF8F5] p-8 sm:p-12 space-y-10">
+          <div className="max-w-3xl pb-6 border-b border-[#E8E2D9]">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-stone-700" />
+              <span>AEO Clinical Knowledge & Editorial Q&A</span>
+            </div>
+            <p className="text-xs uppercase tracking-wider text-stone-500 font-mono">
+              Formulation Science & Direct Dermal Answers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            {/* Question 1: Beauty and skincare tips */}
+            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+              <div>
+                <div className="text-[11px] uppercase tracking-wider font-semibold text-emerald-800 mb-2">
+                  Topic: Beauty & Skincare Tips
+                </div>
+                <h2 className="font-editorial-serif text-xl sm:text-2xl font-medium text-stone-900 leading-snug mb-3">
+                  What Are the Most Essential Beauty and Skincare Tips for Building an Effective Routine?
+                </h2>
+                <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
+                  To build an effective routine, the most essential beauty and skincare tips center on respecting cutaneous barrier physiology by cleansing with non-stripping lipids, layering hydration from lowest to highest viscosity, and applying broad-spectrum daily SPF 50+ every single morning. Dermatologists emphasize introducing only one active ingredient at a time, patch-testing for 48 hours to assess cutaneous tolerance, and never skipping daytime UV defense even in winter or indoors.
+                </p>
+                <p className="text-stone-600 font-light text-xs leading-relaxed">
+                  For optimal results, apply water-soluble humectants directly to damp skin immediately after gentle cleansing, follow with concentrated antioxidant treatments, and seal the stratum corneum with biocompatible ceramides and plant lipids to lock in hydration throughout the day.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-[#E8E2D9]/70">
+                <a
+                  href={getArticleUrl(articles[1] || articles[0])}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle(articles[1] || articles[0]);
+                  }}
+                  className="text-xs font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1 group"
+                  aria-label="Read our detailed routine sequencing guide in the serum article"
+                >
+                  <span>Explore Routine Tips</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Question 2: Beauty product reviews */}
+            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+              <div>
+                <div className="text-[11px] uppercase tracking-wider font-semibold text-amber-800 mb-2">
+                  Topic: Beauty Product Reviews
+                </div>
+                <h2 className="font-editorial-serif text-xl sm:text-2xl font-medium text-stone-900 leading-snug mb-3">
+                  How Do Independent Beauty Product Reviews Evaluate Formulation Safety and Efficacy?
+                </h2>
+                <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
+                  Independent beauty product reviews evaluate cosmetics and skincare through rigorous clinical criteria—including molecular weight penetration, active ingredient concentration, pH stability, comedogenic potential, and sensory wearability—rather than paid marketing claims. By performing chromatographic purity testing and scrutinizing complete ingredient decks, clinical reviews reveal whether a formula delivers bioavailable actives at therapeutically effective concentrations without hidden sensitizers, drying alcohols, or synthetic fragrances.
+                </p>
+                <p className="text-stone-600 font-light text-xs leading-relaxed">
+                  Our editorial laboratory reviews systematically test formulations under real-world conditions like humidity, speech movements, and makeup layering, giving you transparent, verifiable data to make informed beauty choices that protect cellular health.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-[#E8E2D9]/70">
+                <a
+                  href={getArticlesHubUrl()}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateArticles();
+                  }}
+                  className="text-xs font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1 group"
+                  aria-label="Browse all 10 independent beauty product reviews in our catalog"
+                >
+                  <span>Browse Product Reviews</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Question 3: Skincare ingredients */}
+            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+              <div>
+                <div className="text-[11px] uppercase tracking-wider font-semibold text-stone-800 mb-2">
+                  Topic: Skincare Ingredients
+                </div>
+                <h2 className="font-editorial-serif text-xl sm:text-2xl font-medium text-stone-900 leading-snug mb-3">
+                  Which Active Skincare Ingredients Deliver Clinically Proven Results for Barrier Repair?
+                </h2>
+                <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
+                  The active skincare ingredients with the highest clinical validation for barrier repair and skin radiance are multi-molecular hyaluronic acid, stabilized vitamin C (THD ascorbate and L-ascorbic acid), bioactive peptides (such as palmitoyl tripeptides), niacinamide (vitamin B3), and skin-identical ceramides. Multi-depth hyaluronic acid saturates intercellular hydration reservoirs, vitamin C neutralizes solar free radicals and brightens hyperpigmentation, peptides stimulate structural collagen synthesis, and ceramides restore the lipid bilayer to prevent transepidermal water loss.
+                </p>
+                <p className="text-stone-600 font-light text-xs leading-relaxed">
+                  When formulating or layering, choosing complementary skincare ingredients that match your skin phototype and barrier condition produces visible dermal transformation without the redness or flaking common with aggressive over-exfoliation.
+                </p>
+              </div>
+              <div className="pt-3 border-t border-[#E8E2D9]/70">
+                <button
+                  onClick={onOpenLexicon}
+                  className="text-xs font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1 group"
+                >
+                  <span>Search Ingredient Lexicon</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Routine Matcher Banner Callout */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="border border-[#E8E2D9] bg-[#F3EFEA] p-8 sm:p-12 relative overflow-hidden">
