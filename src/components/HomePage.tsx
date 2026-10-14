@@ -42,6 +42,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Hydrating Matte Elastomers & Peptides',
       article: leadArticle,
       image: leadArticle.heroImage,
+      imageAlt: 'Rosewood hydrating matte lipstick bullet in golden brass case with smooth hydrating lipstick swatch on warm travertine marble',
       finish: 'Velvet Matte',
       keyMolecule: 'Palmitoyl Tripeptide-38 & Squalane'
     },
@@ -51,6 +52,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Multi-Depth Hyaluronic & THD Vitamin C',
       article: serumArticle,
       image: serumArticle.heroImage,
+      imageAlt: 'Pristine glass dropper dispensing active hyaluronic acid drops for face serum layering on natural limestone',
       finish: 'Dewy Satin',
       keyMolecule: '7-Tier Hyaluronic Complex'
     },
@@ -60,6 +62,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Talc-Free Micro-Milled Spherical Silica',
       article: compactArticle,
       image: compactArticle.heroImage,
+      imageAlt: 'Open luxury talc-free compact powder with mirror and soft velour puff on travertine stone',
       finish: 'Soft Focus Blurred',
       keyMolecule: 'Spherical Silica & Jojoba Esters'
     },
@@ -69,6 +72,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Non-Nano Zinc & Priming Fluid Shields',
       article: sunscreenArticle,
       image: sunscreenArticle.heroImage,
+      imageAlt: 'Matte tube of daily sunscreen for flawless makeup with lightweight cream swatch and no white cast on warm stone slab',
       finish: 'Invisible Glow',
       keyMolecule: '20% Non-Nano Zinc Oxide & Ectoin'
     },
@@ -78,6 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Hyaluronic Cheek Petal Droplets',
       article: blushArticle,
       image: blushArticle.heroImage,
+      imageAlt: 'Petal-pink dewy liquid blush bottle with delicate cream droplet on natural limestone',
       finish: 'Dewy Satin',
       keyMolecule: 'Sodium Hyaluronate & Rose Hydrolat'
     },
@@ -87,6 +92,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       tagline: 'Squalane Tints & Amino-Coated Minerals',
       article: foundationArticle,
       image: foundationArticle.heroImage,
+      imageAlt: 'Clean serum foundation bottle with lightweight squalane tint droplet on travertine surface',
       finish: 'Natural Luminous',
       keyMolecule: '100% Plant Squalane & Lauroyl Lysine'
     }
@@ -137,6 +143,18 @@ export const HomePage: React.FC<HomePageProps> = ({
               <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
               <span>Keyword Focus: Blog · Reviews · Ingredients</span>
             </div>
+          </div>
+
+          {/* Decorative Editorial Divider Motif (Purely Decorative: alt="" and aria-hidden) */}
+          <div className="flex items-center justify-center my-6" aria-hidden="true">
+            <img 
+              src="data:image/svg+xml,%3Csvg width='48' height='8' viewBox='0 0 48 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' r='1.5' fill='%23D4CECA'/%3E%3Cline x1='10' y1='4' x2='20' y2='4' stroke='%23D4CECA'/%3E%3Ccircle cx='24' cy='4' r='2' fill='%23B8AFA7'/%3E%3Cline x1='28' y1='4' x2='38' y2='4' stroke='%23D4CECA'/%3E%3Ccircle cx='44' cy='4' r='1.5' fill='%23D4CECA'/%3E%3C/svg%3E"
+              alt=""
+              aria-hidden="true"
+              className="opacity-75"
+              width={48}
+              height={8}
+            />
           </div>
 
           {/* Lead 2-Column Split: Lipstick Editorial Feature */}
@@ -236,9 +254,14 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <div className="aspect-[4/3] w-full relative">
                   <img
                     src={HOME_HERO_IMAGE}
-                    alt="The 2026 Beauty Product Essentials: active serum dropper, velvet compact powder, satin lipstick, and fluid sunscreen on travertine stone"
+                    alt="Curated beauty product reviews collection: hydrating matte lipstick, active face serum dropper, and sunscreen for flawless makeup on natural travertine stone"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1200}
+                    height={896}
                   />
                   <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors" />
                 </div>
@@ -291,9 +314,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                 >
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt || item.article.imageAlt}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    width={1200}
+                    height={896}
                   />
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[10px] font-semibold uppercase tracking-wider text-stone-800 px-2.5 py-1 border border-[#E8E2D9]">
                     {item.type}

@@ -267,7 +267,11 @@ export function updateSeoMetadata(article: BeautyArticle | null, view: 'home' | 
       'description': description,
       'keywords': keywordsArray,
       'url': canonicalUrl,
-      'image': ogImage,
+      'image': {
+        '@type': 'ImageObject',
+        'url': ogImage,
+        'caption': article.imageAlt
+      },
       'datePublished': '2026-10-01T08:00:00+00:00',
       'dateModified': '2026-10-10T12:00:00+00:00',
       'author': {

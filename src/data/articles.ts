@@ -18,7 +18,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       avatarInitials: 'GM'
     },
     heroImage: '/src/assets/images/beauty_lipstick_editorial_1791630593033.jpg',
-    imageAlt: 'Satin rosewood lipstick bullet in golden brass case with smooth velvet swatch on warm travertine marble',
+    imageAlt: 'Rosewood hydrating matte lipstick bullet in golden brass case with smooth hydrating lipstick swatch on warm travertine marble',
     imageCaption: 'Fig. 1 — Modern velvet lipsticks suspend high-purity iron oxide pigments within micro-spherical elastomer matrices for featherlight slip.',
     leadPullQuote: 'For decades, matte lipstick meant drying alcohol solvents and chapped lips by 2 PM. Modern pigment chemistry now delivers comfortable hydrating matte lipstick with zero cellular dehydration.',
     keyTakeaways: [
@@ -115,7 +115,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       avatarInitials: 'CV'
     },
     heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
-    imageAlt: 'Pristine glass dropper with dewy glistening hydrating serum drops over natural limestone',
+    imageAlt: 'Pristine glass dropper dispensing active hyaluronic acid drops for face serum layering on natural limestone',
     imageCaption: 'Fig. 2 — Serums deliver the highest concentration of active molecules per cubic milliliter of any skincare product tier.',
     leadPullQuote: 'Proper serum layering is governed by molecular physics, not marketing trends. When mastering face serum layering, sequencing active formulas incorrectly limits cellular absorption.',
     keyTakeaways: [
@@ -303,7 +303,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       avatarInitials: 'AT'
     },
     heroImage: '/src/assets/images/article_sunscreen_minimal_1791560512517.jpg',
-    imageAlt: 'Matte neutral sunscreen tube with smooth cream swatch on warm stone slab in soft sunlight',
+    imageAlt: 'Matte tube of daily sunscreen for flawless makeup with lightweight cream swatch and no white cast on warm stone slab',
     imageCaption: 'Fig. 4 — Modern fluid sunscreens form a flexible photoprotective mesh that grips makeup without pilling or flashback.',
     leadPullQuote: 'If your UV shield causes foundation to slide, pill, or turn chalky by noon, wearability fails. Modern photodermatology has finally engineered the ideal sunscreen for flawless makeup with zero residue.',
     keyTakeaways: [

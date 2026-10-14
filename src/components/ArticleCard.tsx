@@ -62,6 +62,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             alt={article.imageAlt}
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+            decoding="async"
+            width={1200}
+            height={896}
           />
         </a>
 

@@ -133,6 +133,11 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                   alt={article.imageAlt}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={1200}
+                  height={896}
                 />
                 <div className="absolute inset-0 bg-stone-900/5 group-hover:bg-transparent transition-colors" />
               </div>

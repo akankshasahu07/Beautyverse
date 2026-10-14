@@ -421,6 +421,11 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               alt={article.imageAlt}
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              width={1200}
+              height={896}
             />
           </div>
           <figcaption className="mt-2 text-xs text-stone-500 dark:text-stone-400 font-editorial-serif italic">
@@ -442,6 +447,18 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Decorative Editorial Divider Motif (Purely Decorative: alt="" and aria-hidden) */}
+        <div className="flex justify-center my-6" aria-hidden="true">
+          <img 
+            src="data:image/svg+xml,%3Csvg width='40' height='10' viewBox='0 0 40 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L23 5L20 10L17 5L20 0Z' fill='%23C7BDB1'/%3E%3Ccircle cx='6' cy='5' r='1.5' fill='%23DCD5CB'/%3E%3Ccircle cx='34' cy='5' r='1.5' fill='%23DCD5CB'/%3E%3Cline x1='10' y1='5' x2='15' y2='5' stroke='%23DCD5CB'/%3E%3Cline x1='25' y1='5' x2='30' y2='5' stroke='%23DCD5CB'/%3E%3C/svg%3E" 
+            alt="" 
+            aria-hidden="true" 
+            className="opacity-70 dark:opacity-40" 
+            width={40} 
+            height={10} 
+          />
         </div>
 
         {/* Opening Editorial Pullquote (Zero Thick Border - Clean Hairlines) */}
