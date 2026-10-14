@@ -67,7 +67,7 @@ export const STEP_2_KEYWORD_MAP: Record<string, PageKeywordMapping> = {
     mainKeyword: 'hydrating matte lipstick',
     relatedKeyword1: 'hydrating lipstick',
     relatedKeyword2: 'how to keep lips hydrated with matte lipstick',
-    seoTitle: 'Hydrating Matte Lipstick Science & How to Keep Lips Hydrated | ÉLIXIR & DERMA',
+    seoTitle: 'Hydrating Matte Lipstick | The Velvet Lip Revolution – ELIXIR & DERMA',
     metaDescription: 'Discover how modern hydrating matte lipstick formulas protect the lip barrier. Learn why choosing an advanced hydrating lipstick and knowing how to keep lips hydrated with matte lipstick transforms your wear.',
     primaryHeadingH1: 'The Velvet Lip Revolution: The Science of Hydrating Matte Lipstick That Never Dries Lips',
     sectionHeadingsH2: [
