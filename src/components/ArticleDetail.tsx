@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { BeautyArticle, ArticleComment } from '../types/article';
 import { getArticleUrl, getArticlesHubUrl, getHomeUrl, navigateTo } from '../utils/seoRouter';
+import { handleImageFallback } from '../utils/imageFallback';
 
 /**
  * Renders paragraphs containing Markdown-style links [Anchor Text](url)
@@ -541,6 +542,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
               src={article.heroImage}
               alt={article.imageAlt}
               referrerPolicy="no-referrer"
+              onError={handleImageFallback}
               className="w-full h-full object-cover"
               loading="eager"
               fetchPriority="high"

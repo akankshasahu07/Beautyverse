@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Bookmark, Clock, UserCheck } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
 import { getArticleUrl } from '../utils/seoRouter';
+import { handleImageFallback } from '../utils/imageFallback';
 
 interface HeroFeaturedProps {
   article: BeautyArticle;
@@ -137,6 +138,7 @@ export const HeroFeatured: React.FC<HeroFeaturedProps> = ({
                   src={article.heroImage}
                   alt={article.imageAlt}
                   referrerPolicy="no-referrer"
+                  onError={handleImageFallback}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                   loading="eager"
                   fetchPriority="high"

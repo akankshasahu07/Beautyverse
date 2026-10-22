@@ -2,6 +2,7 @@ import React from 'react';
 import { Bookmark, Clock, ArrowUpRight } from 'lucide-react';
 import { BeautyArticle } from '../types/article';
 import { getArticleUrl } from '../utils/seoRouter';
+import { handleImageFallback } from '../utils/imageFallback';
 
 interface ArticleCardProps {
   article: BeautyArticle;
@@ -63,6 +64,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             src={article.heroImage}
             alt={article.imageAlt}
             referrerPolicy="no-referrer"
+            onError={handleImageFallback}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             loading="lazy"
             decoding="async"
