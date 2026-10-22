@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Bookmark, Clock, Sparkles, Check, Star, ShieldCheck, Heart, Link2, Key } from 'lucide-react';
+import { ArrowRight, Bookmark, Clock, Sparkles, Check, Star, ShieldCheck, Heart, Link2, Key, ExternalLink } from 'lucide-react';
 import { BeautyArticle, BeautyProductType } from '../types/article';
 import { getArticleUrl, getArticlesHubUrl } from '../utils/seoRouter';
 
@@ -138,6 +138,44 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h1 className="font-editorial-serif text-lg sm:text-xl text-stone-800 font-light leading-relaxed">
                 Welcome to ÉLIXIR & DERMA, an independent <strong className="font-medium text-stone-900">beauty and skincare blog</strong> delivering comprehensive <strong className="font-medium text-stone-900">beauty product reviews</strong> and clinical analyses of <strong className="font-medium text-stone-900">beauty and skincare ingredients</strong> across 10 essential product tiers.
               </h1>
+              <div className="mt-3 flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-stone-600 font-editorial-sans">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Spotlight Guides:</span>
+                <a
+                  href={getArticleUrl(leadArticle)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle(leadArticle);
+                  }}
+                  className="text-stone-900 font-medium underline decoration-stone-300 hover:decoration-stone-900 transition-colors"
+                  title="Explore our hydrating matte lipstick guide"
+                >
+                  Explore our hydrating matte lipstick guide
+                </a>
+                <span className="text-stone-300">·</span>
+                <a
+                  href={getArticleUrl(serumArticle)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle(serumArticle);
+                  }}
+                  className="text-stone-900 font-medium underline decoration-stone-300 hover:decoration-stone-900 transition-colors"
+                  title="Learn how to layer skincare serums"
+                >
+                  Learn how to layer skincare serums
+                </a>
+                <span className="text-stone-300">·</span>
+                <a
+                  href={getArticleUrl(sunscreenArticle)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onReadArticle(sunscreenArticle);
+                  }}
+                  className="text-stone-900 font-medium underline decoration-stone-300 hover:decoration-stone-900 transition-colors"
+                  title="Discover our sunscreen guide for makeup"
+                >
+                  Discover our sunscreen guide for makeup
+                </a>
+              </div>
             </div>
             <div className="flex items-center gap-2 shrink-0 text-xs font-editorial-sans text-stone-600 bg-[#F7F4EE] px-3 py-1.5 border border-[#E8E2D9] rounded-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
@@ -571,18 +609,53 @@ export const HomePage: React.FC<HomePageProps> = ({
                   What Are the Most Essential Beauty and Skincare Tips for Building an Effective Routine?
                 </h2>
                 <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
-                  To build an effective routine, the most essential beauty and skincare tips center on respecting cutaneous barrier physiology by cleansing with non-stripping lipids, layering hydration from lowest to highest viscosity, and applying broad-spectrum daily SPF 50+ every single morning. Dermatologists emphasize introducing only one active ingredient at a time, patch-testing for 48 hours to assess cutaneous tolerance, and never skipping daytime UV defense even in winter or indoors.
+                  To build an effective routine, the most essential beauty and skincare tips center on respecting cutaneous barrier physiology by cleansing with non-stripping lipids, layering hydration from lowest to highest viscosity, and applying broad-spectrum daily SPF 50+ every single morning. For clinical routine sequencing,{' '}
+                  <a
+                    href={getArticleUrl(serumArticle)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onReadArticle(serumArticle);
+                    }}
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors"
+                    title="Learn how to layer skincare serums"
+                  >
+                    learn how to layer skincare serums
+                  </a>
+                  {' '}with multi-molecular hyaluronic acid and vitamin C, and{' '}
+                  <a
+                    href={getArticleUrl(sunscreenArticle)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onReadArticle(sunscreenArticle);
+                    }}
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors"
+                    title="Discover our sunscreen guide for makeup"
+                  >
+                    discover our sunscreen guide for makeup
+                  </a>
+                  {' '}for invisible daily UV protection that prevents photoaging without pilling.
                 </p>
                 <p className="text-stone-600 font-light text-xs leading-relaxed">
-                  For optimal results, apply water-soluble humectants directly to damp skin immediately after gentle cleansing, follow with concentrated antioxidant treatments, and seal the stratum corneum with biocompatible ceramides and plant lipids to lock in hydration throughout the day.
+                  As recommended in the{' '}
+                  <a
+                    href="https://www.aad.org/public/everyday-care/skin-care-basics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    title="American Academy of Dermatology (AAD) everyday skin care guidelines (opens in a new tab)"
+                  >
+                    <span>American Academy of Dermatology (AAD) everyday skin care guidelines</span>
+                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                  </a>
+                  , establishing a disciplined regimen of gentle cleansing, humectant hydration, and daily photoprotection is the cornerstone of dermatological health.
                 </p>
               </div>
               <div className="pt-3 border-t border-[#E8E2D9]/70">
                 <a
-                  href={getArticleUrl(articles[1] || articles[0])}
+                  href={getArticleUrl(serumArticle)}
                   onClick={(e) => {
                     e.preventDefault();
-                    onReadArticle(articles[1] || articles[0]);
+                    onReadArticle(serumArticle);
                   }}
                   className="text-xs font-medium text-stone-900 hover:text-stone-700 inline-flex items-center gap-1 group"
                   aria-label="Read our detailed routine sequencing guide in the serum article"
@@ -603,10 +676,33 @@ export const HomePage: React.FC<HomePageProps> = ({
                   How Do Independent Beauty Product Reviews Evaluate Formulation Safety and Efficacy?
                 </h2>
                 <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
-                  Independent beauty product reviews evaluate cosmetics and skincare through rigorous clinical criteria—including molecular weight penetration, active ingredient concentration, pH stability, comedogenic potential, and sensory wearability—rather than paid marketing claims. By performing chromatographic purity testing and scrutinizing complete ingredient decks, clinical reviews reveal whether a formula delivers bioavailable actives at therapeutically effective concentrations without hidden sensitizers, drying alcohols, or synthetic fragrances.
+                  Independent beauty product reviews evaluate cosmetics and skincare through rigorous clinical criteria—including molecular weight penetration, active ingredient concentration, pH stability, comedogenic potential, and sensory wearability—rather than paid marketing claims. For an example of clinical formulation testing,{' '}
+                  <a
+                    href={getArticleUrl(leadArticle)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onReadArticle(leadArticle);
+                    }}
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors"
+                    title="Explore our hydrating matte lipstick guide"
+                  >
+                    explore our hydrating matte lipstick guide
+                  </a>
+                  {' '}to understand how next-generation squalane and elastomer matrices solve mucosal dehydration without compromising vibrant pigment.
                 </p>
                 <p className="text-stone-600 font-light text-xs leading-relaxed">
-                  Our editorial laboratory reviews systematically test formulations under real-world conditions like humidity, speech movements, and makeup layering, giving you transparent, verifiable data to make informed beauty choices that protect cellular health.
+                  Our laboratory reviews cross-reference{' '}
+                  <a
+                    href="https://www.fda.gov/cosmetics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    title="U.S. Food and Drug Administration (FDA) cosmetic safety and ingredient guidance (opens in a new tab)"
+                  >
+                    <span>U.S. Food and Drug Administration (FDA) cosmetic safety and ingredient guidance</span>
+                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                  </a>
+                  {' '}to verify active purity benchmarks, ensuring our evaluations provide transparent, clinically grounded data.
                 </p>
               </div>
               <div className="pt-3 border-t border-[#E8E2D9]/70">
@@ -635,10 +731,21 @@ export const HomePage: React.FC<HomePageProps> = ({
                   Which Active Skincare Ingredients Deliver Clinically Proven Results for Barrier Repair?
                 </h2>
                 <p className="text-stone-700 font-light text-xs sm:text-sm leading-relaxed mb-3">
-                  The active skincare ingredients with the highest clinical validation for barrier repair and skin radiance are multi-molecular hyaluronic acid, stabilized vitamin C (THD ascorbate and L-ascorbic acid), bioactive peptides (such as palmitoyl tripeptides), niacinamide (vitamin B3), and skin-identical ceramides. Multi-depth hyaluronic acid saturates intercellular hydration reservoirs, vitamin C neutralizes solar free radicals and brightens hyperpigmentation, peptides stimulate structural collagen synthesis, and ceramides restore the lipid bilayer to prevent transepidermal water loss.
+                  The active skincare ingredients with the highest clinical validation for barrier repair and skin radiance are multi-molecular hyaluronic acid, stabilized vitamin C (THD ascorbate and L-ascorbic acid), bioactive peptides (such as palmitoyl tripeptides), niacinamide (vitamin B3), and skin-identical ceramides. For scientific research on lipid bilayers, refer to the{' '}
+                  <a
+                    href="https://dermnetnz.org/topics/barrier-repair-creams"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    title="DermNet guide to active skincare ingredients and barrier repair (opens in a new tab)"
+                  >
+                    <span>DermNet guide to active skincare ingredients and barrier repair</span>
+                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                  </a>
+                  .
                 </p>
                 <p className="text-stone-600 font-light text-xs leading-relaxed">
-                  When formulating or layering, choosing complementary skincare ingredients that match your skin phototype and barrier condition produces visible dermal transformation without the redness or flaking common with aggressive over-exfoliation.
+                  When formulating or layering, choosing complementary skincare ingredients that match your skin phototype produces visible dermal transformation without the redness or flaking common with aggressive over-exfoliation.
                 </p>
               </div>
               <div className="pt-3 border-t border-[#E8E2D9]/70">

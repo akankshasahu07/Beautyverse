@@ -2,10 +2,79 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowLeft, ArrowRight, Bookmark, Share2, Volume2, VolumeX, Play, Pause, 
   Check, MessageSquare, ChevronDown, ChevronUp, AlertCircle, 
-  Sparkles, Stethoscope, Layers, Send, Link2, Key, Compass, BookOpen
+  Sparkles, Stethoscope, Layers, Send, Link2, Key, Compass, BookOpen,
+  ExternalLink, Home
 } from 'lucide-react';
 import { BeautyArticle, ArticleComment } from '../types/article';
-import { getArticleUrl, getArticlesHubUrl } from '../utils/seoRouter';
+import { getArticleUrl, getArticlesHubUrl, getHomeUrl, navigateTo } from '../utils/seoRouter';
+
+/**
+ * Renders paragraphs containing Markdown-style links [Anchor Text](url)
+ * - Outbound links open in a new tab with target="_blank" rel="noopener noreferrer"
+ * - Internal links (/home, /lipstick, /serum, /sunscreen) perform smooth client routing
+ */
+function renderRichText(
+  text: string, 
+  onNavigateInternal: (url: string) => void
+): React.ReactNode {
+  if (!text || typeof text !== 'string') return text;
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  if (!linkRegex.test(text)) return text;
+
+  linkRegex.lastIndex = 0;
+  const elements: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      elements.push(text.slice(lastIndex, match.index));
+    }
+
+    const anchorText = match[1];
+    const url = match[2];
+    const isExternal = url.startsWith('http://') || url.startsWith('https://');
+
+    if (isExternal) {
+      elements.push(
+        <a
+          key={`ext-link-${match.index}`}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-stone-900 dark:text-stone-100 font-medium underline decoration-stone-400 hover:decoration-stone-900 dark:decoration-stone-500 dark:hover:decoration-stone-100 transition-colors inline-flex items-center gap-0.5"
+          title={`${anchorText} (opens in a new tab)`}
+        >
+          <span>{anchorText}</span>
+          <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400 shrink-0" aria-hidden="true" />
+        </a>
+      );
+    } else {
+      elements.push(
+        <a
+          key={`int-link-${match.index}`}
+          href={url}
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigateInternal(url);
+          }}
+          className="text-stone-900 dark:text-stone-100 font-medium underline decoration-stone-400 hover:decoration-stone-900 dark:decoration-stone-500 dark:hover:decoration-stone-100 transition-colors"
+          title={`Navigate to ${anchorText}`}
+        >
+          {anchorText}
+        </a>
+      );
+    }
+
+    lastIndex = linkRegex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    elements.push(text.slice(lastIndex));
+  }
+
+  return elements;
+}
 
 interface ArticleDetailProps {
   article: BeautyArticle;
@@ -109,6 +178,25 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
       navigator.clipboard.writeText(fullUrl);
       setCopiedToast(true);
       setTimeout(() => setCopiedToast(false), 3000);
+    }
+  };
+
+  const handleInternalLink = (url: string) => {
+    if (url === '/home' || url === '/') {
+      onBack();
+      return;
+    }
+    const cleanUrl = url.toLowerCase().trim();
+    const target = allArticles.find(
+      a => getArticleUrl(a) === cleanUrl || 
+           `/article/${a.slug}` === cleanUrl || 
+           a.slug === cleanUrl.replace(/^\//, '') ||
+           a.id === cleanUrl.replace(/^\//, '')
+    );
+    if (target) {
+      onSelectArticle(target);
+    } else {
+      navigateTo(url);
     }
   };
 
@@ -519,7 +607,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
                     sIdx === 0 && pIdx === 0 ? 'drop-cap' : ''
                   }`}
                 >
-                  {p}
+                  {renderRichText(p, handleInternalLink)}
                 </p>
               ))}
 
@@ -585,7 +673,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
             <span>Dermatologist Clinical Synthesis</span>
           </div>
           <p className="text-sm font-light text-stone-700 dark:text-stone-300 leading-relaxed">
-            {article.dermatologistPerspective}
+            {renderRichText(article.dermatologistPerspective, handleInternalLink)}
           </p>
         </div>
 
@@ -669,47 +757,230 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
           </div>
         </div>
 
-        {/* Related Formulations & Cross-Article Reading with Descriptive Anchor Text */}
-        <div className="mt-14 p-6 border border-[#E8E2D9] dark:border-stone-800 bg-[#FAF8F5]/80 dark:bg-stone-900/60 rounded-sm">
-          <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-stone-900 dark:text-stone-100 mb-2">
-            <Sparkles className="w-4 h-4 text-stone-700 dark:text-stone-300" />
-            <span>Related Formulation Science & Guides</span>
+        {/* Dedicated Related Articles & Internal Navigation Section */}
+        <section aria-labelledby="related-articles-heading" className="mt-14 p-6 sm:p-7 border border-[#E8E2D9] dark:border-stone-800 bg-[#FAF8F5]/90 dark:bg-stone-900/70 rounded-sm">
+          <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#E8E2D9] dark:border-stone-800">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-stone-900 dark:text-stone-100">
+              <Compass className="w-4 h-4 text-stone-700 dark:text-stone-300" />
+              <h3 id="related-articles-heading" className="font-editorial-sans text-xs uppercase tracking-widest">
+                Related Articles & Core Guides
+              </h3>
+            </div>
+            <a
+              href={getHomeUrl()}
+              onClick={(e) => {
+                e.preventDefault();
+                onBack();
+              }}
+              className="text-[11px] font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 flex items-center gap-1 group"
+              title="Return to ELIXIR & DERMA Homepage"
+            >
+              <Home className="w-3.5 h-3.5" />
+              <span>ELIXIR & DERMA Home</span>
+            </a>
           </div>
-          <p className="text-xs text-stone-600 dark:text-stone-400 font-light mb-4">
-            Deepen your skincare and cosmetics knowledge by exploring related laboratory investigations across the ELIXIR & DERMA catalog:
+
+          <p className="text-xs text-stone-600 dark:text-stone-400 font-light mb-5">
+            Continue your formulation journey with our interrelated clinical investigations and editorial guides:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {allArticles
-              .filter(a => a.id !== article.id)
-              .slice(0, 2)
-              .map(rel => (
-                <a
-                  key={rel.id}
-                  href={getArticleUrl(rel)}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onSelectArticle(rel);
-                  }}
-                  className="p-3.5 border border-[#E8E2D9] dark:border-stone-800 bg-white dark:bg-stone-900 hover:border-stone-400 dark:hover:border-stone-600 transition-colors group flex flex-col justify-between"
-                  aria-label={`Read related investigation: ${rel.title}`}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Compute the 3 related articles based on current page */}
+            {(() => {
+              const isLipstick = article.id === 'velvet-lipstick-formulation-science' || article.slug === 'lipstick';
+              const isSerum = article.id === 'ultimate-serum-layering-radiance' || article.slug === 'serum';
+              const isSunscreen = article.id === 'invisible-fluid-sunscreens-makeup-prep' || article.slug === 'sunscreen';
+
+              const lipstickArt = allArticles.find(a => a.id === 'velvet-lipstick-formulation-science' || a.slug === 'lipstick');
+              const serumArt = allArticles.find(a => a.id === 'ultimate-serum-layering-radiance' || a.slug === 'serum');
+              const sunscreenArt = allArticles.find(a => a.id === 'invisible-fluid-sunscreens-makeup-prep' || a.slug === 'sunscreen');
+
+              const cards: {
+                key: string;
+                category: string;
+                title: string;
+                anchorText: string;
+                description: string;
+                url: string;
+                onNavigate: () => void;
+              }[] = [];
+
+              if (isLipstick) {
+                if (serumArt) {
+                  cards.push({
+                    key: 'serum',
+                    category: 'Active Skincare',
+                    title: serumArt.title,
+                    anchorText: 'Learn How to Layer Skincare Serums',
+                    description: 'Explore the scientific sequencing of hyaluronic acid, vitamin C, and copper peptides.',
+                    url: getArticleUrl(serumArt),
+                    onNavigate: () => onSelectArticle(serumArt)
+                  });
+                }
+                if (sunscreenArt) {
+                  cards.push({
+                    key: 'sunscreen',
+                    category: 'SPF Photoprotection',
+                    title: sunscreenArt.title,
+                    anchorText: 'Discover Our Sunscreen Guide for Makeup',
+                    description: 'Learn how modern non-nano zinc fluid shields grip complexion products with zero white cast.',
+                    url: getArticleUrl(sunscreenArt),
+                    onNavigate: () => onSelectArticle(sunscreenArt)
+                  });
+                }
+                cards.push({
+                  key: 'home',
+                  category: 'Editorial Hub',
+                  title: 'The Science of Radiant Formulations',
+                  anchorText: 'Return to ELIXIR & DERMA Homepage',
+                  description: 'Browse our complete beauty and skincare blog, product reviews, and clinical ingredient directory.',
+                  url: getHomeUrl(),
+                  onNavigate: () => onBack()
+                });
+              } else if (isSerum) {
+                if (lipstickArt) {
+                  cards.push({
+                    key: 'lipstick',
+                    category: 'Color Cosmetics',
+                    title: lipstickArt.title,
+                    anchorText: 'Explore Our Hydrating Matte Lipstick Guide',
+                    description: 'Understand how squalane and cross-linked elastomers lock moisture into delicate lip mucosa.',
+                    url: getArticleUrl(lipstickArt),
+                    onNavigate: () => onSelectArticle(lipstickArt)
+                  });
+                }
+                if (sunscreenArt) {
+                  cards.push({
+                    key: 'sunscreen',
+                    category: 'SPF Photoprotection',
+                    title: sunscreenArt.title,
+                    anchorText: 'Discover Our Sunscreen Guide for Makeup',
+                    description: 'Select the optimal fluid mineral UV shield to bond cleanly over active serum layers.',
+                    url: getArticleUrl(sunscreenArt),
+                    onNavigate: () => onSelectArticle(sunscreenArt)
+                  });
+                }
+                cards.push({
+                  key: 'home',
+                  category: 'Editorial Hub',
+                  title: 'The Science of Radiant Formulations',
+                  anchorText: 'Return to ELIXIR & DERMA Homepage',
+                  description: 'Browse our complete beauty and skincare blog, product reviews, and clinical ingredient directory.',
+                  url: getHomeUrl(),
+                  onNavigate: () => onBack()
+                });
+              } else if (isSunscreen) {
+                if (lipstickArt) {
+                  cards.push({
+                    key: 'lipstick',
+                    category: 'Color Cosmetics',
+                    title: lipstickArt.title,
+                    anchorText: 'Explore Our Hydrating Matte Lipstick Guide',
+                    description: 'Pair daily broad-spectrum sun protection with barrier-cushioning velvet lip color.',
+                    url: getArticleUrl(lipstickArt),
+                    onNavigate: () => onSelectArticle(lipstickArt)
+                  });
+                }
+                if (serumArt) {
+                  cards.push({
+                    key: 'serum',
+                    category: 'Active Skincare',
+                    title: serumArt.title,
+                    anchorText: 'Learn How to Layer Skincare Serums',
+                    description: 'Master pre-SPF skin preparation with water-soluble humectants and stable antioxidants.',
+                    url: getArticleUrl(serumArt),
+                    onNavigate: () => onSelectArticle(serumArt)
+                  });
+                }
+                cards.push({
+                  key: 'home',
+                  category: 'Editorial Hub',
+                  title: 'The Science of Radiant Formulations',
+                  anchorText: 'Return to ELIXIR & DERMA Homepage',
+                  description: 'Browse our complete beauty and skincare blog, product reviews, and clinical ingredient directory.',
+                  url: getHomeUrl(),
+                  onNavigate: () => onBack()
+                });
+              } else {
+                // Fallback for any other article
+                if (lipstickArt) {
+                  cards.push({
+                    key: 'lipstick',
+                    category: 'Color Cosmetics',
+                    title: lipstickArt.title,
+                    anchorText: 'Explore Our Hydrating Matte Lipstick Guide',
+                    description: 'The science of velvet elastomer polymers and squalane lip matrices.',
+                    url: getArticleUrl(lipstickArt),
+                    onNavigate: () => onSelectArticle(lipstickArt)
+                  });
+                }
+                if (serumArt) {
+                  cards.push({
+                    key: 'serum',
+                    category: 'Active Skincare',
+                    title: serumArt.title,
+                    anchorText: 'Learn How to Layer Skincare Serums',
+                    description: 'Viscosity sequencing with hyaluronic acid, vitamin C, and copper peptides.',
+                    url: getArticleUrl(serumArt),
+                    onNavigate: () => onSelectArticle(serumArt)
+                  });
+                }
+                cards.push({
+                  key: 'home',
+                  category: 'Editorial Hub',
+                  title: 'The Science of Radiant Formulations',
+                  anchorText: 'Return to ELIXIR & DERMA Homepage',
+                  description: 'Return to our homepage for all clinical product reviews and ingredient guides.',
+                  url: getHomeUrl(),
+                  onNavigate: () => onBack()
+                });
+              }
+
+              return cards.map(card => (
+                <div
+                  key={card.key}
+                  className="p-4 border border-[#E8E2D9] dark:border-stone-800 bg-white dark:bg-stone-900 rounded-sm hover:border-stone-400 dark:hover:border-stone-600 transition-colors flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10px] uppercase tracking-wider text-stone-500 mb-1 flex items-center justify-between">
-                      <span>{rel.productType}</span>
-                      <span>{rel.readTime}</span>
+                    <div className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 mb-1">
+                      {card.category}
                     </div>
-                    <div className="font-editorial-serif text-sm font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 line-clamp-2 leading-snug mb-2">
-                      {rel.title}
-                    </div>
+                    <h4 className="font-editorial-serif text-base font-medium text-stone-900 dark:text-stone-100 leading-snug mb-1.5">
+                      <a
+                        href={card.url}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          card.onNavigate();
+                        }}
+                        className="hover:underline decoration-stone-400 underline-offset-2"
+                        title={card.anchorText}
+                      >
+                        {card.anchorText}
+                      </a>
+                    </h4>
+                    <p className="text-xs text-stone-600 dark:text-stone-400 font-light leading-relaxed mb-3">
+                      {card.description}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-medium text-stone-800 dark:text-stone-200 group-hover:underline pt-2 border-t border-[#E8E2D9]/60 dark:border-stone-800">
-                    <span>Explore {rel.productType} Guide</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                  <div className="pt-2.5 border-t border-[#E8E2D9]/70 dark:border-stone-800">
+                    <a
+                      href={card.url}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        card.onNavigate();
+                      }}
+                      className="text-xs font-medium text-stone-900 dark:text-stone-100 hover:text-stone-700 inline-flex items-center gap-1 group"
+                      aria-label={`${card.anchorText}: ${card.title}`}
+                    >
+                      <span>Read Guide</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
                   </div>
-                </a>
-              ))}
+                </div>
+              ));
+            })()}
           </div>
-        </div>
+        </section>
 
         {/* Reader Discussion & Comments */}
         <div className="mt-16 pt-10 border-t border-[#E8E2D9] dark:border-stone-800">
