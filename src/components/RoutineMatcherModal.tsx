@@ -75,22 +75,22 @@ export const RoutineMatcherModal: React.FC<RoutineMatcherModalProps> = ({
   }).slice(0, 3);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/60 backdrop-blur-xs">
-      <div className="bg-[#FAF8F5] border border-[#E8E2D9] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl p-6 sm:p-8 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-stone-950/60 backdrop-blur-xs">
+      <div className="bg-[#FAF8F5] border border-[#E8E2D9] w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl p-5 sm:p-8 relative">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-stone-400 hover:text-stone-900 transition-colors p-1"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 text-stone-400 hover:text-stone-900 transition-colors p-1.5"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 mb-2 font-editorial-sans">
-          <Sparkles className="w-3.5 h-3.5 text-stone-700" />
+        <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 mb-2 font-editorial-sans pr-8">
+          <Sparkles className="w-3.5 h-3.5 text-stone-700 shrink-0" />
           <span>Clinical Routine Algorithm</span>
         </div>
 
-        <h2 className="font-editorial-serif text-2xl sm:text-3xl font-medium text-stone-900 mb-2">
+        <h2 className="font-editorial-serif text-xl sm:text-3xl font-medium text-stone-900 mb-2 pr-6">
           Diagnostic Routine & Conflict Matcher
         </h2>
         <p className="text-xs sm:text-sm text-stone-600 font-light mb-6">

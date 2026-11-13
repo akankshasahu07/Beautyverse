@@ -100,20 +100,20 @@ export const HomePage: React.FC<HomePageProps> = ({
   ];
 
   return (
-    <div className="space-y-14 lg:space-y-20 pb-16">
+    <div className="space-y-10 sm:space-y-14 lg:space-y-20 pb-12 sm:pb-16">
       {/* Editorial Marquee Hero: Lead Beauty Product Investigation */}
-      <section className="border-b border-[#E8E2D9] pt-6 lg:pt-10 pb-12 lg:pb-16 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="border-b border-[#E8E2D9] pt-5 sm:pt-6 lg:pt-10 pb-10 sm:pb-12 lg:pb-16 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Masthead Header Banner */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-4 mb-6 border-b border-[#E8E2D9] text-[11px] uppercase tracking-widest text-stone-500 font-editorial-sans">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 pb-4 mb-5 sm:mb-6 border-b border-[#E8E2D9] text-[10px] sm:text-[11px] uppercase tracking-widest text-stone-500 font-editorial-sans">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="text-stone-900 font-semibold">ÉLIXIR & DERMA</span>
               <span aria-hidden="true">·</span>
               <span>Beauty and Skincare Blog</span>
               <span aria-hidden="true">·</span>
               <span>Reviews & Ingredient Science</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               {onOpenKeywordMap && (
                 <button
                   onClick={onOpenKeywordMap}
@@ -178,8 +178,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-2 shrink-0 text-xs font-editorial-sans text-stone-600 bg-[#F7F4EE] px-3 py-1.5 border border-[#E8E2D9] rounded-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
+            <div className="flex items-center gap-2 shrink-0 self-start md:self-auto text-xs font-editorial-sans text-stone-600 bg-[#F7F4EE] px-3 py-1.5 border border-[#E8E2D9] rounded-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0"></span>
               <span>Keyword Focus: Blog · Reviews · Ingredients</span>
             </div>
           </div>
@@ -198,8 +198,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           {/* Lead 2-Column Split: Lipstick Editorial Feature */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
-            <div className="lg:col-span-7 space-y-6">
-              <div className="text-xs uppercase tracking-widest text-stone-600 font-editorial-sans flex items-center gap-2">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              <div className="text-xs uppercase tracking-widest text-stone-600 font-editorial-sans flex flex-wrap items-center gap-2">
                 <span className="font-semibold text-stone-900">Cover Feature: {leadArticle.productType}</span>
                 <span aria-hidden="true">·</span>
                 <span className="flex items-center gap-1">
@@ -210,7 +210,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <span>{leadArticle.publishDate}</span>
               </div>
 
-              <h2 className="font-editorial-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-stone-900 leading-[1.14] text-balance">
+              <h2 className="font-editorial-serif text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-stone-900 leading-[1.15] text-balance">
                 <a
                   href={getArticleUrl(leadArticle)}
                   onClick={(e) => {
@@ -240,8 +240,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Action Cluster */}
               <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-stone-200 border border-stone-300 flex items-center justify-center font-editorial-serif text-sm font-semibold text-stone-800">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-10 h-10 rounded-full bg-stone-200 border border-stone-300 flex items-center justify-center font-editorial-serif text-sm font-semibold text-stone-800 shrink-0">
                     {leadArticle.author.avatarInitials}
                   </div>
                   <div>
@@ -320,7 +320,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* The 6 Core Beauty Product Categories Spotlight */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 pb-4 border-b border-[#E8E2D9]">
           <div>
             <div className="text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1 flex items-center gap-1.5">
@@ -427,8 +427,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Editor's Formulation Bench: Product Archetype Ratings & Texture Notes */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="p-8 sm:p-10 border border-[#E8E2D9] bg-[#F7F4EE]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-5 sm:p-8 lg:p-10 border border-[#E8E2D9] bg-[#F7F4EE]">
           <div className="max-w-3xl mb-8">
             <div className="text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1 flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-800" />
@@ -492,7 +492,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Directory of All 10 Blog Articles */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 pb-4 border-b border-[#E8E2D9]">
           <div>
             <div className="text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1">
@@ -589,8 +589,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Answer Engine Optimization (AEO) Knowledge Guide: Direct Answers on Tips, Reviews, and Ingredients */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8" aria-label="AEO Editorial Answers and Science Guide">
-        <div className="border border-[#E8E2D9] bg-[#FAF8F5] p-8 sm:p-12 space-y-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="AEO Editorial Answers and Science Guide">
+        <div className="border border-[#E8E2D9] bg-[#FAF8F5] p-5 sm:p-8 lg:p-12 space-y-8 sm:space-y-10">
           <div className="max-w-3xl pb-6 border-b border-[#E8E2D9]">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1.5">
               <Sparkles className="w-3.5 h-3.5 text-stone-700" />
@@ -601,9 +601,9 @@ export const HomePage: React.FC<HomePageProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
             {/* Question 1: Beauty and skincare tips */}
-            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+            <div className="space-y-3.5 bg-white p-5 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-wider font-semibold text-emerald-800 mb-2">
                   Topic: Beauty & Skincare Tips
@@ -644,11 +644,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                     href="https://www.aad.org/public/everyday-care/skin-care-basics"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline"
                     title="American Academy of Dermatology (AAD) everyday skin care guidelines (opens in a new tab)"
                   >
                     <span>American Academy of Dermatology (AAD) everyday skin care guidelines</span>
-                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                    <ExternalLink className="w-3 h-3 inline ml-1 -mt-0.5 text-stone-400" aria-hidden="true" />
                   </a>
                   , establishing a disciplined regimen of gentle cleansing, humectant hydration, and daily photoprotection is the cornerstone of dermatological health.
                 </p>
@@ -670,7 +670,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             {/* Question 2: Beauty product reviews */}
-            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+            <div className="space-y-3.5 bg-white p-5 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-wider font-semibold text-amber-800 mb-2">
                   Topic: Beauty Product Reviews
@@ -699,11 +699,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                     href="https://www.fda.gov/cosmetics"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline"
                     title="U.S. Food and Drug Administration (FDA) cosmetic safety and ingredient guidance (opens in a new tab)"
                   >
                     <span>U.S. Food and Drug Administration (FDA) cosmetic safety and ingredient guidance</span>
-                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                    <ExternalLink className="w-3 h-3 inline ml-1 -mt-0.5 text-stone-400" aria-hidden="true" />
                   </a>
                   {' '}to verify active purity benchmarks, ensuring our evaluations provide transparent, clinically grounded data.
                 </p>
@@ -725,7 +725,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
             {/* Question 3: Skincare ingredients */}
-            <div className="space-y-3.5 bg-white p-6 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
+            <div className="space-y-3.5 bg-white p-5 sm:p-7 border border-[#E8E2D9] flex flex-col justify-between">
               <div>
                 <div className="text-[11px] uppercase tracking-wider font-semibold text-stone-800 mb-2">
                   Topic: Skincare Ingredients
@@ -739,11 +739,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                     href="https://dermnetnz.org/topics/barrier-repair-creams"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline-flex items-center gap-0.5"
+                    className="text-stone-900 font-medium underline decoration-stone-400 hover:decoration-stone-900 transition-colors inline"
                     title="DermNet guide to active skincare ingredients and barrier repair (opens in a new tab)"
                   >
                     <span>DermNet guide to active skincare ingredients and barrier repair</span>
-                    <ExternalLink className="w-3 h-3 inline-block ml-0.5 text-stone-400" aria-hidden="true" />
+                    <ExternalLink className="w-3 h-3 inline ml-1 -mt-0.5 text-stone-400" aria-hidden="true" />
                   </a>
                   .
                 </p>
@@ -766,14 +766,14 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* Routine Matcher Banner Callout */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="border border-[#E8E2D9] bg-[#F3EFEA] p-8 sm:p-12 relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="border border-[#E8E2D9] bg-[#F3EFEA] p-5 sm:p-8 lg:p-12 relative overflow-hidden">
           <div className="max-w-2xl space-y-4">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-editorial-sans">
               <Sparkles className="w-3.5 h-3.5 text-stone-700" />
               <span>Ingredient Diagnostic Tool</span>
             </div>
-            <h2 className="font-editorial-serif text-3xl sm:text-4xl font-medium text-stone-900 leading-tight">
+            <h2 className="font-editorial-serif text-2xl sm:text-4xl font-medium text-stone-900 leading-tight">
               Analyze Active Beauty and Skincare Ingredients in Your Routine
             </h2>
             <p className="text-stone-600 text-sm font-light leading-relaxed">

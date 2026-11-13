@@ -63,7 +63,7 @@ export const SeoKeywordMapModal: React.FC<SeoKeywordMapModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-stone-900/60 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-stone-900/60 backdrop-blur-xs">
       <div 
         className="bg-[#FAF8F5] border border-[#E8E2D9] w-full max-w-5xl max-h-[90vh] flex flex-col shadow-2xl rounded-sm overflow-hidden animate-in fade-in zoom-in-95 duration-200"
         role="dialog"
@@ -71,13 +71,13 @@ export const SeoKeywordMapModal: React.FC<SeoKeywordMapModalProps> = ({
         aria-labelledby="keyword-map-title"
       >
         {/* Header Strip */}
-        <div className="p-6 border-b border-[#E8E2D9] bg-[#F7F4EE] flex items-start justify-between gap-4">
-          <div>
+        <div className="p-4 sm:p-6 border-b border-[#E8E2D9] bg-[#F7F4EE] flex items-start justify-between gap-4">
+          <div className="min-w-0">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-stone-500 font-editorial-sans mb-1">
-              <Key className="w-3.5 h-3.5 text-stone-800" />
+              <Key className="w-3.5 h-3.5 text-stone-800 shrink-0" />
               <span>Step 2 Keyword Map & SEO Architecture</span>
             </div>
-            <h2 id="keyword-map-title" className="font-editorial-serif text-2xl sm:text-3xl font-medium text-stone-900">
+            <h2 id="keyword-map-title" className="font-editorial-serif text-xl sm:text-3xl font-medium text-stone-900">
               Assigned Page-by-Page Keyword Map
             </h2>
             <p className="text-xs sm:text-sm text-stone-600 font-light mt-1 max-w-2xl">
@@ -95,7 +95,7 @@ export const SeoKeywordMapModal: React.FC<SeoKeywordMapModalProps> = ({
         </div>
 
         {/* Filter bar */}
-        <div className="p-4 border-b border-[#E8E2D9] bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="p-3 sm:p-4 border-b border-[#E8E2D9] bg-white flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="relative w-full sm:w-96">
             <Search className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
@@ -113,12 +113,12 @@ export const SeoKeywordMapModal: React.FC<SeoKeywordMapModalProps> = ({
         </div>
 
         {/* Content Table / Cards */}
-        <div className="overflow-y-auto p-4 sm:p-6 space-y-4 flex-1">
+        <div className="overflow-y-auto p-3 sm:p-6 space-y-4 flex-1">
           <div className="grid grid-cols-1 gap-4">
             {filtered.map((item) => (
               <div
                 key={item.pageId}
-                className="border border-[#E8E2D9] bg-white p-5 hover:border-stone-400 transition-colors rounded-sm"
+                className="border border-[#E8E2D9] bg-white p-4 sm:p-5 hover:border-stone-400 transition-colors rounded-sm"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-[#E8E2D9]/70">
                   <div>

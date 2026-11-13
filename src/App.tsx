@@ -171,8 +171,8 @@ export default function App() {
     <div className="min-h-screen bg-[#FAF8F5] text-stone-900 font-editorial-sans selection:bg-stone-200">
       {/* Toast Alert */}
       {toastMessage && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-stone-900 text-white text-xs px-4 py-2.5 rounded-sm shadow-xl flex items-center gap-2">
-          <Check className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] sm:w-auto max-w-md bg-stone-900 text-white text-xs px-4 py-2.5 rounded-sm shadow-xl flex items-center justify-center gap-2 text-center">
+          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
           <span>{toastMessage}</span>
         </div>
       )}

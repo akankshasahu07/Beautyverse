@@ -1,9 +1,8 @@
 import React, { useMemo } from 'react';
-import { SlidersHorizontal, BookOpen, Search } from 'lucide-react';
+import { SlidersHorizontal, BookOpen, Search, Key } from 'lucide-react';
 import { BeautyArticle, BeautyProductType } from '../types/article';
 import { ArticleCard } from './ArticleCard';
 import { getArticlesHubUrl } from '../utils/seoRouter';
-import { Key } from 'lucide-react';
 
 interface BlogHubProps {
   articles: BeautyArticle[];
@@ -94,16 +93,16 @@ export const BlogHub: React.FC<BlogHubProps> = ({
   return (
     <div className="pb-16">
       {/* Blog Hub Title Banner */}
-      <section className="border-b border-[#E8E2D9] py-8 lg:py-12 bg-[#F7F4EE]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="border-b border-[#E8E2D9] py-7 sm:py-8 lg:py-12 bg-[#F7F4EE]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-3xl space-y-3">
-              <div className="text-xs uppercase tracking-widest text-stone-500 font-editorial-sans flex items-center gap-2">
+              <div className="text-xs uppercase tracking-widest text-stone-500 font-editorial-sans flex flex-wrap items-center gap-2">
                 <span className="font-semibold text-stone-900">Blog Archive</span>
                 <span aria-hidden="true">·</span>
                 <span>10 Clinical Beauty Product Investigations</span>
               </div>
-              <h1 className="font-editorial-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-stone-900 leading-tight">
+              <h1 className="font-editorial-serif text-2xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-stone-900 leading-tight">
                 Beauty Product Guides & Editorial Investigations
               </h1>
               <p className="text-stone-600 text-sm sm:text-base font-light leading-relaxed">
@@ -125,8 +124,20 @@ export const BlogHub: React.FC<BlogHubProps> = ({
       </section>
 
       {/* Filter and Control Bar */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-8 border-b border-[#E8E2D9]">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 border-b border-[#E8E2D9]">
+        {/* Mobile Search Input inside Archive */}
+        <div className="relative sm:hidden mb-4">
+          <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
+          <input
+            type="text"
+            placeholder="Search articles, actives, product types..."
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
+            className="w-full bg-white border border-[#E8E2D9] text-sm text-stone-800 placeholder-stone-400 pl-9 pr-3 py-2 rounded-sm focus:outline-none focus:border-stone-500"
+          />
+        </div>
+
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
           {/* Product Type Tabs */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 scrollbar-none text-xs">
             {productTypesList.map((pType) => (
@@ -150,9 +161,9 @@ export const BlogHub: React.FC<BlogHubProps> = ({
           </div>
 
           {/* Secondary Filters: Pacing & Sort */}
-          <div className="flex items-center gap-4 shrink-0 text-xs">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0 text-xs">
             <div className="flex items-center gap-2 text-stone-500">
-              <SlidersHorizontal className="w-3.5 h-3.5" />
+              <SlidersHorizontal className="w-3.5 h-3.5 shrink-0" />
               <span className="hidden sm:inline">Pacing:</span>
               <select
                 value={readTimeFilter}
@@ -209,9 +220,9 @@ export const BlogHub: React.FC<BlogHubProps> = ({
       </section>
 
       {/* Grid of Articles */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
         {filteredArticles.length === 0 ? (
-          <div className="py-20 text-center border border-dashed border-[#E8E2D9] p-8 bg-white/50">
+          <div className="py-16 sm:py-20 text-center border border-dashed border-[#E8E2D9] p-6 sm:p-8 bg-white/50">
             <BookOpen className="w-8 h-8 text-stone-400 mx-auto mb-3" />
             <h3 className="font-editorial-serif text-xl font-medium text-stone-900 mb-1">
               No Articles Found
@@ -231,7 +242,7 @@ export const BlogHub: React.FC<BlogHubProps> = ({
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredArticles.map((article) => (
               <ArticleCard
                 key={article.id}

@@ -31,11 +31,11 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="border-t border-[#E8E2D9] bg-[#F7F4EE] pt-14 pb-12 transition-colors font-editorial-sans text-stone-800">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-12 border-b border-[#E8E2D9]">
+    <footer className="border-t border-[#E8E2D9] bg-[#F7F4EE] pt-10 sm:pt-14 pb-10 sm:pb-12 transition-colors font-editorial-sans text-stone-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 pb-10 sm:pb-12 border-b border-[#E8E2D9]">
           {/* Brand Colophon */}
-          <div className="md:col-span-4 space-y-4">
+          <div className="sm:col-span-2 md:col-span-4 space-y-4">
             <a 
               href={getHomeUrl()}
               onClick={(e) => {
@@ -207,7 +207,7 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Weekly Clinical Dispatch Signup */}
-          <div className="md:col-span-4 space-y-3">
+          <div className="sm:col-span-2 md:col-span-4 space-y-3">
             <div className="text-xs uppercase tracking-widest font-semibold text-stone-900">
               The Weekly Clinical Dispatch
             </div>
@@ -223,7 +223,7 @@ export const Footer: React.FC<FooterProps> = ({
                   placeholder="Enter your email address..."
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 text-xs p-2.5 bg-white border border-[#E8E2D9] rounded-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-stone-500"
+                  className="flex-1 min-w-0 text-xs p-2.5 bg-white border border-[#E8E2D9] rounded-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-stone-500"
                 />
                 <button
                   type="submit"
@@ -242,11 +242,11 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Quiet Baseline Footer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 font-light">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 font-light text-center sm:text-left">
           <div>
             © 2026 ÉLIXIR & DERMA Publishing Corp. All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2">
             <a 
               href={getHomeUrl()}
               onClick={(e) => {
