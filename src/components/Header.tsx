@@ -38,7 +38,9 @@ export const Header: React.FC<HeaderProps> = ({
   useEffect(() => {
     if (!isMobileMenuOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -87,25 +89,25 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Main Top Bar Contract: Zone 1 (Wordmark) - Zone 2 (Nav Links) - Zone 3 (Action) */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4 lg:gap-8 px-4 sm:px-6 lg:px-8 h-14 sm:h-16">
-        {/* Zone 1: Single text element wordmark */}
+      {/* Main Top Bar Contract: Zone 1 (Wordmark) - Zone 2 (Nav Links at xl+) - Zone 3 (Action) */}
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-4 xl:gap-6 px-4 sm:px-6 lg:px-8 h-14 sm:h-16">
+        {/* Zone 1: Single text element wordmark (always shrink-0 so it never overlaps menu) */}
         <a 
           href={getHomeUrl()}
           onClick={(e) => {
             e.preventDefault();
             handleMobileAction(onNavigateHome);
           }}
-          className="text-left group cursor-pointer focus:outline-none min-w-0"
+          className="text-left group cursor-pointer focus:outline-none shrink-0"
           aria-label="ÉLIXIR & DERMA — Homepage"
         >
-          <span className="font-editorial-serif text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap shrink-0 block">
+          <span className="font-editorial-serif text-lg sm:text-2xl 2xl:text-3xl font-medium tracking-tight text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap shrink-0 block">
             ÉLIXIR & DERMA
           </span>
         </a>
 
-        {/* Zone 2: 4–5 clean single-line text navigation links */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-xs uppercase tracking-wider font-medium text-stone-600">
+        {/* Zone 2: Clean single-line text navigation links on wide desktop (xl+) */}
+        <nav aria-label="Primary Navigation" className="hidden xl:flex items-center gap-5 2xl:gap-6 text-xs uppercase tracking-wider font-medium text-stone-600 shrink-0">
           <a
             href={getHomeUrl()}
             onClick={(e) => {
@@ -193,9 +195,10 @@ export const Header: React.FC<HeaderProps> = ({
           </a>
         </nav>
 
-        {/* Zone 3: 1 primary action cluster + Mobile Menu Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <div className="relative hidden sm:block w-36 md:w-36 lg:w-52">
+        {/* Zone 3: Primary action cluster + Mobile Utility Toggle */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          {/* Search bar visible on sm+ screens */}
+          <div className="relative hidden sm:block w-36 md:w-44 xl:w-44 2xl:w-52">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
             <input
               type="text"
@@ -214,7 +217,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={() => handleMobileAction(onOpenSavedDrawer)}
             aria-label="View saved reading list"
-            className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 border border-[#E8E2D9] hover:border-stone-400 rounded-sm transition-colors whitespace-nowrap"
+            className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 border border-[#E8E2D9] hover:border-stone-400 rounded-sm transition-colors whitespace-nowrap"
           >
             <Bookmark className="w-3.5 h-3.5 text-stone-600" />
             <span className="hidden sm:inline">Folio</span>
@@ -225,29 +228,124 @@ export const Header: React.FC<HeaderProps> = ({
 
           <button
             onClick={() => handleMobileAction(onOpenRoutineMatcher)}
+            aria-label="Open Product Routine Matcher"
             className="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-sm transition-colors whitespace-nowrap shrink-0 shadow-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span className="hidden lg:inline">Product Matcher</span>
-            <span className="lg:hidden">Matcher</span>
+            <span className="hidden xl:inline">Product Matcher</span>
+            <span className="hidden min-[380px]:inline xl:hidden">Matcher</span>
           </button>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Tools/Search Menu Toggle Button on mobile/tablet (< lg) */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-label={isMobileMenuOpen ? 'Close tools and search menu' : 'Open tools and search menu'}
             aria-expanded={isMobileMenuOpen}
-            className="md:hidden p-1.5 text-stone-700 hover:text-stone-950 border border-[#E8E2D9] rounded-sm bg-white/70 transition-colors"
+            className="lg:hidden p-1.5 text-stone-700 hover:text-stone-950 border border-[#E8E2D9] rounded-sm bg-white/70 transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Always-Visible Menu Bar Row on Mobile, Tablet & Standard Laptops (< xl) so it never overlaps the website name */}
+      <nav
+        aria-label="Mobile and Tablet Navigation"
+        className="xl:hidden border-t border-[#E8E2D9]/80 bg-[#FAF8F5] px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto flex items-center lg:justify-center gap-4 sm:gap-6 h-10 overflow-x-auto scrollbar-none text-[11px] sm:text-xs uppercase tracking-wider font-medium text-stone-600">
+          <a
+            href={getHomeUrl()}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(onNavigateHome);
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1 py-1 ${
+              currentView === 'home' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Navigate to Homepage"
+          >
+            <Compass className="w-3.5 h-3.5" />
+            <span>Home</span>
+          </a>
+
+          <a
+            href={getArticlesHubUrl('All')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(onNavigateArticles);
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1 py-1 ${
+              currentView === 'articles' && selectedProductType === 'All' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Explore all 10 blog articles"
+          >
+            <BookOpen className="w-3.5 h-3.5" />
+            <span>10 Blog Articles</span>
+          </a>
+
+          <a
+            href={getArticlesHubUrl('Lipstick')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(() => onSelectProductType('Lipstick'));
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
+              selectedProductType === 'Lipstick' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Filter articles by Lipsticks"
+          >
+            Lipsticks
+          </a>
+
+          <a
+            href={getArticlesHubUrl('Serum')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(() => onSelectProductType('Serum'));
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
+              selectedProductType === 'Serum' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Filter articles by Serums"
+          >
+            Serums
+          </a>
+
+          <a
+            href={getArticlesHubUrl('Compact Powder')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(() => onSelectProductType('Compact Powder'));
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
+              selectedProductType === 'Compact Powder' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Filter articles by Compact Powder"
+          >
+            Compacts
+          </a>
+
+          <a
+            href={getArticlesHubUrl('Sunscreen')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleMobileAction(() => onSelectProductType('Sunscreen'));
+            }}
+            className={`hover:text-stone-900 transition-colors whitespace-nowrap shrink-0 py-1 ${
+              selectedProductType === 'Sunscreen' ? 'text-stone-950 font-semibold underline underline-offset-4 decoration-stone-900' : ''
+            }`}
+            aria-label="Filter articles by Sunscreens"
+          >
+            Sunscreens
+          </a>
+        </div>
+      </nav>
+
+      {/* Mobile/Tablet Extra Search & Tools Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-[#E8E2D9] bg-[#FAF8F5] px-4 py-4 space-y-4 max-h-[calc(100vh-3.5rem)] overflow-y-auto shadow-lg">
+        <div className="lg:hidden border-t border-[#E8E2D9] bg-[#FAF8F5] px-4 sm:px-6 py-4 space-y-4 max-h-[calc(100vh-6rem)] overflow-y-auto shadow-lg">
           {/* Mobile Search Input */}
           <div className="relative">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />

@@ -251,7 +251,7 @@ export const ArticleDetail: React.FC<ArticleDetailProps> = ({
       />
 
       {/* Reader Control Strip */}
-      <div className={`sticky top-[57px] sm:top-[65px] lg:top-[97px] z-30 border-b backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 transition-colors ${
+      <div className={`sticky top-[98px] sm:top-[106px] lg:top-[139px] xl:top-[98px] z-30 border-b backdrop-blur-md px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 transition-colors ${
         themeMode === 'dark' ? 'bg-[#161514]/90 border-stone-800' : 'bg-[#FAF8F5]/90 border-[#E8E2D9]'
       }`}>
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
