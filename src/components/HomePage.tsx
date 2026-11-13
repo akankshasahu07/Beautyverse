@@ -3,6 +3,7 @@ import { ArrowRight, Bookmark, Clock, Sparkles, Check, Star, ShieldCheck, Heart,
 import { BeautyArticle, BeautyProductType } from '../types/article';
 import { getArticleUrl, getArticlesHubUrl } from '../utils/seoRouter';
 import { handleImageFallback } from '../utils/imageFallback';
+import { EDITORIAL_IMAGES } from '../utils/editorialImages';
 
 interface HomePageProps {
   articles: BeautyArticle[];
@@ -34,7 +35,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   const blushArticle = articles[4]; // Blush
   const foundationArticle = articles[5]; // Foundation & Tint
 
-  const HOME_HERO_IMAGE = '/src/assets/images/home_hero_beauty_collection_1791632078081.jpg';
+  const HOME_HERO_IMAGE = EDITORIAL_IMAGES.homeHero;
 
   const spotlightProducts = [
     {
@@ -299,7 +300,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <img
                     src={HOME_HERO_IMAGE}
                     alt="Curated beauty product reviews collection: hydrating matte lipstick, active face serum dropper, and sunscreen for flawless makeup on natural travertine stone"
-                    referrerPolicy="no-referrer"
                     onError={handleImageFallback}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                     loading="eager"
@@ -362,10 +362,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <img
                     src={item.image}
                     alt={item.imageAlt || item.article.imageAlt}
-                    referrerPolicy="no-referrer"
                     onError={handleImageFallback}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     width={1200}
                     height={896}

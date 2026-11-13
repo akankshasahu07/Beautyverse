@@ -1,5 +1,6 @@
 import { BeautyArticle, BeautyProductType } from '../types/article';
 import { STEP_2_KEYWORD_MAP, getKeywordMappingForPage } from '../data/keywordMap';
+import { EDITORIAL_IMAGES } from './editorialImages';
 
 export interface RouteMatch {
   view: 'home' | 'articles' | 'detail';
@@ -253,7 +254,7 @@ export function updateSeoMetadata(article: BeautyArticle | null, view: 'home' | 
   let description = homeMapping.metaDescription;
   let keywords = `${homeMapping.mainKeyword}, ${homeMapping.relatedKeyword1}, ${homeMapping.relatedKeyword2}`;
   let ogType = 'website';
-  let ogImage = `${origin}/src/assets/images/home_hero_beauty_collection_1791632078081.jpg`;
+  let ogImage = `${origin}${EDITORIAL_IMAGES.homeHero}`;
   let keywordsArray = [homeMapping.mainKeyword, homeMapping.relatedKeyword1, homeMapping.relatedKeyword2];
 
   if (view === 'detail' && article) {
@@ -346,7 +347,7 @@ export function updateSeoMetadata(article: BeautyArticle | null, view: 'home' | 
         'name': 'ÉLIXIR & DERMA Publishing Corp.',
         'logo': {
           '@type': 'ImageObject',
-          'url': `${origin}/src/assets/images/home_hero_beauty_collection_1791632078081.jpg`
+          'url': `${origin}${EDITORIAL_IMAGES.homeHero}`
         }
       },
       'mainEntityOfPage': {

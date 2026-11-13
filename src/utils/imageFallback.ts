@@ -9,30 +9,45 @@ export function handleImageFallback(e: React.SyntheticEvent<HTMLImageElement, Ev
 
   // Track attempts via data attribute to prevent infinite retry loops
   const attempt = parseInt(img.dataset.fallbackAttempt || '0', 10);
-  if (attempt >= 3) {
+  if (attempt >= 4) {
     return;
   }
   img.dataset.fallbackAttempt = String(attempt + 1);
 
-  // Strategy 1: If URL has /src/assets/images/, convert to /assets/images/
-  if (currentSrc.includes('/src/assets/images/')) {
-    img.src = currentSrc.replace('/src/assets/images/', '/assets/images/');
-    return;
-  }
+  try {
+    const urlObj = new URL(currentSrc, window.location.origin);
+    const rawFile = urlObj.pathname.split('/').pop() || '';
+    // Strip Vite content hash if present (e.g. name-B1xY2z.jpg -> name.jpg)
+    const cleanFile = rawFile.replace(/-[A-Za-z0-9_-]{6,}(\.[a-z]+)$/i, '$1');
 
-  // Strategy 2: If URL has /assets/images/, convert to /images/
-  if (currentSrc.includes('/assets/images/')) {
-    img.src = currentSrc.replace('/assets/images/', '/images/');
-    return;
-  }
+    if (attempt === 0 && cleanFile) {
+      img.src = `/images/${cleanFile}`;
+      return;
+    }
 
-  // Strategy 3: Try switching extension between .jpg and .webp
-  if (currentSrc.endsWith('.jpg')) {
-    img.src = currentSrc.replace(/\.jpg$/, '.webp');
-    return;
-  }
-  if (currentSrc.endsWith('.webp')) {
-    img.src = currentSrc.replace(/\.webp$/, '.jpg');
-    return;
+    if (attempt === 1 && cleanFile) {
+      img.src = `/assets/images/${cleanFile}`;
+      return;
+    }
+
+    if (attempt === 2 && cleanFile) {
+      const altExt = cleanFile.endsWith('.jpg')
+        ? cleanFile.replace(/\.jpg$/, '.webp')
+        : cleanFile.replace(/\.webp$/, '.jpg');
+      img.src = `/images/${altExt}`;
+      return;
+    }
+
+    if (attempt === 3 && cleanFile) {
+      img.src = `/src/assets/images/${cleanFile}`;
+      return;
+    }
+  } catch {
+    // Fallback string manipulation
+    if (currentSrc.includes('/src/assets/images/')) {
+      img.src = currentSrc.replace('/src/assets/images/', '/images/');
+    } else if (currentSrc.includes('/assets/images/')) {
+      img.src = currentSrc.replace('/assets/images/', '/images/');
+    }
   }
 }

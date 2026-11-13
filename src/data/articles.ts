@@ -1,5 +1,6 @@
 import { BeautyArticle } from '../types/article';
 import { STEP_2_KEYWORD_MAP } from './keywordMap';
+import { EDITORIAL_IMAGES } from '../utils/editorialImages';
 
 export const BEAUTY_ARTICLES: BeautyArticle[] = [
   {
@@ -17,7 +18,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Paris Haute Couture Beauty Director',
       avatarInitials: 'GM'
     },
-    heroImage: '/src/assets/images/beauty_lipstick_editorial_1791630593033.jpg',
+    heroImage: EDITORIAL_IMAGES.lipstickEditorial,
     imageAlt: 'Rosewood hydrating matte lipstick bullet in golden brass case with smooth hydrating lipstick swatch on warm travertine marble',
     imageCaption: 'Fig. 1 — Modern velvet lipsticks suspend high-purity iron oxide pigments within micro-spherical elastomer matrices for featherlight slip.',
     leadPullQuote: 'For decades, matte lipstick meant drying alcohol solvents and chapped lips by 2 PM. Modern pigment chemistry now delivers comfortable hydrating matte lipstick with zero cellular dehydration.',
@@ -117,7 +118,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'FAAD, Associate Professor of Cutaneous Biology',
       avatarInitials: 'CV'
     },
-    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
+    heroImage: EDITORIAL_IMAGES.serumDropper,
     imageAlt: 'Pristine glass dropper dispensing active hyaluronic acid drops for face serum layering on natural limestone',
     imageCaption: 'Fig. 2 — Serums deliver the highest concentration of active molecules per cubic milliliter of any skincare product tier.',
     leadPullQuote: 'Proper serum layering is governed by molecular physics, not marketing trends. When mastering face serum layering, sequencing active formulas incorrectly limits cellular absorption.',
@@ -214,7 +215,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Society of Cosmetic Chemists Fellow',
       avatarInitials: 'HB'
     },
-    heroImage: '/src/assets/images/beauty_compact_powder_1791630604457.jpg',
+    heroImage: EDITORIAL_IMAGES.compactPowder,
     imageAlt: 'Open luxury pressed powder compact with mirror and soft velour puff on travertine stone',
     imageCaption: 'Fig. 3 — Micro-milled spherical silica particles absorb excess oil while transmitting natural ambient light.',
     leadPullQuote: 'A great compact should never look like powder on the skin. It should act as an invisible optical filter that diffuses shine while retaining healthy three-dimensional skin glow.',
@@ -308,7 +309,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Director of Melanoma & Photobiology Research',
       avatarInitials: 'AT'
     },
-    heroImage: '/src/assets/images/article_sunscreen_minimal_1791560512517.jpg',
+    heroImage: EDITORIAL_IMAGES.sunscreenMinimal,
     imageAlt: 'Matte tube of daily sunscreen for flawless makeup with lightweight cream swatch and no white cast on warm stone slab',
     imageCaption: 'Fig. 4 — Modern fluid sunscreens form a flexible photoprotective mesh that grips makeup without pilling or flashback.',
     leadPullQuote: 'If your UV shield causes foundation to slide, pill, or turn chalky by noon, wearability fails. Modern photodermatology has finally engineered the ideal sunscreen for flawless makeup with zero residue.',
@@ -404,7 +405,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Paris Haute Couture Beauty Director',
       avatarInitials: 'GM'
     },
-    heroImage: '/src/assets/images/beauty_liquid_blush_1791630617637.jpg',
+    heroImage: EDITORIAL_IMAGES.liquidBlush,
     imageAlt: 'Frosted glass bottle of petal-pink liquid blush with dewy swatch and brush on natural limestone',
     imageCaption: 'Fig. 5 — Liquid blush formulations suspend micronized pigments in hydrating botanical glycerols for effortless dermal blending.',
     leadPullQuote: 'Youthful skin does not blush in dry, powdery squares. A natural blush comes from vascular warmth beneath living skin—and liquid blushes recreate that exact optical diffusion.',
@@ -498,7 +499,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Paris Haute Couture Beauty Director',
       avatarInitials: 'GM'
     },
-    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
+    heroImage: EDITORIAL_IMAGES.skincareElixir,
     imageAlt: 'Luxury frosted skincare dropper bottle and cosmetic flacon on travertine pedestal',
     imageCaption: 'Fig. 6 — Hybrid foundations blend the coverage of base makeup with the transdermal nourishment of active facial serums.',
     leadPullQuote: 'The era of the heavy cakey foundation mask is dead. Modern makeup is designed not to hide your skin, but to act as a luminous optical amplifier of your existing skincare.',
@@ -592,7 +593,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'FAAD, Associate Professor of Cutaneous Biology',
       avatarInitials: 'CV'
     },
-    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
+    heroImage: EDITORIAL_IMAGES.retinoidCreme,
     imageAlt: 'Amber glass jar of rich whipped cleansing balm with wooden spatula on stone',
     imageCaption: 'Fig. 7 — Oil dissolves oil: botanical lipids bond with stubborn waterproof polymers, rinsing clean upon water contact.',
     leadPullQuote: 'You cannot remove long-wear foundation and waterproof mineral sunscreen with a gentle foaming wash. You either leave dirty residue behind or strip your acid mantle with harsh sulfates.',
@@ -684,7 +685,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Oxford Cutaneous Photochemistry Laboratory',
       avatarInitials: 'MS'
     },
-    heroImage: '/src/assets/images/hero_skincare_elixir_1791560474615.jpg',
+    heroImage: EDITORIAL_IMAGES.skincareElixir,
     imageAlt: 'Frosted eye cream and serum dropper on neutral travertine stone',
     imageCaption: 'Fig. 8 — Periorbital skin is 40% thinner than facial skin, requiring specialized bio-peptides and vascular drainers.',
     leadPullQuote: 'Undereye dark circles are not just pigmentation; they are a complex interplay of micro-vascular pooling, lymphatic stagnation, and thinning dermal collagen.',
@@ -776,7 +777,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Paris Haute Couture Beauty Director',
       avatarInitials: 'GM'
     },
-    heroImage: '/src/assets/images/article_serum_dropper_1791560501821.jpg',
+    heroImage: EDITORIAL_IMAGES.serumDropper,
     imageAlt: 'Micro-droplets of facial mist glistening in morning light on travertine surface',
     imageCaption: 'Fig. 9 — Ultra-fine nozzle technology distributes biopolymers evenly, forming an invisible transfer-proof mesh.',
     leadPullQuote: 'A setting spray is not just scented water; it is a specialized biopolymer web that melts foundation and powder particles together into a unified second-skin finish.',
@@ -868,7 +869,7 @@ export const BEAUTY_ARTICLES: BeautyArticle[] = [
       credentials: 'Society of Cosmetic Chemists Fellow',
       avatarInitials: 'HB'
     },
-    heroImage: '/src/assets/images/article_retinoid_creme_1791560488949.jpg',
+    heroImage: EDITORIAL_IMAGES.retinoidCreme,
     imageAlt: 'Amber glass jar of whipped nourishing lipid barrier cream with wooden spatula',
     imageCaption: 'Fig. 10 — Bilayer lamellar emulsions replicate the natural lipid matrix of healthy human epidermis.',
     leadPullQuote: 'Healthy skin is luminous because its outer surface is structurally planar and light reflects off coherent lipid sheets—not because you acid-stripped away the top five cell tiers.',
